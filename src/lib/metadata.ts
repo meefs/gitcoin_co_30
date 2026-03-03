@@ -70,7 +70,7 @@ export function generateDetailPageMetadata(config: MetadataConfig): Metadata {
     },
     twitter: {
       card: "summary_large_image",
-      title,
+      title: shortDescription ? `${title} — ${shortDescription}`.slice(0, 100) : title,
       description: shortDescription,
       images: [imageUrl],
       creator: "@gitcoin",
