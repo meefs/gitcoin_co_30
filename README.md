@@ -175,3 +175,7 @@ npm run build
 - On the `/research` page, sensemaking articles also appear in the normal grid
 - Banner images for sensemaking articles should use a wider 3:1 aspect ratio (e.g., 1800x600px)
 - Example: `sensemakingFor: mechanisms`
+
+
+**`researchType`** (research only, optional)
+- Example values: `Report`, `Opinion`, etc

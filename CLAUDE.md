@@ -67,6 +67,8 @@ sensemakingFor: mechanisms   # Optional — marks this as the sensemaking articl
                              # Valid values: mechanisms | apps | campaigns | case-studies | research
                              # Only one article per category should have this set
                              # Use a wider 3:1 banner (e.g. 1800×600px) for sensemaking articles
+
+researchType: Report # Optional - can be Report | Opinion but not restricted to these values only
 ```
 
 ### Campaigns — additional fields

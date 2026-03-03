@@ -8,7 +8,6 @@ interface CampaignCardProps {
   campaign: Campaign;
   featured?: boolean;
   variant?: "default" | "home";
-  statusLabel?: string;
   ctaLabel?: string;
 }
 
@@ -31,6 +30,23 @@ function getTimelineLabel(startDate?: string, endDate?: string): string | null {
   );
   if (days < 1) return "Ends today";
   return days === 1 ? "1 day left" : `${days} days left`;
+}
+
+function getStatusBadge(
+  startDate?: string,
+  endDate?: string,
+): { label: string; variant: "info" | "warning" | "default" } {
+  const now = new Date();
+
+  if (!endDate) return { label: "Ongoing", variant: "info" };
+
+  const end = new Date(endDate);
+  if (end < now) return { label: "Ended", variant: "default" };
+
+  const start = startDate ? new Date(startDate) : null;
+  if (start && start > now) return { label: "Upcoming", variant: "warning" };
+
+  return { label: "Active", variant: "info" };
 }
 
 function MetricItem({
@@ -57,11 +73,11 @@ export default function CampaignCard({
   campaign,
   featured = false,
   variant = "home",
-  statusLabel = "Active now",
   ctaLabel = "Visit campaign",
 }: CampaignCardProps) {
   const campaignUrl = `/campaigns/${campaign.slug}`;
   const timelineLabel = getTimelineLabel(campaign.startDate, campaign.endDate);
+  const statusBadge = getStatusBadge(campaign.startDate, campaign.endDate);
 
   const metrics = [
     campaign.matchingPoolUsd && {
@@ -85,8 +101,8 @@ export default function CampaignCard({
     return (
       <Link href={campaignUrl}>
         <article className="group flex min-h-[386px] flex-col rounded-2xl border border-gray-600 bg-gray-900 p-6 transition-all duration-300 hover:border-teal-500">
-          <Badge variant="info" size="sm">
-            {statusLabel}
+          <Badge variant={statusBadge.variant} size="sm">
+            {statusBadge.label}
           </Badge>
 
           <h3 className="mt-6 text-2xl sm:text-[32px] text-gray-25 font-heading font-light">

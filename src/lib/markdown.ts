@@ -118,7 +118,8 @@ function parseResearch(data: any, content: string, slug: string): Research {
   return {
     ...parseBaseContent(data, content, slug),
     sensemakingFor: data.sensemakingFor,
-  } as Research
+    researchType: data.researchType
+  } as Research;
 }
 
 export function getResearchFromMarkdown(): Research[] {

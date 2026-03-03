@@ -11,9 +11,12 @@ if (!issueNumber) {
 publishContent("research", issueNumber, {
   addCustomFrontmatter: (_customData, metadata) => {
     const m = metadata as unknown as IssueMetadata;
+    const lines: string[] = [];
     if (m.sensemakingFor) {
-      return `sensemakingFor: ${m.sensemakingFor}`;
+      lines.push(`sensemakingFor: ${m.sensemakingFor}`);
     }
-    return "";
+    if (m.researchType) lines.push(`researchType: ${m.researchType}`);
+
+    return lines.join("\n");
   },
 }).catch(console.error);

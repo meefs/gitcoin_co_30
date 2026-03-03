@@ -10,6 +10,7 @@ export interface IssueMetadata {
   tags?: string[];
   featured?: boolean;
   sensemakingFor?: string;
+  researchType?: string;
   externalUrl?: string;
   matchingPoolUsd?: string;
   projectsCount?: string;
@@ -39,11 +40,12 @@ function extractField(content: string, label: string): string {
 
 /** Parse the ## Metadata section from a GitHub issue body */
 export function parseMetadata(markdown: string): IssueMetadata {
+  const capitalize = (str: string) =>
+    str ? str[0].toUpperCase() + str.slice(1) : "";
+
   const metadata: IssueMetadata = {};
 
-  const metadataSection = markdown.match(
-    /## Metadata\s+([\s\S]*?)(?=\n##|$)/,
-  );
+  const metadataSection = markdown.match(/## Metadata\s+([\s\S]*?)(?=\n##|$)/);
   if (!metadataSection) return metadata;
 
   const content = metadataSection[1];
@@ -65,11 +67,14 @@ export function parseMetadata(markdown: string): IssueMetadata {
   const featured = extractField(content, "Featured").toLowerCase();
   if (featured === "true") metadata.featured = true;
 
-  const sensemakingFor = extractField(
-    content,
-    "Sensemaking For",
-  ).toLowerCase();
+  const sensemakingFor = extractField(content, "Sensemaking For").toLowerCase();
+
   if (sensemakingFor) metadata.sensemakingFor = sensemakingFor;
+
+  const researchType = extractField(content, "Research Type").toLowerCase();
+
+  if (researchType && typeof researchType === "string")
+    metadata.researchType = capitalize(researchType);
 
   const externalUrl = extractField(content, "External URL");
   if (externalUrl) metadata.externalUrl = externalUrl;
@@ -91,8 +96,7 @@ export function parseMetadata(markdown: string): IssueMetadata {
 
 /** Parse a named ## section from the issue body */
 export function parseSection(markdown: string, sectionName: string): string {
-  const stop =
-    sectionName === "Description" ? DESC_STOP : "\\n## [^#]|---|$";
+  const stop = sectionName === "Description" ? DESC_STOP : "\\n## [^#]|---|$";
   const section = markdown.match(
     new RegExp(
       `## ${sectionName}\\s+(?:<!--[\\s\\S]*?-->[ \\t]*)?([\\s\\S]*?)(?=${stop})`,
@@ -191,10 +195,7 @@ export function extractImagesBySections(issueBody: string) {
 /** Format markdown content (preserve line breaks, bold headings) */
 export function formatMarkdown(content: string): string {
   let formatted = content.replace(/([^\n\s])\n([^\n])/g, "$1  \n$2");
-  formatted = formatted.replace(
-    /([^\n])\n(\*\*[^*]+\*\*)\n/g,
-    "$1\n\n$2\n\n",
-  );
+  formatted = formatted.replace(/([^\n])\n(\*\*[^*]+\*\*)\n/g, "$1\n\n$2\n\n");
   return formatted;
 }
 
