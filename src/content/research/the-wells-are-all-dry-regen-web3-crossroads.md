@@ -10,6 +10,8 @@ tags:
   - go-to-market
   - ecosystem health
   - '2025'
+researchType:
+  - Perspective
 lastUpdated: '2025-12-01'
 relatedMechanisms:
   - quadratic-funding
@@ -22,7 +24,7 @@ relatedResearch:
 banner: /content-images/research/the-wells-are-all-dry-regen-web3-crossroads/banner.png
 ---
 
-**Type:** Opinion / Analysis
+**Type:** Perspective
 **Author:** Owocki
 **Published:** December 2025
 
