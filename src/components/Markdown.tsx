@@ -90,7 +90,7 @@ export function Markdown({ content, className = "" }: MarkdownProps) {
             <img
               src={src}
               alt={alt || ""}
-              className="rounded-lg my-8 w-full bg-gray-900 invert"
+              className="rounded-lg my-8 w-full"
             />
           ),
           // Style tables
