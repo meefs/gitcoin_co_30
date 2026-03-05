@@ -22,6 +22,7 @@ relatedResearch:
   - reforming-eth-public-goods-funding-2026
   - plural-funding-mechanisms
 relatedCampaigns: []
+banner: /content-images/research/deep-funding-visual-guide/banner.png
 ---
 
 **Type:** Report
