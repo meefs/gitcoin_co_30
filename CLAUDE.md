@@ -194,6 +194,15 @@ npm run publish-campaign <issue-number>
 
 > If `npm run banner:auto` fails with a Playwright error, the user needs to run `npx playwright install chromium` once (one-time setup per machine). Tell them to do this and then re-run the command.
 
+### Ingesting content from external URLs
+
+When ingesting a post/article from an external URL (e.g. gov.gitcoin.co, blog posts, etc.):
+
+1. **Always download inline images.** Fetch the page, identify ALL images in the post body, and download the original/high-resolution versions to `public/content-images/{category}/{slug}/`. Use descriptive filenames (e.g. `01-diagram-name.png`, `02-chart-name.png`).
+2. **Reference images with local paths** in the markdown body — use `/content-images/{category}/{slug}/filename.png`, not the original external URLs. External image URLs can break or disappear over time.
+3. **Preserve the original structure** of the source content as closely as possible — keep headings, tables, lists, and image placement in their original positions rather than summarizing or reorganizing.
+4. Skip images that are purely navigational (avatars, UI chrome, social share buttons) — only download content-relevant images like diagrams, charts, screenshots, and illustrations.
+
 ### Slugs
 
 - Kebab-case, derived from the content name
