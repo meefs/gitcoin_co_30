@@ -21,12 +21,12 @@ tags:
   - "ethereum"
 lastUpdated: '2026-03-05'
 relatedMechanisms:
-  - `google adsense`
+  - google adsense
 relatedApps:
-  - `Harberger Tax Billboard by Matter Labs`
-  - `Dextools ads`
-  - `juicebox`
-  - `giveth`
+  - Harberger Tax Billboard by Matter Labs
+  - Dextools ads
+  - juicebox
+  - giveth
 relatedCaseStudies:
 
 relatedResearch:
