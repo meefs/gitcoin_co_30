@@ -5,21 +5,9 @@ const nextConfig: NextConfig = {
     domains: ["images.unsplash.com"],
   },
 
-  // Prevent large packages from being bundled into serverless functions
-  serverExternalPackages: ["three"],
-
-  experimental: {
-    // Exclude large directories from output file tracing so they don't
-    // bloat serverless function bundles (e.g. opengraph-image routes)
-    outputFileTracingExcludes: {
-      "**": [
-        "node_modules/three/**",
-        "node_modules/@react-three/**",
-        "node_modules/canvas/**",
-        "public/content-images/**",
-      ],
-    },
-  },
+  // Prevent large packages (e.g. Three.js) from being bundled into
+  // serverless functions such as opengraph-image routes
+  serverExternalPackages: ["three", "@react-three/fiber", "@react-three/drei"],
 
   async redirects() {
     return [
@@ -32,6 +20,10 @@ const nextConfig: NextConfig = {
   },
   async rewrites() {
     return [
+      {
+        source: "/generator",
+        destination: "https://octaviaan.github.io/Chladni-Particles/",
+      },
       // gitcoin.co rewrites
       //  redo - high priority
       {
