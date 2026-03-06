@@ -18,6 +18,7 @@ relatedResearch:
   - plural-funding-mechanisms
 relatedCampaigns:
 
+banner: /content-images/research/ethereum-has-ens-for-people-what-about-everything-else/banner.png
 ---
 
 # Ethereum Has ENS for People. What About Everything Else?
