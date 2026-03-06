@@ -3,7 +3,6 @@ id: '1772727452809'
 slug: gardens-v2
 name: "Gardens"
 shortDescription: "Modular community governance platform using conviction voting to allocate resources and signal sentiment across decentralized communities."
-banner: /content-images/apps/gardens-v2/banner.png
 logo: /content-images/apps/gardens-v2/logo.png
 tags:
   - "governance"
@@ -34,6 +33,7 @@ relatedResearch:
 
 relatedCampaigns:
 
+banner: /content-images/apps/gardens-v2/banner.png
 ---
 
 - **Category**: Platform  
