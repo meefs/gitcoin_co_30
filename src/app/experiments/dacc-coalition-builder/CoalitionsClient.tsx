@@ -633,7 +633,7 @@ export function CoalitionsClient() {
       <ActivityFeed
         activity={activity}
         trending={trending}
-        onTrendingClick={(domainId) => {
+        onDomainClick={(domainId) => {
           setZoom(2);
           const domain = domains.find((d) => d.id === domainId);
           if (domain) {
@@ -844,7 +844,6 @@ function StakingPositions({ pendingTx }: { pendingTx: { domainId: string; hash: 
   );
 }
 
-// Lightweight checker — only reads getStake, renders full card if non-zero
 function PositionCard({
   domainId,
   domainName,
@@ -854,35 +853,19 @@ function PositionCard({
   domainName: string;
   address: `0x${string}`;
 }) {
-  const { data: stakeWei } = useReadContract({
+  const { data: stakeWei, refetch: refetchStake } = useReadContract({
     address: STAKING_CONTRACT_ADDRESS,
     abi: STAKING_CONTRACT_ABI,
     functionName: "getStake",
     args: [domainId, address],
   });
 
-  const stakeAmount = stakeWei ? Number(formatEther(stakeWei)) : 0;
-  if (stakeAmount === 0) return null;
-
-  return <PositionCardInner domainId={domainId} domainName={domainName} address={address} stakeWei={stakeWei!} />;
-}
-
-function PositionCardInner({
-  domainId,
-  domainName,
-  address,
-  stakeWei,
-}: {
-  domainId: string;
-  domainName: string;
-  address: `0x${string}`;
-  stakeWei: bigint;
-}) {
   const { data: isDeployed } = useReadContract({
     address: STAKING_CONTRACT_ADDRESS,
     abi: STAKING_CONTRACT_ABI,
     functionName: "isDomainDeployed",
     args: [domainId],
+    query: { enabled: !!stakeWei && stakeWei > BigInt(0) },
   });
 
   const { data: domainTotalWei } = useReadContract({
@@ -890,43 +873,54 @@ function PositionCardInner({
     abi: STAKING_CONTRACT_ABI,
     functionName: "getDomainTotal",
     args: [domainId],
+    query: { enabled: !!stakeWei && stakeWei > BigInt(0) },
   });
 
-  const { writeContract, isPending } = useWriteContract();
+  const { writeContractAsync: withdrawAsync, isPending } = useWriteContract();
   const [withdrawing, setWithdrawing] = useState(false);
+  const [withdrawTxHash, setWithdrawTxHash] = useState<string | null>(null);
 
-  const stakeAmount = Number(formatEther(stakeWei));
+  const explorerUrl = TARGET_CHAIN.blockExplorers?.default?.url || "https://etherscan.io";
+
+  const stakeAmount = stakeWei ? Number(formatEther(stakeWei)) : 0;
+  if (stakeAmount === 0 && !withdrawing) return null;
+
   const domainTotal = domainTotalWei ? Number(formatEther(domainTotalWei)) : 0;
   const othersStaked = Math.max(0, domainTotal - stakeAmount);
   const status = isDeployed ? "Done" : "Not Started";
   const statusColor = isDeployed ? "text-green-400" : "text-gray-500";
   const statusDot = isDeployed ? "bg-green-400" : "bg-gray-500";
 
-  const handleWithdraw = () => {
+  const handleWithdraw = async () => {
     if (!stakeWei || isDeployed) return;
     setWithdrawing(true);
-    writeContract(
-      {
+    try {
+      const hash = await withdrawAsync({
         address: STAKING_CONTRACT_ADDRESS,
         abi: STAKING_CONTRACT_ABI,
         functionName: "withdraw",
         args: [domainId, stakeWei],
-      },
-      {
-        onSuccess: () => {
-          setTimeout(() => setWithdrawing(false), 3000);
-        },
-        onError: () => setWithdrawing(false),
+      });
+      if (hash) {
+        setWithdrawTxHash(hash);
+        // Wait for the tx to be included, then refetch
+        setTimeout(() => {
+          refetchStake();
+          setWithdrawing(false);
+          setWithdrawTxHash(null);
+        }, 15000);
       }
-    );
+    } catch {
+      setWithdrawing(false);
+    }
   };
 
   return (
-    <div className="rounded-xl border border-gray-700 bg-gray-950 p-4">
+    <div className={`rounded-xl border bg-gray-950 p-4 ${withdrawing ? "border-orange-500/30" : "border-gray-700"}`}>
       <div className="flex items-center justify-between mb-1">
         <h3 className="font-heading font-semibold text-gray-25 text-sm">{domainName}</h3>
         <span className="text-sm font-heading font-bold text-teal-400">
-          {formatEther(stakeWei)} ETH
+          {stakeWei ? formatEther(stakeWei) : "0"} ETH
         </span>
       </div>
       <div className="flex items-center gap-3 mb-3 flex-wrap">
@@ -942,17 +936,29 @@ function PositionCardInner({
       </div>
       {isDeployed ? (
         <p className="text-xs text-gray-500">Funds deployed — thank you for your support</p>
+      ) : withdrawing ? (
+        <div className="space-y-2">
+          <div className="flex items-center gap-2 text-xs text-orange-400">
+            <Loader2 className="w-4 h-4 animate-spin" />
+            {isPending ? "Confirm in wallet..." : "Withdrawing..."}
+          </div>
+          {withdrawTxHash && (
+            <a
+              href={`${explorerUrl}/tx/${withdrawTxHash}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-teal-400 hover:text-teal-300 inline-flex items-center gap-1"
+            >
+              View on block explorer <ExternalLink className="w-3 h-3" />
+            </a>
+          )}
+        </div>
       ) : (
         <button
           onClick={handleWithdraw}
-          disabled={isPending || withdrawing}
-          className="w-full py-2 rounded-lg border border-gray-600 text-sm text-gray-300 hover:border-gray-400 hover:text-gray-25 transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
+          className="w-full py-2 rounded-lg border border-gray-600 text-sm text-gray-300 hover:border-gray-400 hover:text-gray-25 transition-colors flex items-center justify-center gap-2"
         >
-          {isPending || withdrawing ? (
-            <Loader2 className="w-4 h-4 animate-spin" />
-          ) : (
-            <ArrowDownToLine className="w-4 h-4" />
-          )}
+          <ArrowDownToLine className="w-4 h-4" />
           Withdraw
         </button>
       )}
@@ -960,20 +966,45 @@ function PositionCardInner({
   );
 }
 
+// ── ENS-aware address display ─────────────────────────────────────────────
+function ActivityAddress({ address: addr }: { address: string }) {
+  const explorerUrl = TARGET_CHAIN.blockExplorers?.default?.url || "https://etherscan.io";
+  const isEthAddress = addr.startsWith("0x") && addr.length === 42;
+  const { data: ensName } = useEnsName({
+    address: isEthAddress ? (addr as `0x${string}`) : undefined,
+    chainId: 1, // ENS lives on mainnet
+  });
+  const display = ensName || `${addr.slice(0, 6)}...${addr.slice(-4)}`;
+
+  if (!isEthAddress) {
+    return <span className="text-gray-400 font-mono">{display}</span>;
+  }
+
+  return (
+    <a
+      href={`${explorerUrl}/address/${addr}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-gray-400 font-mono hover:text-teal-400 transition-colors"
+    >
+      {display}
+    </a>
+  );
+}
+
 // ── Activity Feed ─────────────────────────────────────────────────────────
 function ActivityFeed({
   activity,
   trending,
-  onTrendingClick,
+  onDomainClick,
 }: {
   activity: { type: string; domainId: string; address: string; amount?: string; timestamp: number }[];
   trending: { domainId: string; queryCount: number }[];
-  onTrendingClick: (domainId: string) => void;
+  onDomainClick: (domainId: string) => void;
 }) {
   if (activity.length === 0 && trending.length === 0) return null;
 
   const domainName = (id: string) => domains.find((d) => d.id === id)?.name || id;
-  const shortAddr = (addr: string) => `${addr.slice(0, 6)}...${addr.slice(-4)}`;
   const timeAgo = (ts: number) => {
     const diff = Date.now() - ts;
     if (diff < 60_000) return "just now";
@@ -1003,7 +1034,7 @@ function ActivityFeed({
                 return (
                   <button
                     key={t.domainId}
-                    onClick={() => onTrendingClick(domain.id)}
+                    onClick={() => onDomainClick(domain.id)}
                     className="px-3 py-1.5 rounded-full bg-gray-950 border border-gray-700 text-gray-200 text-xs hover:border-teal-500 transition-colors flex items-center gap-1.5"
                   >
                     {domain.name}
@@ -1030,7 +1061,7 @@ function ActivityFeed({
                       : "bg-blue-400"
                 }`}
               />
-              <span className="text-gray-400 font-mono">{shortAddr(entry.address)}</span>
+              <ActivityAddress address={entry.address} />
               <span className="text-gray-500">
                 {entry.type === "stake" && (
                   <>
@@ -1044,7 +1075,12 @@ function ActivityFeed({
                 )}
                 {entry.type === "interest" && "signaled interest in"}
               </span>
-              <span className="text-gray-300 font-medium truncate">{domainName(entry.domainId)}</span>
+              <button
+                onClick={() => onDomainClick(entry.domainId)}
+                className="text-gray-300 font-medium truncate hover:text-teal-400 transition-colors"
+              >
+                {domainName(entry.domainId)}
+              </button>
               <span className="text-gray-600 ml-auto shrink-0">{timeAgo(entry.timestamp)}</span>
             </div>
           ))}
