@@ -22,13 +22,11 @@ const aboutItems: DropdownItem[] = [
   },
 ];
 
-const discoverItems: DropdownItem[] = [
-  { label: "Campaigns", href: "/campaigns" },
+const navLinks = [
   { label: "Research", href: "/research" },
   { label: "Apps", href: "/apps" },
   { label: "Mechanisms", href: "/mechanisms" },
   { label: "Case Studies", href: "/case-studies" },
-  { label: "Experiments", href: "/experiments" },
 ];
 
 const navLinkClass =
@@ -130,7 +128,11 @@ export default function Header() {
 
         <nav className="hidden items-center xl:gap-8 gap-2 lg:flex">
           <NavDropdown label="About" items={aboutItems} />
-          <NavDropdown label="Discover" items={discoverItems} />
+          {[{ label: "Campaigns", href: "/campaigns" }, ...navLinks].map(({ label, href }) => (
+            <Link key={href} href={href} className={navLinkClass}>
+              {label}
+            </Link>
+          ))}
         </nav>
 
         <div className="hidden items-center xl:gap-8 gap-2 lg:flex">
@@ -172,19 +174,16 @@ export default function Header() {
                 ),
               )}
             </div>
-          <div className="space-y-2">
-              <p className="text-sm font-semibold text-gray-400">Discover</p>
-              {discoverItems.map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className="block pl-3 text-gray-200"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </div>
+          {[{ label: "Campaigns", href: "/campaigns" }, ...navLinks].map(({ label, href }) => (
+            <Link
+              key={href}
+              href={href}
+              className={`block ${navLinkClass}`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {label}
+            </Link>
+          ))}
           <Button
             variant="secondary"
             href="/partner"
