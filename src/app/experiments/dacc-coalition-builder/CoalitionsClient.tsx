@@ -23,6 +23,7 @@ import {
   useReadContract,
   useWriteContract,
   useSwitchChain,
+  useEnsName,
 } from "wagmi";
 import { parseEther, formatEther } from "viem";
 import { domains, quadrants, diagnosticChecklist, axes, type Domain } from "@/lib/coalitions-data";

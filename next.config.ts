@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
   },
 
   // Prevent large packages from being bundled into serverless functions
-  serverExternalPackages: ["three", "@react-three/fiber", "@react-three/drei"],
+  serverExternalPackages: ["three", "@react-three/fiber", "@react-three/drei", "pg"],
 
   experimental: {
     // outputFileTracingExcludes is valid but missing from the TS types
