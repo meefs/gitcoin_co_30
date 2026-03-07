@@ -16,10 +16,12 @@ import {
   ZoomIn,
   ZoomOut,
   ExternalLink,
+  LogOut,
 } from "lucide-react";
 import {
   useAccount,
   useConnect,
+  useDisconnect,
   useReadContract,
   useWriteContract,
   useSwitchChain,
@@ -71,6 +73,7 @@ export function CoalitionsClient() {
   const [sortBy, setSortBy] = useState<"segment" | "alpha" | "raised" | "interest">("segment");
   const [domainTotals, setDomainTotals] = useState<Record<string, number>>({});
   const [activity, setActivity] = useState<{ type: string; domainId: string; address: string; amount?: string; timestamp: number }[]>([]);
+  const [activityTotal, setActivityTotal] = useState(0);
   const [pendingTx, setPendingTx] = useState<{ domainId: string; hash: string } | null>(null);
   const searchDebounceRef = useRef<ReturnType<typeof setTimeout>>(null);
 
@@ -88,6 +91,7 @@ export function CoalitionsClient() {
         setInterestCounts(data.interests || {});
         setTrending(data.trending || []);
         setActivity(data.activity || []);
+        setActivityTotal(data.activityTotal || 0);
       })
       .catch(() => {});
   }, []);
@@ -632,7 +636,9 @@ export function CoalitionsClient() {
       {/* Activity Feed */}
       <ActivityFeed
         activity={activity}
+        activityTotal={activityTotal}
         trending={trending}
+        connectedAddress={address}
         onDomainClick={(domainId) => {
           setZoom(2);
           const domain = domains.find((d) => d.id === domainId);
@@ -784,6 +790,7 @@ const ALL_STAKEABLE_IDS: { id: string; name: string }[] = [
 function StakingPositions({ pendingTx }: { pendingTx: { domainId: string; hash: string } | null }) {
   const { address, isConnected } = useAccount();
   const { connect: connectWallet, connectors: availableConnectors } = useConnect();
+  const { disconnect } = useDisconnect();
 
   const explorerUrl = TARGET_CHAIN.blockExplorers?.default?.url || "https://etherscan.io";
 
@@ -808,13 +815,22 @@ function StakingPositions({ pendingTx }: { pendingTx: { domainId: string; hash: 
   return (
     <section className="border-t border-gray-600 py-12">
       <div className="container-page">
-        <h2 className="text-lg font-heading font-semibold text-gray-25 mb-6 flex items-center gap-2">
-          <Wallet className="w-5 h-5 text-teal-400" />
-          Your Positions
-          <span className="text-xs text-gray-500 font-normal ml-2">
-            {address?.slice(0, 6)}...{address?.slice(-4)}
-          </span>
-        </h2>
+        <div className="flex items-center justify-between mb-6">
+          <h2 className="text-lg font-heading font-semibold text-gray-25 flex items-center gap-2">
+            <Wallet className="w-5 h-5 text-teal-400" />
+            Your Positions
+            <span className="text-xs text-gray-500 font-normal ml-2">
+              {address?.slice(0, 6)}...{address?.slice(-4)}
+            </span>
+          </h2>
+          <button
+            onClick={() => disconnect()}
+            className="flex items-center gap-1.5 text-xs text-gray-500 hover:text-gray-300 transition-colors"
+          >
+            <LogOut className="w-3.5 h-3.5" />
+            Disconnect
+          </button>
+        </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {pendingTx && (
             <div className="rounded-xl border border-teal-500/30 bg-gray-950 p-4">
@@ -992,33 +1008,121 @@ function ActivityAddress({ address: addr }: { address: string }) {
   );
 }
 
-// ── Activity Feed ─────────────────────────────────────────────────────────
-function ActivityFeed({
-  activity,
-  trending,
+// ── Activity Entry Row ────────────────────────────────────────────────────
+function ActivityEntry({
+  entry,
   onDomainClick,
 }: {
-  activity: { type: string; domainId: string; address: string; amount?: string; timestamp: number }[];
-  trending: { domainId: string; queryCount: number }[];
+  entry: { type: string; domainId: string; address: string; amount?: string; timestamp: number };
   onDomainClick: (domainId: string) => void;
 }) {
-  if (activity.length === 0 && trending.length === 0) return null;
+  const domainName = domains.find((d) => d.id === entry.domainId)?.name || entry.domainId;
+  const diff = Date.now() - entry.timestamp;
+  const timeAgo =
+    diff < 60_000 ? "just now"
+    : diff < 3600_000 ? `${Math.floor(diff / 60_000)}m ago`
+    : diff < 86400_000 ? `${Math.floor(diff / 3600_000)}h ago`
+    : `${Math.floor(diff / 86400_000)}d ago`;
 
-  const domainName = (id: string) => domains.find((d) => d.id === id)?.name || id;
-  const timeAgo = (ts: number) => {
-    const diff = Date.now() - ts;
-    if (diff < 60_000) return "just now";
-    if (diff < 3600_000) return `${Math.floor(diff / 60_000)}m ago`;
-    if (diff < 86400_000) return `${Math.floor(diff / 3600_000)}h ago`;
-    return `${Math.floor(diff / 86400_000)}d ago`;
+  return (
+    <div className="flex items-center gap-3 py-2 px-3 rounded-lg bg-gray-950 border border-gray-800 text-xs">
+      <span
+        className={`w-1.5 h-1.5 rounded-full shrink-0 ${
+          entry.type === "stake"
+            ? "bg-teal-400"
+            : entry.type === "withdraw"
+              ? "bg-orange-400"
+              : "bg-blue-400"
+        }`}
+      />
+      <ActivityAddress address={entry.address} />
+      <span className="text-gray-500">
+        {entry.type === "stake" && (
+          <>
+            staked <span className="text-teal-400 font-medium">{entry.amount} ETH</span> on
+          </>
+        )}
+        {entry.type === "withdraw" && (
+          <>
+            withdrew <span className="text-orange-400 font-medium">{entry.amount} ETH</span> from
+          </>
+        )}
+        {entry.type === "interest" && "signaled interest in"}
+      </span>
+      <button
+        onClick={() => onDomainClick(entry.domainId)}
+        className="text-gray-300 font-medium truncate hover:text-teal-400 transition-colors"
+      >
+        {domainName}
+      </button>
+      <span className="text-gray-600 ml-auto shrink-0">{timeAgo}</span>
+    </div>
+  );
+}
+
+// ── Activity Feed ─────────────────────────────────────────────────────────
+type ActivityItem = { type: string; domainId: string; address: string; amount?: string; timestamp: number };
+
+function ActivityFeed({
+  activity,
+  activityTotal,
+  trending,
+  connectedAddress,
+  onDomainClick,
+}: {
+  activity: ActivityItem[];
+  activityTotal: number;
+  trending: { domainId: string; queryCount: number }[];
+  connectedAddress?: string;
+  onDomainClick: (domainId: string) => void;
+}) {
+  const [allActivity, setAllActivity] = useState<ActivityItem[]>(activity);
+  const [loading, setLoading] = useState(false);
+
+  // Sync when parent refreshes initial data
+  useEffect(() => {
+    setAllActivity(activity);
+  }, [activity]);
+
+  const hasMore = allActivity.length < activityTotal;
+
+  const loadMore = () => {
+    setLoading(true);
+    fetch(`/api/coalitions?limit=25&offset=${allActivity.length}`)
+      .then((r) => r.json())
+      .then((data) => {
+        setAllActivity((prev) => [...prev, ...(data.activity || [])]);
+      })
+      .catch(() => {})
+      .finally(() => setLoading(false));
   };
+
+  const myActivity = connectedAddress
+    ? allActivity.filter((e) => e.address.toLowerCase() === connectedAddress.toLowerCase())
+    : [];
 
   return (
     <section className="border-t border-gray-600 py-12">
       <div className="container-page">
+        {/* Your Activity — only when wallet connected and has activity */}
+        {myActivity.length > 0 && (
+          <div className="mb-10">
+            <h2 className="text-lg font-heading font-semibold text-gray-25 mb-6 flex items-center gap-2">
+              <Wallet className="w-5 h-5 text-teal-400" />
+              Your Activity
+            </h2>
+            <div className="space-y-1.5 max-w-2xl">
+              {myActivity.map((entry, i) => (
+                <ActivityEntry key={`my-${entry.timestamp}-${i}`} entry={entry} onDomainClick={onDomainClick} />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* All Activity — always shown */}
         <h2 className="text-lg font-heading font-semibold text-gray-25 mb-6 flex items-center gap-2">
           <Activity className="w-5 h-5 text-teal-400" />
-          Activity
+          All Activity
         </h2>
 
         {trending.length > 0 && (
@@ -1046,45 +1150,31 @@ function ActivityFeed({
           </div>
         )}
 
-        <div className="space-y-1.5 max-w-2xl">
-          {activity.map((entry, i) => (
-            <div
-              key={`${entry.timestamp}-${i}`}
-              className="flex items-center gap-3 py-2 px-3 rounded-lg bg-gray-950 border border-gray-800 text-xs"
-            >
-              <span
-                className={`w-1.5 h-1.5 rounded-full shrink-0 ${
-                  entry.type === "stake"
-                    ? "bg-teal-400"
-                    : entry.type === "withdraw"
-                      ? "bg-orange-400"
-                      : "bg-blue-400"
-                }`}
-              />
-              <ActivityAddress address={entry.address} />
-              <span className="text-gray-500">
-                {entry.type === "stake" && (
-                  <>
-                    staked <span className="text-teal-400 font-medium">{entry.amount} ETH</span> on
-                  </>
-                )}
-                {entry.type === "withdraw" && (
-                  <>
-                    withdrew <span className="text-orange-400 font-medium">{entry.amount} ETH</span> from
-                  </>
-                )}
-                {entry.type === "interest" && "signaled interest in"}
-              </span>
+        {allActivity.length > 0 ? (
+          <div className="space-y-1.5 max-w-2xl">
+            {allActivity.map((entry, i) => (
+              <ActivityEntry key={`all-${entry.timestamp}-${i}`} entry={entry} onDomainClick={onDomainClick} />
+            ))}
+            {hasMore && (
               <button
-                onClick={() => onDomainClick(entry.domainId)}
-                className="text-gray-300 font-medium truncate hover:text-teal-400 transition-colors"
+                onClick={loadMore}
+                disabled={loading}
+                className="w-full py-2.5 rounded-lg border border-gray-700 text-sm text-gray-400 hover:border-gray-500 hover:text-gray-300 transition-colors flex items-center justify-center gap-2 disabled:opacity-50 mt-3"
               >
-                {domainName(entry.domainId)}
+                {loading ? (
+                  <>
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                    Loading...
+                  </>
+                ) : (
+                  `Load more (${activityTotal - allActivity.length} remaining)`
+                )}
               </button>
-              <span className="text-gray-600 ml-auto shrink-0">{timeAgo(entry.timestamp)}</span>
-            </div>
-          ))}
-        </div>
+            )}
+          </div>
+        ) : (
+          <p className="text-sm text-gray-500">No activity yet. Be the first to stake or signal interest.</p>
+        )}
       </div>
     </section>
   );

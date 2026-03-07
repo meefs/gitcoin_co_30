@@ -3,6 +3,7 @@ import { Pool } from "pg";
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: { rejectUnauthorized: false },
+  max: 3,
 });
 
 let _initialized = false;
@@ -126,13 +127,15 @@ export async function getTrending(limit = 5): Promise<{ domainId: string; queryC
 
 export async function getQueryCounts(): Promise<{ total: number; recent: number }> {
   await ensureTables();
-  const totalRes = await pool.query("SELECT COUNT(*)::INT as c FROM query_log");
   const sevenDaysAgo = Date.now() - 7 * 24 * 60 * 60 * 1000;
-  const recentRes = await pool.query(
-    "SELECT COUNT(*)::INT as c FROM query_log WHERE timestamp > $1",
+  const res = await pool.query(
+    `SELECT
+       COUNT(*)::INT as total,
+       COUNT(*) FILTER (WHERE timestamp > $1)::INT as recent
+     FROM query_log`,
     [sevenDaysAgo]
   );
-  return { total: totalRes.rows[0].c, recent: recentRes.rows[0].c };
+  return { total: res.rows[0].total, recent: res.rows[0].recent };
 }
 
 // ── Activity feed ─────────────────────────────────────────────────────────
@@ -150,7 +153,7 @@ export async function pushActivity(entry: {
   );
 }
 
-export async function getRecentActivity(limit = 25): Promise<{
+export async function getRecentActivity(limit = 25, offset = 0): Promise<{
   type: string;
   domainId: string;
   address: string;
@@ -159,8 +162,8 @@ export async function getRecentActivity(limit = 25): Promise<{
 }[]> {
   await ensureTables();
   const res = await pool.query(
-    "SELECT type, domain_id, address, amount, timestamp FROM activity_feed ORDER BY timestamp DESC LIMIT $1",
-    [limit]
+    "SELECT type, domain_id, address, amount, timestamp FROM activity_feed ORDER BY timestamp DESC LIMIT $1 OFFSET $2",
+    [limit, offset]
   );
   return res.rows.map((r) => ({
     type: r.type,
@@ -169,4 +172,10 @@ export async function getRecentActivity(limit = 25): Promise<{
     amount: r.amount ?? undefined,
     timestamp: Number(r.timestamp),
   }));
+}
+
+export async function getActivityCount(): Promise<number> {
+  await ensureTables();
+  const res = await pool.query("SELECT COUNT(*)::INT as c FROM activity_feed");
+  return res.rows[0].c;
 }

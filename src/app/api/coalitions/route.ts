@@ -9,23 +9,28 @@ import {
   getQueryCounts,
   pushActivity,
   getRecentActivity,
+  getActivityCount,
 } from "@/lib/coalitions-db";
 
 // GET: retrieve interest counts, stakes, trending, and activity feed
-export async function GET() {
-  const [interests, stakesByDomain, trending, activity, queryCounts] = await Promise.all([
-    getInterestCounts(),
-    getStakesByDomain(),
-    getTrending(),
-    getRecentActivity(),
-    getQueryCounts(),
-  ]);
+export async function GET(request: NextRequest) {
+  const { searchParams } = new URL(request.url);
+  const limit = Math.min(parseInt(searchParams.get("limit") || "25", 10), 100);
+  const offset = parseInt(searchParams.get("offset") || "0", 10);
+
+  const interests = await getInterestCounts();
+  const stakesByDomain = await getStakesByDomain();
+  const trending = await getTrending();
+  const activity = await getRecentActivity(limit, offset);
+  const activityTotal = await getActivityCount();
+  const queryCounts = await getQueryCounts();
 
   return NextResponse.json({
     interests,
     stakes: stakesByDomain,
     trending,
     activity,
+    activityTotal,
     totalQueries: queryCounts.total,
     recentQueryCount: queryCounts.recent,
   });
