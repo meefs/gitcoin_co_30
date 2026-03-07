@@ -13,6 +13,9 @@ import {
   Wallet,
   ArrowDownToLine,
   Activity,
+  ZoomIn,
+  ZoomOut,
+  ExternalLink,
 } from "lucide-react";
 import {
   useAccount,
@@ -33,7 +36,15 @@ const STAKE_TIERS = [
   { amount: "1", label: "1 ETH", description: "Champion" },
 ] as const;
 
+type ZoomLevel = 4 | 3 | 2 | 1;
 type QuadrantId = Domain["quadrant"];
+
+const ZOOM_LABELS: Record<ZoomLevel, string> = {
+  4: "1x",
+  3: "2x",
+  2: "3x",
+  1: "4x",
+};
 
 const diagnosticIcons = {
   Shield,
@@ -48,6 +59,7 @@ export function CoalitionsClient() {
   const { switchChainAsync } = useSwitchChain();
   const { writeContractAsync, isPending: isSending, reset: resetTx } = useWriteContract();
   const [stakingDomain, setStakingDomain] = useState<string | null>(null);
+  const [zoom, setZoom] = useState<ZoomLevel>(2);
   const [selectedQuadrant, setSelectedQuadrant] = useState<QuadrantId | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [interestCounts, setInterestCounts] = useState<Record<string, number>>({});
@@ -57,11 +69,10 @@ export function CoalitionsClient() {
   const [selectedDiagnostics, setSelectedDiagnostics] = useState<Set<string>>(new Set());
   const [sortBy, setSortBy] = useState<"segment" | "alpha" | "raised" | "interest">("segment");
   const [domainTotals, setDomainTotals] = useState<Record<string, number>>({});
-  const [mode, setMode] = useState<"basic" | "advanced">("basic");
   const [activity, setActivity] = useState<{ type: string; domainId: string; address: string; amount?: string; timestamp: number }[]>([]);
+  const [pendingTx, setPendingTx] = useState<{ domainId: string; hash: string } | null>(null);
   const searchDebounceRef = useRef<ReturnType<typeof setTimeout>>(null);
 
-  // Callback for DomainPercent to report onchain totals
   const reportDomainTotal = useCallback((domainId: string, ethAmount: number) => {
     setDomainTotals((prev) => {
       if (prev[domainId] === ethAmount) return prev;
@@ -69,7 +80,6 @@ export function CoalitionsClient() {
     });
   }, []);
 
-  // Fetch interest data from API
   const refreshData = useCallback(() => {
     fetch("/api/coalitions")
       .then((r) => r.json())
@@ -85,7 +95,6 @@ export function CoalitionsClient() {
     refreshData();
   }, [refreshData]);
 
-  // Log search queries
   const logQuery = useCallback(
     (query: string, domainId?: string) => {
       fetch("/api/coalitions", {
@@ -99,7 +108,6 @@ export function CoalitionsClient() {
     [refreshData]
   );
 
-  // Light interest signal (no wallet needed)
   const signalInterest = useCallback(
     (domainId: string) => {
       if (interested.has(domainId)) return;
@@ -120,7 +128,6 @@ export function CoalitionsClient() {
     [interested, address]
   );
 
-  // Click domain card = mark interested + expand
   const handleDomainClick = (domainId: string) => {
     const wasExpanded = expandedDomain === domainId;
     setExpandedDomain(wasExpanded ? null : domainId);
@@ -130,23 +137,18 @@ export function CoalitionsClient() {
     }
   };
 
-  // Stake: connect → switch chain → send tx
   const handleStake = async (domainId: string, amount: string) => {
     try {
       if (!isConnected) {
         connect({ connector: connectors[0] });
         return;
       }
-
-      // Switch to target chain first — return so user clicks again on correct chain
       if (walletChainId !== TARGET_CHAIN.id) {
         await switchChainAsync({ chainId: TARGET_CHAIN.id });
         return;
       }
-
       resetTx();
       setStakingDomain(domainId);
-
       const hash = await writeContractAsync({
         address: STAKING_CONTRACT_ADDRESS,
         abi: STAKING_CONTRACT_ABI,
@@ -154,7 +156,10 @@ export function CoalitionsClient() {
         args: [domainId],
         value: parseEther(amount),
       });
-
+      if (hash) {
+        setPendingTx({ domainId, hash });
+        setTimeout(() => setPendingTx(null), 20000);
+      }
       if (hash && address) {
         fetch("/api/coalitions", {
           method: "POST",
@@ -169,7 +174,6 @@ export function CoalitionsClient() {
     }
   };
 
-  // Search handlers
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchQuery.trim()) logQuery(searchQuery);
@@ -204,7 +208,7 @@ export function CoalitionsClient() {
       if (sortBy === "alpha") return a.name.localeCompare(b.name);
       if (sortBy === "raised") return (domainTotals[b.id] || 0) - (domainTotals[a.id] || 0);
       if (sortBy === "interest") return (interestCounts[b.id] || 0) - (interestCounts[a.id] || 0);
-      return 0; // segment = default order
+      return 0;
     });
 
   const toggleDiagnostic = (id: string) => {
@@ -218,82 +222,85 @@ export function CoalitionsClient() {
 
   return (
     <div className="bg-gray-900">
-      {/* Mode toggle */}
+      {/* Zoom control */}
       <div className="border-b border-gray-700">
-        <div className="container-page py-2 flex items-center gap-3">
+        <div className="container-page py-2.5 flex items-center gap-3">
           {IS_STAGING && (
             <span className="text-[10px] px-2 py-0.5 rounded-full bg-yellow-500/10 text-yellow-400 border border-yellow-500/20">
               Sepolia
             </span>
           )}
+          <ZoomOut className="w-3.5 h-3.5 text-gray-500" />
           <div className="flex items-center bg-gray-800 rounded-full p-0.5">
-            <button
-              onClick={() => setMode("basic")}
-              className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${
-                mode === "basic" ? "bg-gray-25 text-gray-900" : "text-gray-500 hover:text-gray-300"
-              }`}
-            >
-              Basic
-            </button>
-            <button
-              onClick={() => setMode("advanced")}
-              className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${
-                mode === "advanced" ? "bg-gray-25 text-gray-900" : "text-gray-500 hover:text-gray-300"
-              }`}
-            >
-              Advanced
-            </button>
+            {([4, 3, 2, 1] as ZoomLevel[]).map((level) => (
+              <button
+                key={level}
+                onClick={() => {
+                  setZoom(level);
+                  if (level >= 3) { setSelectedQuadrant(null); setSearchQuery(""); }
+                }}
+                className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${
+                  zoom === level ? "bg-gray-25 text-gray-900" : "text-gray-500 hover:text-gray-300"
+                }`}
+              >
+                {ZOOM_LABELS[level]}
+              </button>
+            ))}
           </div>
+          <ZoomIn className="w-3.5 h-3.5 text-gray-500" />
         </div>
       </div>
 
-      {/* Step 1: Select your flavor of d/acc (advanced only) */}
-      {mode === "advanced" && (
-        <section className="border-b border-gray-700">
-          <div className="container-page py-5">
-            <div className="flex items-center gap-2 mb-3 text-sm">
-              <Shield className="w-4 h-4 text-teal-400" />
-              <span className="text-xs text-gray-500 uppercase tracking-wider mr-1">Step 1</span>
-              <span className="font-heading font-semibold text-gray-25">Select your flavor of d/acc</span>
-              {selectedDiagnostics.size > 0 && (
-                <span className="text-xs px-2 py-0.5 rounded-full bg-teal-500/10 text-teal-400">
-                  {selectedDiagnostics.size}/4
-                </span>
-              )}
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
+      {/* ═══ ZOOM 4x: Select your flavor of d/acc ═══ */}
+      {zoom === 4 && (
+        <section className="py-6">
+          <div className="container-page">
+            <h2 className="text-lg font-heading font-bold text-gray-25 mb-1">Select your flavor of d/acc</h2>
+            <p className="text-sm text-gray-500 mb-5">Each flavor represents a different dimension of acceleration. Stake to signal which matters most to you.</p>
+            <div className="grid md:grid-cols-2 gap-4">
               {diagnosticChecklist.map((item) => {
                 const Icon = diagnosticIcons[item.icon as keyof typeof diagnosticIcons];
-                const isSelected = selectedDiagnostics.has(item.id);
+                const flavorId = `flavor:${item.id}`;
+                const isExpanded = expandedDomain === flavorId;
                 return (
-                  <button
+                  <div
                     key={item.id}
-                    onClick={() => toggleDiagnostic(item.id)}
-                    className={`p-3 rounded-lg text-left transition-all ${
-                      isSelected
-                        ? "bg-teal-500/10 border border-teal-500/50 ring-1 ring-teal-500/20"
-                        : "bg-gray-950 border border-gray-700 hover:border-gray-500"
+                    className={`rounded-xl border bg-gray-950 transition-all ${
+                      isExpanded
+                        ? "border-teal-500/50 ring-1 ring-teal-500/20"
+                        : "border-gray-700 hover:border-gray-500"
                     }`}
                   >
-                    <div className="flex items-center gap-2 mb-1.5">
-                      <div
-                        className={`w-5 h-5 rounded border flex items-center justify-center transition-colors ${
-                          isSelected
-                            ? "bg-teal-500 border-teal-500"
-                            : "border-gray-600"
-                        }`}
-                      >
-                        {isSelected && <Check className="w-3 h-3 text-gray-950" />}
+                    <button
+                      onClick={() => setExpandedDomain(isExpanded ? null : flavorId)}
+                      className="w-full p-5 text-left"
+                    >
+                      <div className="flex items-start justify-between">
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2 mb-2">
+                            <Icon className="w-5 h-5 text-teal-400" />
+                            <h3 className="font-heading font-bold text-gray-25 text-lg">{item.label}</h3>
+                          </div>
+                          <p className="text-sm text-gray-400 font-serif italic">
+                            &ldquo;{item.question}&rdquo;
+                          </p>
+                        </div>
+                        <DomainPercent domainId={flavorId} onTotal={reportDomainTotal} />
                       </div>
-                      <Icon className={`w-3.5 h-3.5 ${isSelected ? "text-teal-400" : "text-gray-500"}`} />
-                      <span className={`font-heading font-semibold text-sm ${isSelected ? "text-teal-300" : "text-gray-25"}`}>
-                        {item.label}
-                      </span>
-                    </div>
-                    <p className="text-xs text-gray-400 font-serif italic pl-7">
-                      &ldquo;{item.question}&rdquo;
-                    </p>
-                  </button>
+                    </button>
+
+                    {isExpanded && (
+                      <div className="px-5 pb-5 border-t border-gray-800 pt-4 space-y-3">
+                        <DomainStakeInfo domainId={flavorId} />
+                        <StakeTierButtons
+                          domainId={flavorId}
+                          stakingDomain={stakingDomain}
+                          isSending={isSending}
+                          onStake={handleStake}
+                        />
+                      </div>
+                    )}
+                  </div>
                 );
               })}
             </div>
@@ -301,204 +308,332 @@ export function CoalitionsClient() {
         </section>
       )}
 
-      {/* Step 2: Domain Map (advanced only) */}
-      {mode === "advanced" && (
-        <section className="border-b border-gray-700">
-          <div className="container-page py-5">
-            <div className="flex items-center gap-2 mb-1">
-              <span className="text-xs text-gray-500 uppercase tracking-wider">Step 2</span>
-              <h2 className="text-sm font-heading font-semibold text-gray-25">Find your domain</h2>
-            </div>
-            <p className="text-xs text-gray-500 mb-4">
-              {axes.y.description} &times; {axes.x.description}
-            </p>
-            <DomainMap
-              domains={domains}
-              interestCounts={interestCounts}
-              selectedQuadrant={selectedQuadrant}
-              onSelectQuadrant={setSelectedQuadrant}
-            />
-          </div>
-        </section>
-      )}
-
-      {/* Search (advanced only) */}
-      {mode === "advanced" && (
-        <section className="border-b border-gray-700">
-          <div className="container-page py-4">
-            <form onSubmit={handleSearch} className="max-w-2xl">
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
-                <input
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => handleSearchChange(e.target.value)}
-                  placeholder="Search domains... (e.g. watershed monitoring, AI alignment)"
-                  className="w-full bg-gray-950 border border-gray-700 rounded-lg pl-10 pr-4 py-2.5 text-sm text-gray-25 placeholder:text-gray-500 focus:outline-none focus:border-teal-500 transition-colors"
-                />
-              </div>
-            </form>
-          </div>
-        </section>
-      )}
-
-      {/* Quadrant Filter + Domain Cards */}
-      <section className="sticky top-[72px] z-40 bg-gray-900 border-b border-gray-700">
-        <div className="container-page py-2.5">
-          <div className="flex items-center gap-2 flex-wrap">
-            {mode === "advanced" && (
-              <span className="text-xs text-gray-500 uppercase tracking-wider mr-1">Step 3</span>
-            )}
-            <button
-              onClick={() => setSelectedQuadrant(null)}
-              className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
-                !selectedQuadrant
-                  ? "bg-gray-25 text-gray-900"
-                  : "bg-gray-800 text-gray-500 hover:bg-gray-700 hover:text-gray-25"
-              }`}
-            >
-              All
-            </button>
-            {quadrants.map((q) => (
-              <button
-                key={q.id}
-                onClick={() => setSelectedQuadrant(selectedQuadrant === q.id ? null : q.id)}
-                className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
-                  selectedQuadrant === q.id
-                    ? "bg-gray-25 text-gray-900"
-                    : "bg-gray-800 text-gray-500 hover:bg-gray-700 hover:text-gray-25"
-                }`}
-              >
-                {q.label}
-              </button>
-            ))}
-            <span className="text-xs text-gray-500 ml-auto mr-2">{filteredDomains.length} domains</span>
-            <span className="text-[10px] text-gray-600">|</span>
-            {(["segment", "alpha", "raised", "interest"] as const).map((s) => (
-              <button
-                key={s}
-                onClick={() => setSortBy(s)}
-                className={`px-2 py-1 rounded text-[10px] transition-colors ${
-                  sortBy === s
-                    ? "bg-gray-700 text-gray-25"
-                    : "text-gray-500 hover:text-gray-300"
-                }`}
-              >
-                {s === "segment" ? "Segment" : s === "alpha" ? "A→Z" : s === "raised" ? "$ Raised" : "Interest"}
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Domain Cards */}
-      <section className="py-5">
-        <div className="container-page">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {filteredDomains.map((domain) => {
-              const quadrant = quadrants.find((q) => q.id === domain.quadrant);
-              const count = interestCounts[domain.id] || 0;
-              const isExpanded = expandedDomain === domain.id;
-              const isInterested = interested.has(domain.id);
-              return (
-                <div
-                  key={domain.id}
-                  className={`rounded-lg border bg-gray-950 transition-all ${
-                    isExpanded
-                      ? `${quadrant?.borderColor} ring-1 ring-inset`
-                      : isInterested
-                        ? "border-teal-500/30"
-                        : "border-gray-700 hover:border-gray-500"
-                  }`}
-                >
-                  <button onClick={() => handleDomainClick(domain.id)} className="w-full p-4 text-left">
-                    <div className="flex items-start justify-between">
-                      <div className="flex-1">
-                        <div className="flex items-center gap-1.5 mb-1">
-                          <span
-                            className={`text-[10px] px-1.5 py-0.5 rounded-full ${quadrant?.bgColor} ${quadrant?.color}`}
-                          >
-                            {quadrant?.label}
+      {/* ═══ ZOOM 3x: Fund a quadrant ═══ */}
+      {zoom === 3 && (
+        <section className="py-6">
+          <div className="container-page">
+            <div className="grid md:grid-cols-2 gap-4">
+              {quadrants.map((q) => {
+                const qDomains = domains.filter((d) => d.quadrant === q.id);
+                const qInterest = qDomains.reduce((sum, d) => sum + (interestCounts[d.id] || 0), 0);
+                const isExpanded = expandedDomain === q.id;
+                return (
+                  <div
+                    key={q.id}
+                    className={`rounded-xl border bg-gray-950 transition-all ${
+                      isExpanded ? `${q.borderColor} ring-1 ring-inset` : "border-gray-700 hover:border-gray-500"
+                    }`}
+                  >
+                    <button
+                      onClick={() => setExpandedDomain(isExpanded ? null : q.id)}
+                      className="w-full p-5 text-left"
+                    >
+                      <div className="flex items-start justify-between">
+                        <div>
+                          <span className={`text-[10px] px-1.5 py-0.5 rounded-full ${q.bgColor} ${q.color}`}>
+                            {q.axis.y} + {q.axis.x}
                           </span>
-                          {isInterested && (
-                            <Check className="w-3 h-3 text-teal-400" />
+                          <h3 className="font-heading font-bold text-gray-25 text-lg mt-2">{q.label}</h3>
+                          <p className="text-xs text-gray-500 mt-1">{q.description}</p>
+                          <p className="text-[10px] text-gray-600 mt-2">{qDomains.length} domains</p>
+                        </div>
+                        <div className="text-right shrink-0 ml-3">
+                          <DomainPercent domainId={`quadrant:${q.id}`} onTotal={reportDomainTotal} />
+                          {qInterest > 0 && (
+                            <>
+                              <span className="text-sm font-heading font-bold text-teal-400 block">{qInterest}</span>
+                              <p className="text-[10px] text-gray-500">interested</p>
+                            </>
                           )}
                         </div>
-                        <h3 className="font-heading font-semibold text-gray-25 text-sm">
-                          {domain.name}
-                        </h3>
-                        <p className="text-xs text-gray-500 mt-0.5 line-clamp-2">{domain.description}</p>
                       </div>
-                      <div className="ml-2 text-right shrink-0 flex flex-col items-end gap-0.5">
-                        <DomainPercent domainId={domain.id} onTotal={reportDomainTotal} />
-                        {count > 0 && (
-                          <>
-                            <span className="text-sm font-heading font-bold text-teal-400">{count}</span>
-                            <p className="text-[10px] text-gray-500">interested</p>
-                          </>
-                        )}
-                      </div>
-                    </div>
-                  </button>
+                    </button>
 
-                  {isExpanded && (
-                    <div className="px-4 pb-4 border-t border-gray-800 pt-3 space-y-3">
-                      <div className="flex flex-wrap gap-1.5">
-                        {domain.examples.map((ex) => (
-                          <span key={ex} className="text-[10px] px-2 py-0.5 rounded bg-gray-800 text-gray-400">
-                            {ex}
-                          </span>
-                        ))}
-                      </div>
-
-                      <DomainStakeInfo domainId={domain.id} />
-
-                      <div>
-                        <p className="text-[10px] text-gray-500 mb-2">
-                          Stake ETH to signal interest — withdraw anytime
-                        </p>
-                        <div className="grid grid-cols-4 gap-1.5">
-                          {STAKE_TIERS.map((tier) => (
-                            <button
-                              key={tier.amount}
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                handleStake(domain.id, tier.amount);
-                              }}
-                              disabled={!!stakingDomain}
-                              className="py-2 px-2 rounded-md border border-gray-700 hover:border-teal-500 bg-gray-900 transition-all text-center group disabled:opacity-50"
-                            >
-                              <span className="text-xs font-heading font-bold text-teal-400 group-hover:text-teal-300">
-                                {tier.label}
-                              </span>
-                              <p className="text-[10px] text-gray-500">{tier.description}</p>
-                            </button>
+                    {isExpanded && (
+                      <div className="px-5 pb-5 border-t border-gray-800 pt-4 space-y-3">
+                        <div className="flex flex-wrap gap-1.5">
+                          {qDomains.map((d) => (
+                            <span key={d.id} className="text-[10px] px-2 py-0.5 rounded bg-gray-800 text-gray-400">
+                              {d.name}
+                            </span>
                           ))}
                         </div>
-                        {stakingDomain === domain.id && (
-                          <div className="mt-2 flex items-center gap-2 text-xs text-teal-400">
-                            <Loader2 className="w-3 h-3 animate-spin" />
-                            {isSending ? "Confirm in wallet..." : "Processing..."}
+
+                        <DomainStakeInfo domainId={`quadrant:${q.id}`} />
+
+                        <div>
+                          <p className="text-[10px] text-gray-500 mb-2">
+                            Stake ETH to fund {q.label.toLowerCase()} — withdraw anytime
+                          </p>
+                          <div className="grid grid-cols-4 gap-1.5">
+                            {STAKE_TIERS.map((tier) => (
+                              <button
+                                key={tier.amount}
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  handleStake(`quadrant:${q.id}`, tier.amount);
+                                }}
+                                disabled={!!stakingDomain}
+                                className="py-2 px-2 rounded-md border border-gray-700 hover:border-teal-500 bg-gray-900 transition-all text-center group disabled:opacity-50"
+                              >
+                                <span className="text-xs font-heading font-bold text-teal-400 group-hover:text-teal-300">
+                                  {tier.label}
+                                </span>
+                                <p className="text-[10px] text-gray-500">{tier.description}</p>
+                              </button>
+                            ))}
                           </div>
-                        )}
+                          {stakingDomain === `quadrant:${q.id}` && (
+                            <div className="mt-2 flex items-center gap-2 text-xs text-teal-400">
+                              <Loader2 className="w-3 h-3 animate-spin" />
+                              {isSending ? "Confirm in wallet..." : "Processing..."}
+                            </div>
+                          )}
+                        </div>
                       </div>
-                    </div>
-                  )}
-                </div>
-              );
-            })}
+                    )}
+                  </div>
+                );
+              })}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
+
+      {/* ═══ ZOOM 2x: Fund a domain ═══ */}
+      {zoom === 2 && (
+        <>
+          {/* Filters */}
+          <section className="sticky top-[72px] z-40 bg-gray-900 border-b border-gray-700">
+            <div className="container-page py-2.5">
+              <div className="flex items-center gap-2 flex-wrap">
+                <button
+                  onClick={() => setSelectedQuadrant(null)}
+                  className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
+                    !selectedQuadrant
+                      ? "bg-gray-25 text-gray-900"
+                      : "bg-gray-800 text-gray-500 hover:bg-gray-700 hover:text-gray-25"
+                  }`}
+                >
+                  All
+                </button>
+                {quadrants.map((q) => (
+                  <button
+                    key={q.id}
+                    onClick={() => setSelectedQuadrant(selectedQuadrant === q.id ? null : q.id)}
+                    className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
+                      selectedQuadrant === q.id
+                        ? "bg-gray-25 text-gray-900"
+                        : "bg-gray-800 text-gray-500 hover:bg-gray-700 hover:text-gray-25"
+                    }`}
+                  >
+                    {q.label}
+                  </button>
+                ))}
+                <span className="text-xs text-gray-500 ml-auto mr-2">{filteredDomains.length} domains</span>
+                <span className="text-[10px] text-gray-600">|</span>
+                {(["segment", "alpha", "raised", "interest"] as const).map((s) => (
+                  <button
+                    key={s}
+                    onClick={() => setSortBy(s)}
+                    className={`px-2 py-1 rounded text-[10px] transition-colors ${
+                      sortBy === s ? "bg-gray-700 text-gray-25" : "text-gray-500 hover:text-gray-300"
+                    }`}
+                  >
+                    {s === "segment" ? "Segment" : s === "alpha" ? "A\u2192Z" : s === "raised" ? "$ Raised" : "Interest"}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Domain cards */}
+          <section className="py-5">
+            <div className="container-page">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {filteredDomains.map((domain) => {
+                  const quadrant = quadrants.find((q) => q.id === domain.quadrant);
+                  const count = interestCounts[domain.id] || 0;
+                  const isExpanded = expandedDomain === domain.id;
+                  const isInterested = interested.has(domain.id);
+                  return (
+                    <div
+                      key={domain.id}
+                      className={`rounded-lg border bg-gray-950 transition-all ${
+                        isExpanded
+                          ? `${quadrant?.borderColor} ring-1 ring-inset`
+                          : isInterested
+                            ? "border-teal-500/30"
+                            : "border-gray-700 hover:border-gray-500"
+                      }`}
+                    >
+                      <button onClick={() => handleDomainClick(domain.id)} className="w-full p-4 text-left">
+                        <div className="flex items-start justify-between">
+                          <div className="flex-1">
+                            <div className="flex items-center gap-1.5 mb-1">
+                              <span className={`text-[10px] px-1.5 py-0.5 rounded-full ${quadrant?.bgColor} ${quadrant?.color}`}>
+                                {quadrant?.label}
+                              </span>
+                              {isInterested && <Check className="w-3 h-3 text-teal-400" />}
+                            </div>
+                            <h3 className="font-heading font-semibold text-gray-25 text-sm">{domain.name}</h3>
+                            <p className="text-xs text-gray-500 mt-0.5 line-clamp-2">{domain.description}</p>
+                          </div>
+                          <div className="ml-2 text-right shrink-0 flex flex-col items-end gap-0.5">
+                            <DomainPercent domainId={domain.id} onTotal={reportDomainTotal} />
+                            {count > 0 && (
+                              <>
+                                <span className="text-sm font-heading font-bold text-teal-400">{count}</span>
+                                <p className="text-[10px] text-gray-500">interested</p>
+                              </>
+                            )}
+                          </div>
+                        </div>
+                      </button>
+
+                      {isExpanded && (
+                        <div className="px-4 pb-4 border-t border-gray-800 pt-3 space-y-3">
+                          <div className="flex flex-wrap gap-1.5">
+                            {domain.examples.map((ex) => (
+                              <span key={ex} className="text-[10px] px-2 py-0.5 rounded bg-gray-800 text-gray-400">
+                                {ex}
+                              </span>
+                            ))}
+                          </div>
+                          <DomainStakeInfo domainId={domain.id} />
+                          <StakeTierButtons
+                            domainId={domain.id}
+                            stakingDomain={stakingDomain}
+                            isSending={isSending}
+                            onStake={handleStake}
+                          />
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+        </>
+      )}
+
+      {/* ═══ ZOOM 1x: Fund projects ═══ */}
+      {zoom === 1 && (
+        <>
+          {/* Filters */}
+          <section className="sticky top-[72px] z-40 bg-gray-900 border-b border-gray-700">
+            <div className="container-page py-2.5">
+              <div className="flex items-center gap-2 flex-wrap">
+                <button
+                  onClick={() => setSelectedQuadrant(null)}
+                  className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
+                    !selectedQuadrant
+                      ? "bg-gray-25 text-gray-900"
+                      : "bg-gray-800 text-gray-500 hover:bg-gray-700 hover:text-gray-25"
+                  }`}
+                >
+                  All
+                </button>
+                {quadrants.map((q) => (
+                  <button
+                    key={q.id}
+                    onClick={() => setSelectedQuadrant(selectedQuadrant === q.id ? null : q.id)}
+                    className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
+                      selectedQuadrant === q.id
+                        ? "bg-gray-25 text-gray-900"
+                        : "bg-gray-800 text-gray-500 hover:bg-gray-700 hover:text-gray-25"
+                    }`}
+                  >
+                    {q.label}
+                  </button>
+                ))}
+                <div className="ml-auto relative">
+                  <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-500" />
+                  <input
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => handleSearchChange(e.target.value)}
+                    placeholder="Search projects..."
+                    className="bg-gray-800 border border-gray-700 rounded-full pl-8 pr-3 py-1.5 text-xs text-gray-25 placeholder:text-gray-500 focus:outline-none focus:border-teal-500 w-48"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Project cards */}
+          <section className="py-5">
+            <div className="container-page">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+                {filteredDomains.flatMap((domain) => {
+                  const quadrant = quadrants.find((q) => q.id === domain.quadrant);
+                  return domain.examples
+                    .filter(
+                      (ex) =>
+                        !searchQuery ||
+                        ex.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                        domain.name.toLowerCase().includes(searchQuery.toLowerCase())
+                    )
+                    .map((example) => {
+                      const projectId = `project:${example.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
+                      const isExpanded = expandedDomain === projectId;
+                      return (
+                        <div
+                          key={projectId}
+                          className={`rounded-lg border bg-gray-950 transition-all ${
+                            isExpanded
+                              ? `${quadrant?.borderColor} ring-1 ring-inset`
+                              : "border-gray-700 hover:border-gray-500"
+                          }`}
+                        >
+                          <button
+                            onClick={() => setExpandedDomain(isExpanded ? null : projectId)}
+                            className="w-full p-3 text-left"
+                          >
+                            <div className="flex items-start justify-between">
+                              <div className="flex-1">
+                                <div className="flex items-center gap-1.5 mb-1">
+                                  <span className={`text-[10px] px-1.5 py-0.5 rounded-full ${quadrant?.bgColor} ${quadrant?.color}`}>
+                                    {domain.name}
+                                  </span>
+                                </div>
+                                <h3 className="font-heading font-semibold text-gray-25 text-sm">{example}</h3>
+                              </div>
+                              <DomainPercent domainId={projectId} onTotal={reportDomainTotal} />
+                            </div>
+                          </button>
+
+                          {isExpanded && (
+                            <div className="px-3 pb-3 border-t border-gray-800 pt-3 space-y-3">
+                              <DomainStakeInfo domainId={projectId} />
+                              <StakeTierButtons
+                                domainId={projectId}
+                                stakingDomain={stakingDomain}
+                                isSending={isSending}
+                                onStake={handleStake}
+                              />
+                            </div>
+                          )}
+                        </div>
+                      );
+                    });
+                })}
+              </div>
+            </div>
+          </section>
+        </>
+      )}
 
       {/* My Positions */}
-      <StakingPositions />
+      <StakingPositions pendingTx={pendingTx} />
 
       {/* Activity Feed */}
       <ActivityFeed
         activity={activity}
         trending={trending}
         onTrendingClick={(domainId) => {
+          setZoom(2);
           const domain = domains.find((d) => d.id === domainId);
           if (domain) {
             setSelectedQuadrant(domain.quadrant);
@@ -506,6 +641,51 @@ export function CoalitionsClient() {
           }
         }}
       />
+    </div>
+  );
+}
+
+// ── Reusable stake tier buttons ───────────────────────────────────────────
+function StakeTierButtons({
+  domainId,
+  stakingDomain,
+  isSending,
+  onStake,
+}: {
+  domainId: string;
+  stakingDomain: string | null;
+  isSending: boolean;
+  onStake: (domainId: string, amount: string) => void;
+}) {
+  return (
+    <div>
+      <p className="text-[10px] text-gray-500 mb-2">
+        Stake ETH to signal interest — withdraw anytime
+      </p>
+      <div className="grid grid-cols-4 gap-1.5">
+        {STAKE_TIERS.map((tier) => (
+          <button
+            key={tier.amount}
+            onClick={(e) => {
+              e.stopPropagation();
+              onStake(domainId, tier.amount);
+            }}
+            disabled={!!stakingDomain}
+            className="py-2 px-2 rounded-md border border-gray-700 hover:border-teal-500 bg-gray-900 transition-all text-center group disabled:opacity-50"
+          >
+            <span className="text-xs font-heading font-bold text-teal-400 group-hover:text-teal-300">
+              {tier.label}
+            </span>
+            <p className="text-[10px] text-gray-500">{tier.description}</p>
+          </button>
+        ))}
+      </div>
+      {stakingDomain === domainId && (
+        <div className="mt-2 flex items-center gap-2 text-xs text-teal-400">
+          <Loader2 className="w-3 h-3 animate-spin" />
+          {isSending ? "Confirm in wallet..." : "Processing..."}
+        </div>
+      )}
     </div>
   );
 }
@@ -586,10 +766,25 @@ function DomainStakeInfo({ domainId }: { domainId: string }) {
   );
 }
 
+// ── All stakeable IDs across zoom levels ─────────────────────────────────
+const ALL_STAKEABLE_IDS: { id: string; name: string }[] = [
+  ...diagnosticChecklist.map((item) => ({ id: `flavor:${item.id}`, name: `${item.label} d/acc` })),
+  ...quadrants.map((q) => ({ id: `quadrant:${q.id}`, name: q.label })),
+  ...domains.map((d) => ({ id: d.id, name: d.name })),
+  ...domains.flatMap((d) =>
+    d.examples.map((ex) => ({
+      id: `project:${ex.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
+      name: ex,
+    }))
+  ),
+];
+
 // ── My Staking Positions ─────────────────────────────────────────────────
-function StakingPositions() {
+function StakingPositions({ pendingTx }: { pendingTx: { domainId: string; hash: string } | null }) {
   const { address, isConnected } = useAccount();
   const { connect: connectWallet, connectors: availableConnectors } = useConnect();
+
+  const explorerUrl = TARGET_CHAIN.blockExplorers?.default?.url || "https://etherscan.io";
 
   if (!isConnected) {
     return (
@@ -620,8 +815,27 @@ function StakingPositions() {
           </span>
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {domains.map((domain) => (
-            <PositionCard key={domain.id} domainId={domain.id} domainName={domain.name} address={address!} />
+          {pendingTx && (
+            <div className="rounded-xl border border-teal-500/30 bg-gray-950 p-4">
+              <div className="flex items-center gap-2 mb-2">
+                <Loader2 className="w-4 h-4 animate-spin text-teal-400" />
+                <h3 className="font-heading font-semibold text-gray-25 text-sm">Transaction Pending</h3>
+              </div>
+              <p className="text-xs text-gray-400 mb-2">
+                Staking on <span className="text-gray-300">{pendingTx.domainId}</span>
+              </p>
+              <a
+                href={`${explorerUrl}/tx/${pendingTx.hash}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-teal-400 hover:text-teal-300 inline-flex items-center gap-1"
+              >
+                View on block explorer <ExternalLink className="w-3 h-3" />
+              </a>
+            </div>
+          )}
+          {ALL_STAKEABLE_IDS.map((item) => (
+            <PositionCard key={item.id} domainId={item.id} domainName={item.name} address={address!} />
           ))}
         </div>
       </div>
@@ -629,6 +843,7 @@ function StakingPositions() {
   );
 }
 
+// Lightweight checker — only reads getStake, renders full card if non-zero
 function PositionCard({
   domainId,
   domainName,
@@ -638,13 +853,30 @@ function PositionCard({
   domainName: string;
   address: `0x${string}`;
 }) {
-  const { data: stakeWei, refetch } = useReadContract({
+  const { data: stakeWei } = useReadContract({
     address: STAKING_CONTRACT_ADDRESS,
     abi: STAKING_CONTRACT_ABI,
     functionName: "getStake",
     args: [domainId, address],
   });
 
+  const stakeAmount = stakeWei ? Number(formatEther(stakeWei)) : 0;
+  if (stakeAmount === 0) return null;
+
+  return <PositionCardInner domainId={domainId} domainName={domainName} address={address} stakeWei={stakeWei!} />;
+}
+
+function PositionCardInner({
+  domainId,
+  domainName,
+  address,
+  stakeWei,
+}: {
+  domainId: string;
+  domainName: string;
+  address: `0x${string}`;
+  stakeWei: bigint;
+}) {
   const { data: isDeployed } = useReadContract({
     address: STAKING_CONTRACT_ADDRESS,
     abi: STAKING_CONTRACT_ABI,
@@ -662,9 +894,7 @@ function PositionCard({
   const { writeContract, isPending } = useWriteContract();
   const [withdrawing, setWithdrawing] = useState(false);
 
-  const stakeAmount = stakeWei ? Number(formatEther(stakeWei)) : 0;
-  if (stakeAmount === 0) return null;
-
+  const stakeAmount = Number(formatEther(stakeWei));
   const domainTotal = domainTotalWei ? Number(formatEther(domainTotalWei)) : 0;
   const othersStaked = Math.max(0, domainTotal - stakeAmount);
   const status = isDeployed ? "Done" : "Not Started";
@@ -683,10 +913,7 @@ function PositionCard({
       },
       {
         onSuccess: () => {
-          setTimeout(() => {
-            refetch();
-            setWithdrawing(false);
-          }, 3000);
+          setTimeout(() => setWithdrawing(false), 3000);
         },
         onError: () => setWithdrawing(false),
       }
@@ -698,7 +925,7 @@ function PositionCard({
       <div className="flex items-center justify-between mb-1">
         <h3 className="font-heading font-semibold text-gray-25 text-sm">{domainName}</h3>
         <span className="text-sm font-heading font-bold text-teal-400">
-          {formatEther(stakeWei!)} ETH
+          {formatEther(stakeWei)} ETH
         </span>
       </div>
       <div className="flex items-center gap-3 mb-3 flex-wrap">
