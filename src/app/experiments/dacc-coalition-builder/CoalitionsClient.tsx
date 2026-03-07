@@ -290,6 +290,13 @@ export function CoalitionsClient() {
             ))}
           </div>
           <ZoomIn className="w-3.5 h-3.5 text-gray-500" />
+          <a
+            href="/experiments/dacc-coalition-builder/analytics"
+            className="ml-auto text-[10px] px-2.5 py-1 rounded-full bg-gray-800 text-gray-400 hover:text-teal-400 hover:bg-gray-700 transition-colors flex items-center gap-1"
+          >
+            <Activity className="w-3 h-3" />
+            Analytics
+          </a>
         </div>
       </div>
 

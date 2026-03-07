@@ -1,11 +1,8 @@
 "use client";
 
 import { useState, useEffect, useMemo } from "react";
-import { useAccount, useConnect } from "wagmi";
 import { Loader2 } from "lucide-react";
 import { domains, quadrants, type Domain } from "@/lib/coalitions-data";
-
-const ADMIN_ADDRESS = "0x00De4B13153673BCAE2616b67bf822500d325Fc3";
 
 const Q_RGB: Record<string, string> = {
   "atoms-survive": "251,146,60",
@@ -36,19 +33,15 @@ interface ApiData {
 // ── Main Component ──────────────────────────────────────────────────────────
 
 export function AdminClient() {
-  const { address, isConnected } = useAccount();
-  const { connect, connectors } = useConnect();
   const [tab, setTab] = useState<Tab>("heatmap");
   const [data, setData] = useState<ApiData | null>(null);
-  const isAdmin = isConnected && address?.toLowerCase() === ADMIN_ADDRESS.toLowerCase();
 
   useEffect(() => {
-    if (!isAdmin) return;
     fetch("/api/coalitions?limit=1000")
       .then((r) => r.json())
       .then(setData)
       .catch(() => {});
-  }, [isAdmin]);
+  }, []);
 
   const energy = useMemo(() => {
     if (!data) return {};
@@ -60,29 +53,6 @@ export function AdminClient() {
     }
     return result;
   }, [data]);
-
-  if (!isConnected) {
-    return (
-      <div className="min-h-[50vh] flex flex-col items-center justify-center gap-4">
-        <p className="text-gray-500 text-sm">Connect admin wallet to access analytics</p>
-        <button
-          onClick={() => connect({ connector: connectors[0] })}
-          className="px-6 py-3 rounded-lg bg-teal-500 text-gray-950 font-medium text-sm hover:bg-teal-400 transition-colors"
-        >
-          Connect Wallet
-        </button>
-      </div>
-    );
-  }
-
-  if (!isAdmin) {
-    return (
-      <div className="min-h-[50vh] flex flex-col items-center justify-center gap-2">
-        <p className="text-gray-400 font-heading text-lg">Access Denied</p>
-        <p className="text-gray-600 text-sm">This view is restricted to the contract operator.</p>
-      </div>
-    );
-  }
 
   if (!data) {
     return (
