@@ -18,7 +18,7 @@ relatedResearch:
   - networks-vs-hierarchies
   - the-evolution-of-surplus-distribution
 relatedCampaigns: []
-banner: /content-images/mechanisms/sortition/banner.png
+banner: /content-images/mechanisms/sortition/banner.jpg
 ---
 
 **Sortition** is the selection of decision-makers through random lottery rather than election or appointment. As a coordination mechanism, sortition addresses core weaknesses of electoral democracy — plutocratic capture, voter apathy, and professional politician incentives — by ensuring governing bodies reflect the statistical composition of the broader community.

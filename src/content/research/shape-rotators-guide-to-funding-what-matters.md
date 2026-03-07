@@ -28,7 +28,7 @@ relatedCaseStudies: []
 relatedResearch:
   - plural-funding-mechanisms
 relatedCampaigns: []
-banner: /content-images/research/shape-rotators-guide-to-funding-what-matters/banner.png
+banner: /content-images/research/shape-rotators-guide-to-funding-what-matters/banner.jpg
 ---
 
 **Type:** Perspective

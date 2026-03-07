@@ -19,7 +19,7 @@ relatedResearch:
 
 relatedCampaigns:
 
-banner: /content-images/case-studies/shamba-network-equipping-smallholder-farmers-to-conserve-ecosystems/banner.png
+banner: /content-images/case-studies/shamba-network-equipping-smallholder-farmers-to-conserve-ecosystems/banner.jpg
 ---
 
 Shamba Network is building an affordable D-MRV (Digital Monitoring, Reporting, & Verification) technology solution using satellite data. MRV technology allows farmers to be paid for reducing carbon in the atmosphere but is typically only affordable for wealthy farmers.

@@ -24,7 +24,7 @@ relatedResearch:
   - the-dao-of-daos
   - protocols-for-postcapitalist-expression
 relatedCampaigns: []
-banner: /content-images/research/summer-of-protocols-what-protocol-theory-teaches-about-coordination/banner.png
+banner: /content-images/research/summer-of-protocols-what-protocol-theory-teaches-about-coordination/banner.jpg
 ---
 
 **Type:** Report

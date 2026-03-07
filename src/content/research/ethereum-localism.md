@@ -24,7 +24,7 @@ relatedResearch:
   - biofi-bioregional-finance-web3
   - bioregional-swarms
 relatedCampaigns: []
-banner: /content-images/research/ethereum-localism/banner.png
+banner: /content-images/research/ethereum-localism/banner.jpg
 ---
 
 **Type:** Book

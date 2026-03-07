@@ -18,7 +18,7 @@ relatedCaseStudies: []
 relatedResearch:
   - quadratic-funding-powered-social-network
 relatedCampaigns: []
-banner: /content-images/case-studies/quadraticlenster-launch-wrap-up/banner.png
+banner: /content-images/case-studies/quadraticlenster-launch-wrap-up/banner.jpg
 ---
 
 **Source:** [Gitcoin Governance Forum](https://gov.gitcoin.co/t/quadraticlenster-xyz-launch-wrap-up/15962)

@@ -19,7 +19,7 @@ relatedResearch:
   - the-networked-firm
   - networks-vs-hierarchies
 relatedCampaigns: []
-banner: /content-images/mechanisms/network-goods/banner.png
+banner: /content-images/mechanisms/network-goods/banner.jpg
 ---
 
 **Network Goods** are goods or services whose value to each user increases as more people use them. As a coordination mechanism, network effects create self-reinforcing adoption dynamics — each new participant makes the network more valuable for everyone, aligning individual incentives with collective growth.

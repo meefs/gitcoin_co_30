@@ -14,7 +14,7 @@ relatedApps: []
 relatedCaseStudies: []
 relatedResearch: []
 relatedCampaigns: []
-banner: /content-images/mechanisms/crowdstaking/banner.png
+banner: /content-images/mechanisms/crowdstaking/banner.jpg
 ---
 
 **Crowdstaking** turns passive capital into recurring funding for public goods. Supporters stake crypto into a shared smart contract, and the interest or yield produced flows to impactful projects. Staked tokens remain the supporter's property — they lend their economic influence without losing their original assets. Breadchain is a notable pioneer of this model.

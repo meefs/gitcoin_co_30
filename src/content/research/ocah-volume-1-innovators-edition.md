@@ -25,7 +25,7 @@ relatedResearch:
   - exploring-the-capital-allocation-design-space
   - onchain-capital-allocation-neural-networks-allonets
 relatedCampaigns: []
-banner: /content-images/research/ocah-volume-1-innovators-edition/banner.png
+banner: /content-images/research/ocah-volume-1-innovators-edition/banner.jpg
 ---
 
 **Type:** Book

@@ -14,7 +14,7 @@ relatedMechanisms:
   - attestation-based
 relatedApps:
   - optimism-retropgf
-banner: /content-images/research/retropgf-impact-measurement-evolution/banner.png
+banner: /content-images/research/retropgf-impact-measurement-evolution/banner.jpg
 ---
 
 **Type:** Analysis

@@ -24,7 +24,7 @@ relatedResearch:
   - from-tribes-to-llcs-to-daos
   - 69-trends-in-2025-era-dao-design
 relatedCampaigns: []
-banner: /content-images/research/the-networked-firm/banner.png
+banner: /content-images/research/the-networked-firm/banner.jpg
 ---
 
 **Type:** Book

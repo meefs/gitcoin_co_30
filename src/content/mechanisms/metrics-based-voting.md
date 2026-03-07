@@ -23,7 +23,7 @@ relatedResearch:
   - deep-funding-visual-guide
   - state-of-public-goods-funding-2024
 relatedCampaigns: []
-banner: /content-images/mechanisms/metrics-based-voting/banner.png
+banner: /content-images/mechanisms/metrics-based-voting/banner.jpg
 ---
 
 **Metrics-based voting** is an allocation mechanism in which voters distribute funding by weighting quantitative impact metrics rather than evaluating individual projects directly. Instead of reviewing hundreds of project applications and making subjective assessments of each one's value, voters express preferences over a set of predefined metrics — such as active users, transaction volume, developer activity, or gas fees generated — and the resulting allocation is computed by applying those metric weights uniformly across all eligible projects. This transforms the voting task from "how much should each project receive?" to "which dimensions of impact matter most?", dramatically reducing cognitive load while producing more consistent and auditable outcomes.

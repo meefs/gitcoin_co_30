@@ -23,7 +23,7 @@ relatedResearch:
   - values-in-programmable-money
   - biofi-bioregional-finance-web3
 relatedCampaigns: []
-banner: /content-images/research/pathways-to-regeneration/banner.png
+banner: /content-images/research/pathways-to-regeneration/banner.jpg
 ---
 
 **Type:** Book

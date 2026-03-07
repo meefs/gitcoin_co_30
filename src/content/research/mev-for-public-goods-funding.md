@@ -22,7 +22,7 @@ relatedResearch:
   - state-of-public-goods-funding-2024
 relatedCaseStudies: []
 relatedCampaigns: []
-banner: /content-images/research/mev-for-public-goods-funding/banner.png
+banner: /content-images/research/mev-for-public-goods-funding/banner.jpg
 ---
 
 **Type:** Report

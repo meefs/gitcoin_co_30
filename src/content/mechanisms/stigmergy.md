@@ -18,7 +18,7 @@ relatedResearch:
   - exploring-mycofi
   - networks-vs-hierarchies
 relatedCampaigns: []
-banner: /content-images/mechanisms/stigmergy/banner.png
+banner: /content-images/mechanisms/stigmergy/banner.jpg
 ---
 
 **Stigmergy** is a coordination mechanism where agents communicate indirectly by modifying their shared environment rather than through direct interaction. The term originates from entomology — ants coordinate complex colony behavior by leaving pheromone trails that guide subsequent ants. In human systems, stigmergy enables large-scale coordination without centralized command or explicit communication between participants.

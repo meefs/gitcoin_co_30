@@ -24,7 +24,7 @@ relatedResearch:
   - ethereum-localism
   - pathways-to-regeneration
 relatedCampaigns: []
-banner: /content-images/research/grassroots-economics/banner.png
+banner: /content-images/research/grassroots-economics/banner.jpg
 ---
 
 **Type:** Book

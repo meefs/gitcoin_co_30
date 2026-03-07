@@ -33,7 +33,7 @@ relatedResearch:
 
 relatedCampaigns:
 
-banner: /content-images/apps/markee/banner.png
+banner: /content-images/apps/markee/banner.jpg
 ---
 
 - **Category**: Platform | Primitive  

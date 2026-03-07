@@ -18,7 +18,7 @@ relatedMechanisms:
   - quadratic-funding
 relatedApps: []
 sensemakingFor: "mechanisms"
-banner: /content-images/research/bioregional-swarms/banner.png
+banner: /content-images/research/bioregional-swarms/banner.jpg
 ---
 
 **Type:** Perspective

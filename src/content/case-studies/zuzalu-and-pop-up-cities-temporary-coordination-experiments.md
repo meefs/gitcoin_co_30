@@ -21,7 +21,7 @@ relatedCaseStudies:
 relatedResearch:
   - state-of-public-goods-funding-2024
 relatedCampaigns: []
-banner: /content-images/case-studies/zuzalu-and-pop-up-cities-temporary-coordination-experiments/banner.png
+banner: /content-images/case-studies/zuzalu-and-pop-up-cities-temporary-coordination-experiments/banner.jpg
 ---
 
 In the spring of 2023, Ethereum co-founder Vitalik Buterin convened approximately 200 residents in Lustica Bay, Montenegro for a two-month experiment called Zuzalu -- a "pop-up city" designed to test whether a temporary physical community could develop novel governance, identity, and coordination systems. What emerged was not just a successful gathering but a movement: within 18 months, over 20 derivative pop-up villages had launched worldwide, organizations like Edge City became self-sustaining businesses, and critical infrastructure projects like Zupass (a zero-knowledge proof identity system) moved from prototype to production. Zuzalu demonstrated that temporary physical coordination can seed permanent digital networks, and that the design space for community governance extends far beyond traditional DAOs.

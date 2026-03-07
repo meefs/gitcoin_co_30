@@ -16,7 +16,7 @@ relatedResearch:
   - the-evolution-of-surplus-distribution
   - from-mutual-aid-to-welfare-state
 relatedCampaigns: []
-banner: /content-images/mechanisms/tithing/banner.png
+banner: /content-images/mechanisms/tithing/banner.jpg
 ---
 
 **Tithing** is one of humanity's oldest coordination mechanisms — a practice of contributing a fixed percentage (traditionally one-tenth) of income or produce to a communal institution, typically a religious organization. It represents an early solution to the public goods funding problem: how to maintain shared infrastructure, support community leaders, and care for the vulnerable without centralized taxation.

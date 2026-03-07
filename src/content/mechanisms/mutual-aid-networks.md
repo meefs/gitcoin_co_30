@@ -14,7 +14,7 @@ relatedApps: []
 relatedCaseStudies: []
 relatedResearch: []
 relatedCampaigns: []
-banner: /content-images/mechanisms/mutual-aid-networks/banner.png
+banner: /content-images/mechanisms/mutual-aid-networks/banner.jpg
 ---
 
 **Mutual Aid Networks** are grassroots funding communities built on relationships, not transactions. Members pool resources and redistribute them based on need without formal hierarchies or gatekeeping. Rooted in Indigenous, abolitionist, and labor movements, these systems are now being adapted into digital formats — onchain mutual credit systems, trust networks, and solidarity DAOs.

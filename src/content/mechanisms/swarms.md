@@ -20,7 +20,7 @@ relatedApps:
 relatedCaseStudies: []
 relatedResearch: []
 relatedCampaigns: []
-banner: /content-images/mechanisms/swarms/banner.png
+banner: /content-images/mechanisms/swarms/banner.jpg
 ---
 
 **Swarms** are autonomous, self-organizing coordination units in which contributors voluntarily form around a specific goal, coordinate work without centralized management, and dissolve or reorganize once the objective is achieved. Borrowed from biological swarm intelligence — where simple agents following local rules produce sophisticated collective behavior without central control — swarms represent an organizational primitive designed for environments where traditional hierarchies are too slow, too rigid, or too exclusionary to match the pace and complexity of decentralized work.

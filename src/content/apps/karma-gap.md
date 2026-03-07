@@ -20,7 +20,7 @@ relatedCaseStudies: []
 relatedResearch:
   - state-of-public-goods-funding-2024
 relatedCampaigns: []
-banner: /content-images/apps/karma-gap/banner.png
+banner: /content-images/apps/karma-gap/banner.jpg
 ---
 
 **Karma GAP** (Grantee Accountability Protocol) is an onchain protocol and application that brings transparency and accountability to grants programs across the Ethereum ecosystem. Built by Karma and founded by Mahesh Murthy, GAP addresses a persistent problem in decentralized funding: once grants are distributed, communities have limited visibility into whether funded projects deliver on their promises. Information about grantee progress is typically scattered across forum posts, external links, and private communications, making it difficult for grant teams and community members to track outcomes.

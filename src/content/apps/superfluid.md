@@ -19,7 +19,7 @@ relatedResearch:
 
 relatedCampaigns:
 
-banner: /content-images/apps/superfluid/banner.png
+banner: /content-images/apps/superfluid/banner.jpg
 ---
 
 **Superfluid** is an open-source token streaming protocol for EVM-compatible blockchains that enables real-time, per-second payments using programmable smart contracts.

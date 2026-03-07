@@ -18,7 +18,7 @@ relatedApps:
   - gitcoin-grants-stack
   - optimism-retropgf
   - protocol-guild
-banner: /content-images/research/state-of-public-goods-funding-2024/banner.png
+banner: /content-images/research/state-of-public-goods-funding-2024/banner.jpg
 ---
 
 **Type:** Report

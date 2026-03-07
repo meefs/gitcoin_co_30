@@ -20,7 +20,7 @@ relatedCaseStudies:
 relatedResearch:
   - retropgf-impact-measurement-evolution
 relatedCampaigns: []
-banner: /content-images/case-studies/filecoin-retropgf-retroactive-funding-beyond-optimism/banner.png
+banner: /content-images/case-studies/filecoin-retropgf-retroactive-funding-beyond-optimism/banner.jpg
 ---
 
 Filecoin's FIL-RetroPGF program is the most ambitious adoption of retroactive public goods funding outside the Optimism Collective. Across three rounds between early 2024 and late 2025, the program grew from 200,000 FIL in Round 1 to 585,000 FIL in Round 3, funding nearly 200 unique projects that maintain the decentralized storage network's infrastructure, tooling, and community. By Round 3, the program had migrated its full application and distribution pipeline to the Drips protocol on Filecoin Virtual Machine (FVM), demonstrating that retroactive funding can be ported across ecosystems with the right tooling.

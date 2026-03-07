@@ -25,7 +25,7 @@ relatedResearch:
 relatedCaseStudies: []
 relatedCampaigns: []
 researchType: Opinion
-banner: /content-images/research/from-tribes-to-llcs-to-daos/banner.png
+banner: /content-images/research/from-tribes-to-llcs-to-daos/banner.jpg
 ---
 
 **Type:** Opinion

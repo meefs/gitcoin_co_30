@@ -24,7 +24,7 @@ relatedResearch:
   - biofi-bioregional-finance-web3
   - state-of-public-goods-funding-2024
 relatedCampaigns: []
-banner: /content-images/research/what-nature-can-teach-us-about-allocating-capital/banner.png
+banner: /content-images/research/what-nature-can-teach-us-about-allocating-capital/banner.jpg
 ---
 
 **Type:** Opinion

@@ -19,7 +19,7 @@ relatedResearch:
   - nouns-dao-governance-evolution
   - exploring-the-capital-allocation-design-space
 relatedCampaigns: []
-banner: /content-images/mechanisms/prop-house/banner.png
+banner: /content-images/mechanisms/prop-house/banner.jpg
 ---
 
 **Prop House** is a public infrastructure for community-driven funding rounds. Created by Nouns DAO, it enables any community to run funding rounds where members submit proposals and the community votes to allocate a fixed pool of funds to the best submissions. Prop House makes it easy to continuously fund ideas without complex governance processes.

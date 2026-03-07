@@ -24,7 +24,7 @@ relatedCaseStudies: []
 relatedResearch:
   - state-of-public-goods-funding-2024
 relatedCampaigns: []
-banner: /content-images/mechanisms/percent-for-public-goods/banner.png
+banner: /content-images/mechanisms/percent-for-public-goods/banner.jpg
 ---
 
 **Percent-for-Public-Goods** is a funding mechanism in which a protocol, network, or organization commits a fixed percentage of its revenue, transaction fees, or token issuance to public goods funding on an ongoing, automatic basis. Rather than relying on discretionary grants, one-time donations, or governance votes for each funding decision, the percentage commitment is embedded at the protocol or organizational level, creating a durable and predictable revenue stream for public goods. The allocation of these funds may flow to a specific recipient (like core protocol developers), to a retroactive funding mechanism, or to a community-governed distribution process.

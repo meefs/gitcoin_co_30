@@ -18,7 +18,7 @@ relatedApps:
 relatedCaseStudies: []
 relatedResearch: []
 relatedCampaigns: []
-banner: /content-images/apps/tea-protocol/banner.png
+banner: /content-images/apps/tea-protocol/banner.jpg
 ---
 
 **Tea Protocol** is a decentralized protocol that rewards open source software developers for their contributions by allowing community members to stake tokens on the packages they depend on. Created by Max Howell -- the original creator of Homebrew, one of the most widely used package managers in the world -- Tea addresses the fundamental sustainability problem in open source: the software that powers the modern internet is overwhelmingly maintained by unpaid volunteers with no systematic way to capture the value their work creates.

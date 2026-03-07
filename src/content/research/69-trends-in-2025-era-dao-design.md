@@ -31,7 +31,7 @@ relatedResearch:
   - onchain-capital-allocation-neural-networks-allonets
   - plural-funding-mechanisms
 relatedCampaigns: []
-banner: /content-images/research/69-trends-in-2025-era-dao-design/banner.png
+banner: /content-images/research/69-trends-in-2025-era-dao-design/banner.jpg
 ---
 
 **Type:** Report

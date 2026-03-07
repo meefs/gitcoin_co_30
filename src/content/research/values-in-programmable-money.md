@@ -24,7 +24,7 @@ relatedResearch:
   - liberating-attention
   - the-evolution-of-surplus-distribution
 relatedCampaigns: []
-banner: /content-images/research/values-in-programmable-money/banner.png
+banner: /content-images/research/values-in-programmable-money/banner.jpg
 ---
 
 **Type:** Report

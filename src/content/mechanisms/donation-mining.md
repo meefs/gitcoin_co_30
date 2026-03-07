@@ -19,7 +19,7 @@ relatedResearch:
   - dopamine-driven-web3
   - exploring-the-capital-allocation-design-space
 relatedCampaigns: []
-banner: /content-images/mechanisms/donation-mining/banner.png
+banner: /content-images/mechanisms/donation-mining/banner.jpg
 ---
 
 **Donation Mining** is a mechanism that rewards contributors to public goods with tokens, creating dual incentives — donors support projects they care about while simultaneously earning tokens that may appreciate in value. The term draws an analogy to proof-of-work mining: instead of expending compute power, participants "mine" by donating to public goods.

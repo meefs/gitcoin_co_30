@@ -23,7 +23,7 @@ relatedResearch:
   - state-of-public-goods-funding-2024
   - ethereum-public-goods-funding-sources-the-next-era
 relatedCampaigns: []
-banner: /content-images/research/what-if-gitcoin-grants-had-been-early-stage-investments/banner.png
+banner: /content-images/research/what-if-gitcoin-grants-had-been-early-stage-investments/banner.jpg
 ---
 
 **Type:** Analysis

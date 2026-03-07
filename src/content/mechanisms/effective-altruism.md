@@ -18,7 +18,7 @@ relatedResearch:
   - the-evolution-of-surplus-distribution
   - meaning-awareness
 relatedCampaigns: []
-banner: /content-images/mechanisms/effective-altruism/banner.png
+banner: /content-images/mechanisms/effective-altruism/banner.jpg
 ---
 
 **Effective Altruism (EA)** is a coordination philosophy and movement that applies evidence-based reasoning to determine the most effective ways to improve the world. As a capital allocation framework, EA treats charitable giving as an optimization problem — directing resources toward interventions with the highest expected impact per dollar.

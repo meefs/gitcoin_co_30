@@ -19,7 +19,7 @@ relatedResearch:
 
 relatedCampaigns:
 
-banner: /content-images/case-studies/austin-griffith-quadratic-freelancer-onboarding-developers/banner.png
+banner: /content-images/case-studies/austin-griffith-quadratic-freelancer-onboarding-developers/banner.jpg
 ---
 
 Austin Griffith was selected in Round 3 by the community as one of the top grantees and was then dubbed by Vitalik "The Quadratic Freelancer." By then, he had already been making his code and tutorials public and had developed applications such as Burner Wallet to make it easier for people to get into crypto.

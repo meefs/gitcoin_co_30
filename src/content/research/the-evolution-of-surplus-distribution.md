@@ -22,7 +22,7 @@ relatedResearch:
   - values-in-programmable-money
   - networks-vs-hierarchies
 relatedCampaigns: []
-banner: /content-images/research/the-evolution-of-surplus-distribution/banner.png
+banner: /content-images/research/the-evolution-of-surplus-distribution/banner.jpg
 ---
 
 **Type:** Opinion

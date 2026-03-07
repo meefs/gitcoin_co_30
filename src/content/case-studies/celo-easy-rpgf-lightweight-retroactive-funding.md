@@ -20,7 +20,7 @@ relatedCaseStudies:
 relatedResearch:
   - retropgf-impact-measurement-evolution
 relatedCampaigns: []
-banner: /content-images/case-studies/celo-easy-rpgf-lightweight-retroactive-funding/banner.png
+banner: /content-images/case-studies/celo-easy-rpgf-lightweight-retroactive-funding/banner.jpg
 ---
 
 CeloRPGF0 was the Celo ecosystem's inaugural retroactive public goods funding round, distributing up to 250,000 CELO to 89 projects that had contributed to the network since its Mainnet launch in 2020. Built on the open-source EasyRetroPGF platform developed by Gitcoin, the program demonstrated that smaller ecosystems can adopt Optimism-style retroactive funding without building custom infrastructure from scratch. By pairing the RPGF round with parallel quadratic funding rounds through Gitcoin Grants Stack, Celo created an integrated H1 2024 public goods funding program that combined retroactive and prospective allocation methods.

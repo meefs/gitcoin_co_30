@@ -33,7 +33,7 @@ relatedResearch:
 
 relatedCampaigns:
 
-banner: /content-images/apps/gardens-v2/banner.png
+banner: /content-images/apps/gardens-v2/banner.jpg
 ---
 
 - **Category**: Platform  

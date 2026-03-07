@@ -25,7 +25,7 @@ relatedResearch:
 relatedCaseStudies: []
 relatedCampaigns: []
 researchType: Opinion
-banner: /content-images/research/the-dao-of-daos/banner.png
+banner: /content-images/research/the-dao-of-daos/banner.jpg
 ---
 
 **Type:** Opinion

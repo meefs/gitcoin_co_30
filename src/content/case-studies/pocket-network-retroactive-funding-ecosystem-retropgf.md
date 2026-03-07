@@ -19,7 +19,7 @@ relatedCaseStudies:
 relatedResearch:
   - retropgf-impact-measurement-evolution
 relatedCampaigns: []
-banner: /content-images/case-studies/pocket-network-retroactive-funding-ecosystem-retropgf/banner.png
+banner: /content-images/case-studies/pocket-network-retroactive-funding-ecosystem-retropgf/banner.jpg
 ---
 
 Pocket Network's Retro POKT Goods Funding (Retro PGF) program launched in mid-2024 as one of the first retroactive funding initiatives purpose-built for a decentralized middleware infrastructure ecosystem. Allocating 750,000 POKT, 60,000 OP, and 70,000 ARB -- roughly $475,000 in total value at the time -- across three categories (Protocol, Ecosystem, and Adoption), the program created a feedback loop: Pocket Network had itself received retroactive rewards from the Optimism ecosystem and chose to redistribute those funds through its own RetroPGF program, demonstrating how retroactive funding can cascade across ecosystems.

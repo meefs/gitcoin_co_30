@@ -24,7 +24,7 @@ relatedResearch:
   - the-gitcoin-gitcoindao-egregore-is-emerging
   - plural-funding-mechanisms
 relatedCampaigns: []
-banner: /content-images/research/pluralistic-civilizational-scale-infrastructure-funding-public-goods/banner.png
+banner: /content-images/research/pluralistic-civilizational-scale-infrastructure-funding-public-goods/banner.jpg
 ---
 
 **Type:** Opinion

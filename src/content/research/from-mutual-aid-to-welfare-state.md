@@ -23,7 +23,7 @@ relatedResearch:
   - networks-vs-hierarchies
   - values-in-programmable-money
 relatedCampaigns: []
-banner: /content-images/research/from-mutual-aid-to-welfare-state/banner.png
+banner: /content-images/research/from-mutual-aid-to-welfare-state/banner.jpg
 ---
 
 **Type:** Report

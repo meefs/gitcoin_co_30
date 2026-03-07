@@ -25,7 +25,7 @@ relatedResearch:
 
 relatedCampaigns:
   - gitcoin-grants-23-gg23
-banner: /content-images/campaigns/gg24-upcoming/banner.png
+banner: /content-images/campaigns/gg24-upcoming/banner.jpg
 ---
 
 **Gitcoin Grants 24 (GG24)** was the inaugural round of "Gitcoin 3.0," marking a fundamental transformation from Gitcoin's previous single-mechanism model to a plural, multi-mechanism funding approach organized around six thematic domains. Under the tagline **"Fund What Matters,"** GG24 distributed approximately $1.8M — $1.175M from Gitcoin and $632.5K from external partners — using six different funding mechanisms simultaneously. The round ran its primary QF donation window from October 14–28, 2025, with extended building and evaluation phases continuing into 2026.

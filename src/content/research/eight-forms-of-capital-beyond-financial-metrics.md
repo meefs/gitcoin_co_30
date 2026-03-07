@@ -25,7 +25,7 @@ relatedResearch:
   - what-nature-can-teach-us-about-allocating-capital
 relatedCaseStudies: []
 relatedCampaigns: []
-banner: /content-images/research/eight-forms-of-capital-beyond-financial-metrics/banner.png
+banner: /content-images/research/eight-forms-of-capital-beyond-financial-metrics/banner.jpg
 ---
 
 **Type:** Report

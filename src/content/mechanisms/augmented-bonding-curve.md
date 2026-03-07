@@ -19,7 +19,7 @@ relatedResearch:
   - exploring-the-capital-allocation-design-space
   - assembly-theory-x-onchain-capital-allocation
 relatedCampaigns: []
-banner: /content-images/mechanisms/augmented-bonding-curve/banner.png
+banner: /content-images/mechanisms/augmented-bonding-curve/banner.jpg
 ---
 
 **Augmented Bonding Curves (ABCs)** extend the standard bonding curve model by embedding a funding mechanism for commons directly into the token's economic design. When participants buy tokens along the curve, a configurable portion of each transaction is diverted to a communal funding pool. This pool is then governed by the community — typically through conviction voting — creating a self-funding commons that grows with adoption.

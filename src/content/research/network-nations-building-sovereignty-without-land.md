@@ -24,7 +24,7 @@ relatedResearch:
 relatedCaseStudies: []
 relatedCampaigns: []
 researchType: Report
-banner: /content-images/research/network-nations-building-sovereignty-without-land/banner.png
+banner: /content-images/research/network-nations-building-sovereignty-without-land/banner.jpg
 ---
 
 **Type:** Report

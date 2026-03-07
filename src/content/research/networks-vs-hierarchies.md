@@ -21,7 +21,7 @@ relatedResearch:
   - 69-trends-in-2025-era-dao-design
   - exploring-the-capital-allocation-design-space
 relatedCampaigns: []
-banner: /content-images/research/networks-vs-hierarchies/banner.png
+banner: /content-images/research/networks-vs-hierarchies/banner.jpg
 ---
 
 **Type:** Report

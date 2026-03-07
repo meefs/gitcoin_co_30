@@ -14,7 +14,7 @@ relatedApps: []
 relatedCaseStudies: []
 relatedResearch: []
 relatedCampaigns: []
-banner: /content-images/mechanisms/guilds/banner.png
+banner: /content-images/mechanisms/guilds/banner.jpg
 ---
 
 **Guilds** are organized subgroups within DAOs and Web3 ecosystems that receive allocated funding to support contributors specializing in particular domains. Like departments with decentralized authority, each guild has a defined mandate, internal governance, and funding to coordinate work in its area — infrastructure, events, governance, content, or research.

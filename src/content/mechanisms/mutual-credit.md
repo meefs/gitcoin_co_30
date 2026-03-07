@@ -21,7 +21,7 @@ relatedApps:
 relatedCaseStudies: []
 relatedResearch: []
 relatedCampaigns: []
-banner: /content-images/mechanisms/mutual-credit/banner.png
+banner: /content-images/mechanisms/mutual-credit/banner.jpg
 ---
 
 **Mutual credit** is a peer-to-peer exchange system in which every participant starts with a zero balance and can both extend and receive credit within a defined network. Rather than relying on an externally issued currency, mutual credit creates its own medium of exchange endogenously: when Alice sells goods to Bob, Alice's balance increases and Bob's decreases by the same amount. The net balance across the entire system always sums to zero. This makes mutual credit fundamentally different from debt-based money systems where currency must first be borrowed into existence from a bank. It also differs from mutual aid networks, which focus on redistributing existing resources rather than creating a new exchange medium.

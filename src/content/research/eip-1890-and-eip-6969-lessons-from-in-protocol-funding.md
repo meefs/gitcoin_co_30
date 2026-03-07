@@ -19,7 +19,7 @@ relatedResearch:
   - plural-funding-mechanisms
 relatedCaseStudies: []
 relatedCampaigns: []
-banner: /content-images/research/eip-1890-and-eip-6969-lessons-from-in-protocol-funding/banner.png
+banner: /content-images/research/eip-1890-and-eip-6969-lessons-from-in-protocol-funding/banner.jpg
 ---
 
 **Type:** Analysis

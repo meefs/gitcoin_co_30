@@ -19,7 +19,7 @@ relatedResearch:
   - values-in-programmable-money
   - dopamine-driven-web3
 relatedCampaigns: []
-banner: /content-images/research/liberating-attention/banner.png
+banner: /content-images/research/liberating-attention/banner.jpg
 ---
 
 **Type:** Opinion

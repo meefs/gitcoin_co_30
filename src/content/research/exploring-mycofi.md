@@ -23,7 +23,7 @@ relatedResearch:
   - grassroots-economics
   - capturing-value-like-a-slime-mold
 relatedCampaigns: []
-banner: /content-images/research/exploring-mycofi/banner.png
+banner: /content-images/research/exploring-mycofi/banner.jpg
 ---
 
 **Type:** Book

@@ -19,7 +19,7 @@ relatedApps:
 relatedCaseStudies:
 relatedResearch:
 relatedCampaigns:
-banner: /content-images/research/nouns-dao-governance-evolution/banner.png
+banner: /content-images/research/nouns-dao-governance-evolution/banner.jpg
 ---
 
 **Type:** Analysis

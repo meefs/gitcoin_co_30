@@ -21,7 +21,7 @@ relatedResearch:
   - pluralistic-civilizational-scale-infrastructure-funding-public-goods
   - why-i-am-holon-maximalist
 relatedCampaigns: []
-banner: /content-images/research/the-gitcoin-gitcoindao-egregore-is-emerging/banner.png
+banner: /content-images/research/the-gitcoin-gitcoindao-egregore-is-emerging/banner.jpg
 ---
 
 **Type:** Opinion

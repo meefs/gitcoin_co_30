@@ -22,7 +22,7 @@ relatedCaseStudies: []
 relatedResearch:
   - state-of-public-goods-funding-2024
 relatedCampaigns: []
-banner: /content-images/mechanisms/grants-as-a-service/banner.png
+banner: /content-images/mechanisms/grants-as-a-service/banner.jpg
 ---
 
 **Grants as a Service (GaaS)** refers to the productization of grants program infrastructure — turning the complex operational work of running a funding program into reusable, configurable tooling that any organization can adopt without building custom systems from scratch. Rather than each DAO, foundation, or protocol designing its own application portal, review workflow, allocation mechanism, and disbursement pipeline, GaaS platforms provide these capabilities as modular components that can be composed, customized, and deployed with minimal technical overhead.

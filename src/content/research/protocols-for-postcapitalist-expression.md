@@ -21,7 +21,7 @@ relatedResearch:
   - plural-funding-mechanisms
   - practical-pluralism
 relatedCampaigns: []
-banner: /content-images/research/protocols-for-postcapitalist-expression/banner.png
+banner: /content-images/research/protocols-for-postcapitalist-expression/banner.jpg
 ---
 
 **Type:** Opinion

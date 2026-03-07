@@ -19,7 +19,7 @@ relatedResearch:
   - values-in-programmable-money
   - practical-pluralism
 relatedCampaigns: []
-banner: /content-images/research/meaning-awareness/banner.png
+banner: /content-images/research/meaning-awareness/banner.jpg
 ---
 
 **Type:** Opinion

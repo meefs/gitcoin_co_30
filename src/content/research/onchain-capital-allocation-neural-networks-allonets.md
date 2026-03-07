@@ -25,7 +25,7 @@ relatedResearch:
   - exploring-the-capital-allocation-design-space
   - 69-trends-in-2025-era-dao-design
 relatedCampaigns: []
-banner: /content-images/research/onchain-capital-allocation-neural-networks-allonets/banner.png
+banner: /content-images/research/onchain-capital-allocation-neural-networks-allonets/banner.jpg
 ---
 
 **Type:** Opinion

@@ -25,7 +25,7 @@ relatedResearch:
 relatedCaseStudies: []
 relatedCampaigns: []
 researchType: Report
-banner: /content-images/research/ai-agents-and-public-goods-the-emerging-agentic-economy/banner.png
+banner: /content-images/research/ai-agents-and-public-goods-the-emerging-agentic-economy/banner.jpg
 ---
 
 **Type:** Report

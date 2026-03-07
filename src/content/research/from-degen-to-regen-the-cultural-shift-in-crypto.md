@@ -28,7 +28,7 @@ relatedResearch:
   - protocols-for-postcapitalist-expression
 relatedCaseStudies: []
 relatedCampaigns: []
-banner: /content-images/research/from-degen-to-regen-the-cultural-shift-in-crypto/banner.png
+banner: /content-images/research/from-degen-to-regen-the-cultural-shift-in-crypto/banner.jpg
 ---
 
 **Type:** Opinion

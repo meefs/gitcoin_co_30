@@ -17,7 +17,7 @@ relatedResearch:
   - the-evolution-of-surplus-distribution
   - the-networked-firm
 relatedCampaigns: []
-banner: /content-images/mechanisms/proof-of-work/banner.png
+banner: /content-images/mechanisms/proof-of-work/banner.jpg
 ---
 
 **Proof-of-Work (PoW)** is a coordination mechanism where participants expend computational resources to solve cryptographic puzzles, earning the right to append blocks to a shared ledger and receive rewards. As a coordination mechanism, PoW solves the fundamental problem of achieving consensus among untrusted parties — computational cost replaces institutional trust, enabling decentralized coordination at global scale.

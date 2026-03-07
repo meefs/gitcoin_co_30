@@ -20,7 +20,7 @@ relatedCaseStudies: []
 relatedResearch:
   - retropgf-impact-measurement-evolution
 relatedCampaigns: []
-banner: /content-images/apps/opensource-observer/banner.png
+banner: /content-images/apps/opensource-observer/banner.jpg
 ---
 
 **Open Source Observer** (OSO) is an open source, AI-driven data platform for measuring the impact of open source software projects. Built by Kariba Labs and co-founded by Carl Cervone and Raymond Cheng, OSO aggregates data from GitHub repositories, npm packages, onchain deployments, and other sources into a unified analytics layer. The platform was created to bring rigorous, data-driven evaluation to public goods funding decisions, replacing subjective assessments with verifiable impact metrics.

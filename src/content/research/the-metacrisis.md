@@ -28,7 +28,7 @@ relatedResearch:
   - from-mutual-aid-to-welfare-state
   - values-in-programmable-money
 relatedCampaigns: []
-banner: /content-images/research/the-metacrisis/banner.png
+banner: /content-images/research/the-metacrisis/banner.jpg
 ---
 
 **Type:** Opinion

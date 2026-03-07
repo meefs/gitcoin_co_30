@@ -21,7 +21,7 @@ relatedResearch:
   - the-gitcoin-gitcoindao-egregore-is-emerging
   - plural-funding-mechanisms
 relatedCampaigns: []
-banner: /content-images/research/why-i-am-holon-maximalist/banner.png
+banner: /content-images/research/why-i-am-holon-maximalist/banner.jpg
 ---
 
 **Type:** Opinion

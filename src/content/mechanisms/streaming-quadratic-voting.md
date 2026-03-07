@@ -15,7 +15,7 @@ relatedApps: []
 relatedCaseStudies: []
 relatedResearch: []
 relatedCampaigns: []
-banner: /content-images/mechanisms/streaming-quadratic-voting/banner.png
+banner: /content-images/mechanisms/streaming-quadratic-voting/banner.jpg
 ---
 
 **Streaming Quadratic Voting (SQV)** enables community members to allocate continuous support to projects or proposals using quadratic cost principles. Unlike traditional one-time voting, participants stream their preferences over time, enabling fluid, adaptive governance that captures evolving community sentiment.

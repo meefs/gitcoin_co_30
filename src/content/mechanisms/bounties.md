@@ -14,7 +14,7 @@ relatedApps: []
 relatedCaseStudies: []
 relatedResearch: []
 relatedCampaigns: []
-banner: /content-images/mechanisms/bounties/banner.png
+banner: /content-images/mechanisms/bounties/banner.jpg
 ---
 
 **Bounties** are a task-based funding mechanism where a funder defines a task, sets a reward, and contributors claim the bounty by completing the work. It's a straightforward "you do this, you get that" model emphasizing speed, clarity, and minimal friction.

@@ -24,7 +24,7 @@ relatedResearch:
   - exploring-the-capital-allocation-design-space
   - 69-trends-in-2025-era-dao-design
 relatedCampaigns: []
-banner: /content-images/research/assembly-theory-x-onchain-capital-allocation/banner.png
+banner: /content-images/research/assembly-theory-x-onchain-capital-allocation/banner.jpg
 ---
 
 **Type:** Opinion

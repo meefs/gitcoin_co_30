@@ -20,7 +20,7 @@ relatedResearch:
   - the-networked-firm
   - liberating-attention
 relatedCampaigns: []
-banner: /content-images/mechanisms/web3-social/banner.png
+banner: /content-images/mechanisms/web3-social/banner.jpg
 ---
 
 **Web3 Social** refers to decentralized social networking protocols and platforms where users own their social graphs, content, and reputation. As a coordination mechanism, web3 social transforms social capital from a platform-captured resource into portable, user-controlled infrastructure for coordination — enabling trust, influence, and attention to flow according to community values rather than algorithmic engagement optimization.

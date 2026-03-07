@@ -3,7 +3,7 @@ id: '1741191000000'
 slug: unicef-alpha-round-partnership-driving-fairness-collaboration-impact
 name: "UNICEF Alpha Round: A Partnership Driving Fairness, Collaboration and Impact"
 shortDescription: "How UNICEF's Office of Innovation partnered with Gitcoin to run a Quadratic Funding pilot for digital public goods, reaching 15,500+ donors."
-banner: /content-images/case-studies/unicef-alpha-round-partnership-driving-fairness-collaboration-impact/banner.png
+banner: /content-images/case-studies/unicef-alpha-round-partnership-driving-fairness-collaboration-impact/banner.jpg
 tags:
   - quadratic
   - democratic

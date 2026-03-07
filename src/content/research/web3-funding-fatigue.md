@@ -25,7 +25,7 @@ relatedResearch:
   - plural-funding-mechanisms
   - state-of-public-goods-funding-2024
 relatedCampaigns: []
-banner: /content-images/research/web3-funding-fatigue/banner.png
+banner: /content-images/research/web3-funding-fatigue/banner.jpg
 ---
 
 **Type:** Report

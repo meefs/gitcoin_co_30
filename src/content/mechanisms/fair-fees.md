@@ -19,7 +19,7 @@ relatedResearch:
 
 relatedCampaigns:
 
-banner: /content-images/mechanisms/fair-fees/banner.png
+banner: /content-images/mechanisms/fair-fees/banner.jpg
 ---
 
 **Fair Fees** is a proposed dynamic fee structure for decentralized applications that balances two competing interests: builders need financial incentives to create and maintain these systems, but excessive fees undermine their effectiveness. The approach provides higher proportional returns for smaller funding flows while gradually decreasing to a minimal percentage for larger ones.

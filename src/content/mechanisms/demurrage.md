@@ -19,7 +19,7 @@ relatedResearch:
   - pathways-to-regeneration
   - the-evolution-of-surplus-distribution
 relatedCampaigns: []
-banner: /content-images/mechanisms/demurrage/banner.png
+banner: /content-images/mechanisms/demurrage/banner.jpg
 ---
 
 **Demurrage** is a monetary mechanism where held currency loses value over time — essentially negative interest on savings. As a coordination mechanism, demurrage incentivizes circulation over hoarding, ensuring that money flows through a community rather than accumulating in the hands of a few. It inverts the logic of conventional interest-bearing currency, where holding money is rewarded.

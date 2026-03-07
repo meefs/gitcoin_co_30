@@ -20,7 +20,7 @@ relatedResearch:
   - the-evolution-of-surplus-distribution
   - networks-vs-hierarchies
 relatedCampaigns: []
-banner: /content-images/mechanisms/voting/banner.png
+banner: /content-images/mechanisms/voting/banner.jpg
 ---
 
 **Voting** is the foundational mechanism for collective decision-making — enabling groups to aggregate individual preferences into binding decisions. As a coordination mechanism, voting transforms diverse opinions into collective action, whether selecting leaders, allocating resources, or approving proposals.

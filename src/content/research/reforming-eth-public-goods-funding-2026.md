@@ -31,7 +31,7 @@ relatedResearch:
   - coalitional-funding-2026-era-primitive
   - state-of-public-goods-funding-2024
 relatedCampaigns: []
-banner: /content-images/research/reforming-eth-public-goods-funding-2026/banner.png
+banner: /content-images/research/reforming-eth-public-goods-funding-2026/banner.jpg
 ---
 
 **Type:** Perspective

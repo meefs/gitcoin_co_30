@@ -18,7 +18,7 @@ relatedApps:
 relatedCaseStudies: []
 relatedResearch: []
 relatedCampaigns: []
-banner: /content-images/apps/artizen-fund/banner.png
+banner: /content-images/apps/artizen-fund/banner.jpg
 ---
 
 **Artizen Fund** is a Web3 crowdfunding platform that uses match funding to support projects at the intersection of art, science, technology, and culture. Founded by Rene Pinnell, Artizen addresses a gap in the public goods funding landscape: while most crypto-native funding mechanisms focus on software and infrastructure, Artizen brings the same principles of community-driven allocation to creative and cultural work. The platform has raised $2.2 million and awarded over $750,000 to projects making positive real-world impact.

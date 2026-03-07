@@ -27,7 +27,7 @@ relatedResearch:
 relatedCaseStudies: []
 relatedCampaigns: []
 researchType: Opinion
-banner: /content-images/research/our-choices-our-world-thriving-together/banner.png
+banner: /content-images/research/our-choices-our-world-thriving-together/banner.jpg
 ---
 
 **Type:** Opinion

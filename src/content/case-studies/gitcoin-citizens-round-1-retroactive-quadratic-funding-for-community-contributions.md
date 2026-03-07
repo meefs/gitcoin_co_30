@@ -18,7 +18,7 @@ relatedResearch:
 
 relatedCampaigns:
 
-banner: /content-images/case-studies/gitcoin-citizens-round-1-retroactive-quadratic-funding-for-community-contributions/banner.png
+banner: /content-images/case-studies/gitcoin-citizens-round-1-retroactive-quadratic-funding-for-community-contributions/banner.jpg
 ---
 
 The Gitcoin Citizens Round 1 was the inaugural deployment of **retroactive quadratic funding** designed to reward non-technical community contributions with demonstrated impact. Running for two weeks in June 2023 with a 20,000 DAI matching pool, the round attracted over 17,000 donors and generated approximately 82,968 DAI in direct contributions—resulting in a roughly 4× amplification of matching funds.

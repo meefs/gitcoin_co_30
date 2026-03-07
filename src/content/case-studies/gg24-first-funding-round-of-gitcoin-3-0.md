@@ -21,7 +21,7 @@ relatedResearch:
   - state-of-public-goods-funding-2024
 relatedCampaigns:
   - gg24-upcoming
-banner: /content-images/case-studies/gg24-first-funding-round-of-gitcoin-3-0/banner.png
+banner: /content-images/case-studies/gg24-first-funding-round-of-gitcoin-3-0/banner.jpg
 ---
 
 Gitcoin Grants 24 (GG24) marked the debut of Gitcoin's 3.0 architecture in a live funding round, distributing over $1.8 million across six thematic domains during October and November 2025. Rather than Gitcoin centrally operating every round, GG24 introduced the **Domain Allocator model**, in which community-appointed operators independently designed, managed, and evaluated rounds within their problem area. The result was a plural, network-first coordination engine that combined quadratic funding, conviction voting, retroactive funding, MACI private voting, Deep Funding, and peer-reviewed hypercerts in a single grants cycle.

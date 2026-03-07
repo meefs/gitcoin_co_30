@@ -21,7 +21,7 @@ relatedCaseStudies: []
 relatedResearch:
   - deep-funding-visual-guide
 relatedCampaigns: []
-banner: /content-images/mechanisms/deep-funding/banner.png
+banner: /content-images/mechanisms/deep-funding/banner.jpg
 ---
 
 **Deep Funding** is an AI-powered public goods funding mechanism, conceived by Vitalik Buterin, that uses machine learning models to evaluate the dependency relationships between open-source projects and allocate capital based on upstream impact. Rather than asking the impossibly broad question "how much did project X contribute to humanity?", Deep Funding reframes allocation as a graph problem: "how much of the credit for outcome Y belongs to dependency X?" AI models propose weights across the edges of this dependency graph, and a human jury randomly spot-checks their answers to determine which models are most aligned with human judgment. The winning model's weights then govern how funds are distributed across the entire graph.

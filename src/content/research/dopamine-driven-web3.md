@@ -20,7 +20,7 @@ relatedResearch:
   - meaning-awareness
   - liberating-attention
 relatedCampaigns: []
-banner: /content-images/research/dopamine-driven-web3/banner.png
+banner: /content-images/research/dopamine-driven-web3/banner.jpg
 ---
 
 **Type:** Opinion

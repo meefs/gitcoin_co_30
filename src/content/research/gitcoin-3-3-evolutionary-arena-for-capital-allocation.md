@@ -23,7 +23,7 @@ relatedResearch:
   - plural-funding-mechanisms
   - what-nature-can-teach-us-about-allocating-capital
 relatedCampaigns: []
-banner: /content-images/research/gitcoin-3-3-evolutionary-arena-for-capital-allocation/banner.png
+banner: /content-images/research/gitcoin-3-3-evolutionary-arena-for-capital-allocation/banner.jpg
 ---
 
 **Type:** Opinion

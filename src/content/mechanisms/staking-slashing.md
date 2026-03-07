@@ -19,7 +19,7 @@ relatedResearch:
   - the-networked-firm
   - networks-vs-hierarchies
 relatedCampaigns: []
-banner: /content-images/mechanisms/staking-slashing/banner.png
+banner: /content-images/mechanisms/staking-slashing/banner.jpg
 ---
 
 **Staking/Slashing** is a coordination mechanism where participants lock capital (stake) as a guarantee of honest behavior, with misbehavior triggering automatic penalties (slashing). The mechanism aligns incentives through skin in the game — participants who act in the network's interest earn rewards, while those who act maliciously or negligently lose capital.

@@ -19,7 +19,7 @@ relatedResearch:
   - meaning-awareness
   - values-in-programmable-money
 relatedCampaigns: []
-banner: /content-images/mechanisms/praise/banner.png
+banner: /content-images/mechanisms/praise/banner.jpg
 ---
 
 **Praise** is a peer-to-peer recognition mechanism where community members publicly acknowledge valuable contributions from others. Praise data is collected, quantified, and used to inform reward distribution — creating a bottom-up system where the community itself determines what work is valued. Originally developed by the Token Engineering Commons and Giveth communities.

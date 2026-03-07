@@ -25,7 +25,7 @@ relatedResearch:
   - a-networked-epistemology
   - our-choices-our-world-thriving-together
 relatedCampaigns: []
-banner: /content-images/research/microsolidarity-small-group-patterns-for-coordination/banner.png
+banner: /content-images/research/microsolidarity-small-group-patterns-for-coordination/banner.jpg
 ---
 
 **Type:** Report

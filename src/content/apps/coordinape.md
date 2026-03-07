@@ -18,7 +18,7 @@ relatedApps:
 relatedCaseStudies: []
 relatedResearch: []
 relatedCampaigns: []
-banner: /content-images/apps/coordinape/banner.png
+banner: /content-images/apps/coordinape/banner.jpg
 ---
 
 **Coordinape** is a decentralized compensation and grants platform that enables DAO contributors to allocate rewards to each other based on perceived value. Originally built to solve Yearn Finance's challenge of distributing a $40,000 monthly community grants budget without centralized management, Coordinape has grown into one of the most widely adopted tools for peer-based compensation in Web3. Hundreds of DAOs -- including BanklessDAO, Index Coop, Seed Club, and DAOhaus -- use Coordinape to decentralize their payroll and reward processes.

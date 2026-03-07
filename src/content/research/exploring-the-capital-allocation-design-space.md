@@ -26,7 +26,7 @@ relatedResearch:
   - networks-vs-hierarchies
   - practical-pluralism
 relatedCampaigns: []
-banner: /content-images/research/exploring-the-capital-allocation-design-space/banner.png
+banner: /content-images/research/exploring-the-capital-allocation-design-space/banner.jpg
 ---
 
 **Type:** Opinion

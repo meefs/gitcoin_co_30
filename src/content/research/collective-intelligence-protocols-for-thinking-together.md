@@ -25,7 +25,7 @@ relatedResearch:
   - the-dao-of-daos
 relatedCaseStudies: []
 relatedCampaigns: []
-banner: /content-images/research/collective-intelligence-protocols-for-thinking-together/banner.png
+banner: /content-images/research/collective-intelligence-protocols-for-thinking-together/banner.jpg
 ---
 
 **Type:** Report

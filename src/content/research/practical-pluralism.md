@@ -23,7 +23,7 @@ relatedCaseStudies: []
 relatedResearch:
   - plural-funding-mechanisms
 relatedCampaigns: []
-banner: /content-images/research/practical-pluralism/banner.png
+banner: /content-images/research/practical-pluralism/banner.jpg
 ---
 
 **Type:** Perspective

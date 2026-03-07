@@ -19,7 +19,7 @@ relatedResearch:
   - exploring-the-capital-allocation-design-space
   - networks-vs-hierarchies
 relatedCampaigns: []
-banner: /content-images/mechanisms/proposal-inverter/banner.png
+banner: /content-images/mechanisms/proposal-inverter/banner.jpg
 ---
 
 **Proposal Inverter** flips the traditional grants model: instead of builders writing proposals to seek funding, funders post needs (with attached budgets) and builders choose which funded proposals to fulfill. This inversion reduces the overhead on builders, who no longer need to write speculative proposals, and allows multiple funders to pool resources behind shared priorities.

@@ -23,7 +23,7 @@ relatedResearch:
   - gitcoin-3-3-evolutionary-arena-for-capital-allocation
   - plural-funding-mechanisms
 relatedCampaigns: []
-banner: /content-images/research/capturing-value-like-a-slime-mold/banner.png
+banner: /content-images/research/capturing-value-like-a-slime-mold/banner.jpg
 ---
 
 **Type:** Opinion

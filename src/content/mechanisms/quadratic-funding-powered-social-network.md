@@ -19,7 +19,7 @@ relatedCaseStudies:
 relatedResearch:
   - pluralistic-civilizational-scale-infrastructure-funding-public-goods
 relatedCampaigns: []
-banner: /content-images/mechanisms/quadratic-funding-powered-social-network/banner.png
+banner: /content-images/mechanisms/quadratic-funding-powered-social-network/banner.jpg
 ---
 
 **Source:** [Gitcoin Governance Forum](https://gov.gitcoin.co/t/a-quadratic-funding-powered-social-network/9462)

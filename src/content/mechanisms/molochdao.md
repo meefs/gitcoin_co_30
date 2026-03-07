@@ -20,7 +20,7 @@ relatedResearch:
   - the-dao-of-daos
   - from-tribes-to-llcs-to-daos
 relatedCampaigns: []
-banner: /content-images/mechanisms/molochdao/banner.png
+banner: /content-images/mechanisms/molochdao/banner.jpg
 ---
 
 **MolochDAO** is a minimal viable DAO framework designed for collective funding of public goods. Named after the ancient deity of coordination failure, MolochDAO's key innovation is the *rage quit* mechanism — members who disagree with a funding decision can exit with their proportional share of the treasury before the decision executes, eliminating the need for trust in majority governance.

@@ -19,7 +19,7 @@ relatedResearch:
 
 relatedCampaigns:
 
-banner: /content-images/case-studies/1inch-from-hackathon-to-decentralized-exchange-powerhouse/banner.png
+banner: /content-images/case-studies/1inch-from-hackathon-to-decentralized-exchange-powerhouse/banner.jpg
 ---
 
 Sergej Kunz and Anton Bukov participated in 17 hackathons worldwide, funding their travels with winnings and often sleeping at venues. At the 2019 ETHNewYork hackathon, they built and released the first version of 1inch in just 18 hours.

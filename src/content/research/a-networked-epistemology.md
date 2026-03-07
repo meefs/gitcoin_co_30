@@ -30,7 +30,7 @@ relatedResearch:
 relatedCaseStudies: []
 relatedCampaigns: []
 researchType: Opinion
-banner: /content-images/research/a-networked-epistemology/banner.png
+banner: /content-images/research/a-networked-epistemology/banner.jpg
 ---
 
 **Type:** Opinion

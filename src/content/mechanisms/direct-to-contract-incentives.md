@@ -14,7 +14,7 @@ relatedApps: []
 relatedCaseStudies: []
 relatedResearch: []
 relatedCampaigns: []
-banner: /content-images/mechanisms/direct-to-contract-incentives/banner.png
+banner: /content-images/mechanisms/direct-to-contract-incentives/banner.jpg
 ---
 
 **Direct to Contract Incentives** route funding directly to smart contracts rather than individuals or teams. If a contract provides value — facilitates transactions, creates matches, processes attestations — it can earn funding automatically based on usage, performance, or programmable logic. This reframes funding from "who should we fund?" to "what code created the value?"

@@ -19,7 +19,7 @@ relatedResearch:
   - plural-funding-mechanisms
   - practical-pluralism
 relatedCampaigns: []
-banner: /content-images/mechanisms/pairwise/banner.png
+banner: /content-images/mechanisms/pairwise/banner.jpg
 ---
 
 **Pairwise** (formerly known as Budget Box) is a preference aggregation mechanism where participants make a series of simple binary comparisons — choosing between two options at a time. These individual pairwise comparisons are then aggregated to produce a robust ranking of all options. The mechanism reduces cognitive load on voters while producing more nuanced preference data than single-choice voting.

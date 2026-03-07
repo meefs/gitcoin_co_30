@@ -19,7 +19,7 @@ relatedResearch:
   - 69-trends-in-2025-era-dao-design
   - networks-vs-hierarchies
 relatedCampaigns: []
-banner: /content-images/mechanisms/holographic-consensus/banner.png
+banner: /content-images/mechanisms/holographic-consensus/banner.jpg
 ---
 
 **Holographic Consensus** is a governance scalability mechanism developed by DAOstack that uses prediction markets to surface high-priority proposals for voter attention. The core insight is that most DAO members can't evaluate every proposal — so predictors stake tokens on which proposals they believe will pass, and boosted proposals receive focused community attention. This enables DAOs to process many proposals while maintaining decision quality.

@@ -25,7 +25,7 @@ relatedResearch:
   - exploring-the-capital-allocation-design-space
   - plural-funding-mechanisms
 relatedCampaigns: []
-banner: /content-images/research/ocah-volume-2-explorers-edition/banner.png
+banner: /content-images/research/ocah-volume-2-explorers-edition/banner.jpg
 ---
 
 **Type:** Book

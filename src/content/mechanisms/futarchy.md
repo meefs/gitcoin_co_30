@@ -14,7 +14,7 @@ relatedApps: []
 relatedCaseStudies: []
 relatedResearch: []
 relatedCampaigns: []
-banner: /content-images/mechanisms/futarchy/banner.png
+banner: /content-images/mechanisms/futarchy/banner.jpg
 ---
 
 **Futarchy** is a governance mechanism developed by economist Robin Hanson where decisions are made via prediction markets rather than traditional voting. The community defines a quantifiable goal, competing proposals are evaluated by prediction markets, and the proposal with the highest expected outcome is selected.

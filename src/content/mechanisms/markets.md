@@ -18,7 +18,7 @@ relatedResearch:
   - the-evolution-of-surplus-distribution
   - the-networked-firm
 relatedCampaigns: []
-banner: /content-images/mechanisms/markets/banner.png
+banner: /content-images/mechanisms/markets/banner.jpg
 ---
 
 **Markets** are coordination mechanisms where resources are allocated through voluntary exchange and price signals. As a coordination mechanism, markets solve the information problem — aggregating distributed knowledge about supply, demand, and value into prices that guide production and consumption decisions without central planning.

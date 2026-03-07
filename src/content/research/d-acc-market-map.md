@@ -3,7 +3,7 @@ id: '1772060260403'
 slug: d-acc-market-map
 name: "d/acc Market Map"
 shortDescription: "The d/acc Market Map maps the defensive acceleration ecosystem across digital and physical infrastructure."
-banner: /content-images/research/d-acc-market-map/banner.png
+banner: /content-images/research/d-acc-market-map/banner.jpg
 featured: true
 tags:
   - governance

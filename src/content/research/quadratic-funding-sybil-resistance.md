@@ -14,7 +14,7 @@ relatedMechanisms:
 relatedApps:
   - gitcoin-grants-stack
   - clr-fund
-banner: /content-images/research/quadratic-funding-sybil-resistance/banner.png
+banner: /content-images/research/quadratic-funding-sybil-resistance/banner.jpg
 ---
 
 **Type:** Analysis

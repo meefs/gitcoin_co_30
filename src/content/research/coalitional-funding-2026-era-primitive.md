@@ -19,7 +19,7 @@ relatedMechanisms:
   - conviction-voting
 relatedApps: []
 sensemakingFor: "mechanisms"
-banner: /content-images/research/coalitional-funding-2026-era-primitive/banner.png
+banner: /content-images/research/coalitional-funding-2026-era-primitive/banner.jpg
 ---
 
 **Type:** Perspective

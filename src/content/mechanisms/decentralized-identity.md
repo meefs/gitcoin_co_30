@@ -19,7 +19,7 @@ relatedResearch:
   - the-networked-firm
   - 69-trends-in-2025-era-dao-design
 relatedCampaigns: []
-banner: /content-images/mechanisms/decentralized-identity/banner.png
+banner: /content-images/mechanisms/decentralized-identity/banner.jpg
 ---
 
 **Decentralized Identity (DID)** encompasses systems that allow individuals to create, own, and control their digital identities without relying on centralized authorities. As a coordination mechanism, decentralized identity enables trust, reputation, and Sybil resistance in permissionless environments — essential infrastructure for democratic allocation mechanisms that need to distinguish unique humans from bots and duplicate accounts.

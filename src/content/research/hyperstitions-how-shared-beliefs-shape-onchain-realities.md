@@ -23,7 +23,7 @@ relatedResearch:
   - a-networked-epistemology
   - protocols-for-postcapitalist-expression
 relatedCampaigns: []
-banner: /content-images/research/hyperstitions-how-shared-beliefs-shape-onchain-realities/banner.png
+banner: /content-images/research/hyperstitions-how-shared-beliefs-shape-onchain-realities/banner.jpg
 ---
 
 **Type:** Opinion

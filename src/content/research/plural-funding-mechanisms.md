@@ -17,7 +17,7 @@ relatedMechanisms:
   - streaming
 relatedApps: []
 sensemakingFor: "mechanisms"
-banner: /content-images/research/plural-funding-mechanisms/banner.png
+banner: /content-images/research/plural-funding-mechanisms/banner.jpg
 ---
 
 **Type:** Perspective

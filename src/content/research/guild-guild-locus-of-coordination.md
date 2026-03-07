@@ -21,7 +21,7 @@ relatedResearch:
   - web3-funding-fatigue
   - plural-funding-mechanisms
 relatedCampaigns: []
-banner: /content-images/research/guild-guild-locus-of-coordination/banner.png
+banner: /content-images/research/guild-guild-locus-of-coordination/banner.jpg
 ---
 
 **Type:** Report

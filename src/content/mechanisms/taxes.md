@@ -18,7 +18,7 @@ relatedResearch:
   - the-evolution-of-surplus-distribution
   - from-mutual-aid-to-welfare-state
 relatedCampaigns: []
-banner: /content-images/mechanisms/taxes/banner.png
+banner: /content-images/mechanisms/taxes/banner.jpg
 ---
 
 **Taxes** are compulsory financial contributions levied by governments on individuals and organizations. As a coordination mechanism, taxation solves the free-rider problem at scale — ensuring that public goods like infrastructure, defense, education, and social safety nets receive sustained funding regardless of individual willingness to contribute voluntarily.

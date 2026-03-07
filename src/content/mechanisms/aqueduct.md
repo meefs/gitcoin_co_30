@@ -19,7 +19,7 @@ relatedResearch:
   - onchain-capital-allocation-neural-networks-allonets
   - exploring-the-capital-allocation-design-space
 relatedCampaigns: []
-banner: /content-images/mechanisms/aqueduct/banner.png
+banner: /content-images/mechanisms/aqueduct/banner.jpg
 ---
 
 **Aqueduct** refers to programmable infrastructure for routing continuous funding flows between organizations, protocols, and projects. Like the Roman aqueducts that transported water across vast distances through engineered channels, funding aqueducts create persistent capital pipelines connecting funding sources to recipients — enabling automated, ongoing resource distribution without repeated manual intervention.

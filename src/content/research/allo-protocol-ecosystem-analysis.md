@@ -15,7 +15,7 @@ relatedMechanisms:
 relatedApps:
   - allo-protocol
   - gitcoin-grants-stack
-banner: /content-images/research/allo-protocol-ecosystem-analysis/banner.png
+banner: /content-images/research/allo-protocol-ecosystem-analysis/banner.jpg
 ---
 
 **Type:** Analysis

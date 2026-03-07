@@ -21,7 +21,7 @@ relatedCaseStudies: []
 relatedResearch:
   - deep-funding-visual-guide
 relatedCampaigns: []
-banner: /content-images/apps/deepfunding/banner.png
+banner: /content-images/apps/deepfunding/banner.jpg
 ---
 
 **Deep Funding** is a mechanism and platform designed by Vitalik Buterin for allocating resources across complex open source dependency networks. Rather than asking "how much did project X contribute to humanity?" in isolation, Deep Funding reframes the question as "how much of the credit for outcome Y belongs to project X?" It then uses an open market of AI models to propose answers, with a human jury randomly spot-checking them for accuracy. The result is a scalable, transparent system for distributing funding across the thousands of repositories that underpin critical infrastructure like Ethereum.

@@ -18,7 +18,7 @@ relatedResearch:
   - exploring-the-capital-allocation-design-space
   - the-evolution-of-surplus-distribution
 relatedCampaigns: []
-banner: /content-images/mechanisms/skeuomorphism/banner.png
+banner: /content-images/mechanisms/skeuomorphism/banner.jpg
 ---
 
 **Skeuomorphism** in coordination design refers to the practice of mapping new onchain mechanisms onto familiar patterns from the physical or web2 world. Just as early digital interfaces used visual metaphors (folders, desktops, trash cans) to help users navigate unfamiliar computing environments, coordination skeuomorphism uses familiar institutional patterns (grants, voting, budgets) to make novel web3 mechanisms accessible.

@@ -22,7 +22,7 @@ relatedResearch:
   - networks-vs-hierarchies
   - values-in-programmable-money
 relatedCampaigns: []
-banner: /content-images/research/from-chaos-to-coordination/banner.png
+banner: /content-images/research/from-chaos-to-coordination/banner.jpg
 ---
 
 **Type:** Opinion

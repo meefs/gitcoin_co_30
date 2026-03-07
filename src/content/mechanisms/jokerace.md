@@ -19,7 +19,7 @@ relatedResearch:
   - gitcoin-3-3-evolutionary-arena-for-capital-allocation
   - exploring-the-capital-allocation-design-space
 relatedCampaigns: []
-banner: /content-images/mechanisms/jokerace/banner.png
+banner: /content-images/mechanisms/jokerace/banner.jpg
 ---
 
 **JokeRace** is an onchain contest protocol where communities create contests — anyone can submit entries, and the community votes to determine winners. It generalizes governance beyond proposals and grants into any competitive submission format: ideas, designs, memes, code, writing, and more. The protocol provides modular, composable contest infrastructure deployable on any EVM chain.
