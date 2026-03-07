@@ -91,14 +91,6 @@ export const domains: Domain[] = [
     relatedMechanisms: [],
   },
   {
-    id: "resilient-manufacturing",
-    name: "Resilient Manufacturing",
-    description: "Distributed, redundant manufacturing capacity that reduces single points of failure",
-    quadrant: "atoms-survive",
-    examples: ["Formlabs", "Hadrian", "Relativity Space", "Firehawk Aerospace"],
-    relatedMechanisms: [],
-  },
-  {
     id: "open-hardware-silicon",
     name: "Open Source Hardware & Silicon",
     description: "Open source chip designs and hardware that reduce dependency on centralized vendors",
@@ -106,11 +98,19 @@ export const domains: Domain[] = [
     examples: ["RISC-V", "SiFive", "Raspberry Pi", "Seeed Studio", "Framework"],
     relatedMechanisms: [],
   },
+  {
+    id: "resilient-manufacturing",
+    name: "Resilient Manufacturing",
+    description: "Distributed, redundant manufacturing capacity that reduces single points of failure",
+    quadrant: "atoms-survive",
+    examples: ["Formlabs", "Hadrian", "Relativity Space", "Firehawk Aerospace"],
+    relatedMechanisms: [],
+  },
 
   // ── ATOMS + THRIVE (Physical Coordination) ─────────────────────────
   {
     id: "property-rights",
-    name: "Property Rights & Registration",
+    name: "Property Rights & Registries",
     description: "Transparent, tamper-proof property registries and land rights systems",
     quadrant: "atoms-thrive",
     examples: ["Medici Land Governance", "India Property Platform", "Georgia Land Registry", "RealIT"],
@@ -132,24 +132,16 @@ export const domains: Domain[] = [
     examples: ["Decide Madrid", "Consul", "Polis", "vTaiwan"],
     relatedMechanisms: [],
   },
-  {
-    id: "green-chain-infrastructure",
-    name: "Green Chain Infrastructure",
-    description: "Blockchain-based environmental monitoring, carbon markets, and sustainability systems",
-    quadrant: "atoms-thrive",
-    examples: ["Toucan Protocol", "KlimaDAO", "Regen Network", "Nori"],
-    relatedMechanisms: [],
-  },
+
+  // ── Infrastructure (spans Atoms/Bits boundary) ─────────────────────
   {
     id: "data-availability-storage",
     name: "Data Availability & Storage",
     description: "Decentralized data persistence and availability layers for resilient information systems",
-    quadrant: "atoms-thrive",
+    quadrant: "bits-survive",
     examples: ["Filecoin", "Arweave", "Ceramic", "IPFS"],
     relatedMechanisms: [],
   },
-
-  // ── BITS + SURVIVE (Digital Defense) ────────────────────────────────
   {
     id: "communication-messaging",
     name: "Communication & Messaging",
@@ -159,6 +151,24 @@ export const domains: Domain[] = [
     relatedMechanisms: [],
   },
   {
+    id: "governance-tooling",
+    name: "Governance Tooling",
+    description: "DAO governance frameworks, voting systems, and onchain decision-making",
+    quadrant: "bits-thrive",
+    examples: ["Snapshot", "Tally", "Aragon", "Safe", "Governor", "Jokerace"],
+    relatedMechanisms: [],
+  },
+  {
+    id: "cross-chain-infrastructure",
+    name: "Cross-Chain Infrastructure",
+    description: "Core protocol infrastructure, indexing, and cross-chain interoperability",
+    quadrant: "bits-thrive",
+    examples: ["The Graph", "LayerZero", "Wormhole", "Connext", "Hyperlane"],
+    relatedMechanisms: [],
+  },
+
+  // ── Identity, Security & Privacy (Bits + Survive) ──────────────────
+  {
     id: "decentralized-identity",
     name: "Decentralized Identity & Attestation",
     description: "Self-sovereign identity, attestation systems, and sybil resistance",
@@ -167,8 +177,8 @@ export const domains: Domain[] = [
     relatedMechanisms: [],
   },
   {
-    id: "proof-verification-security",
-    name: "Proof Verification & Security",
+    id: "formal-verification-security",
+    name: "Formal Verification & Security",
     description: "Smart contract auditing, formal verification, and security infrastructure",
     quadrant: "bits-survive",
     examples: ["Trail of Bits", "OpenZeppelin", "Certora", "Immunefi", "Quantstamp"],
@@ -191,45 +201,21 @@ export const domains: Domain[] = [
     relatedMechanisms: [],
   },
 
-  // ── BITS + THRIVE (Digital Coordination) ────────────────────────────
+  // ── Economic & Coordination (Bits + Thrive) ────────────────────────
   {
-    id: "assessment-tooling",
-    name: "Assessment Tooling",
-    description: "Tools for evaluating impact, measuring outcomes, and scoring coordination systems",
-    quadrant: "bits-thrive",
-    examples: ["DeepDAO", "Karma", "RegenScore", "OpenQ"],
-    relatedMechanisms: [],
-  },
-  {
-    id: "systems-infrastructure",
-    name: "Systems Infrastructure",
-    description: "Core protocol infrastructure, indexing, and cross-chain interoperability",
-    quadrant: "bits-thrive",
-    examples: ["The Graph", "LayerZero", "Wormhole", "Connext", "Hyperlane"],
-    relatedMechanisms: [],
-  },
-  {
-    id: "democratic-funding-systems",
-    name: "Democratic Funding Systems",
-    description: "Capital allocation mechanisms for public goods using democratic inputs",
-    quadrant: "bits-thrive",
-    examples: ["Gitcoin Grants", "Optimism RPGF", "Giveth", "CLR.fund", "Allo Protocol", "Endaoment"],
-    relatedMechanisms: [],
-  },
-  {
-    id: "governance-treasury",
-    name: "Governance & Treasury",
-    description: "DAO governance frameworks, voting systems, and treasury management",
-    quadrant: "bits-thrive",
-    examples: ["Snapshot", "Tally", "Aragon", "Safe", "Governor", "Jokerace"],
-    relatedMechanisms: [],
-  },
-  {
-    id: "decentralized-monetary-policy",
-    name: "Decentralized Monetary Policy",
+    id: "decentralized-monetary-infrastructure",
+    name: "Decentralized Monetary Infrastructure",
     description: "Algorithmic and community-governed monetary systems and stablecoins",
     quadrant: "bits-thrive",
     examples: ["MakerDAO", "Reflexer", "Liquity", "Ampleforth", "Ethena"],
+    relatedMechanisms: [],
+  },
+  {
+    id: "epistemic-infrastructure",
+    name: "Epistemic Infrastructure",
+    description: "Decentralized information markets, fact-checking, and collective intelligence",
+    quadrant: "bits-thrive",
+    examples: ["Polymarket", "Augur", "Gnosis", "Metaculus"],
     relatedMechanisms: [],
   },
   {
@@ -241,19 +227,19 @@ export const domains: Domain[] = [
     relatedMechanisms: [],
   },
   {
-    id: "prediction-markets",
-    name: "Prediction Markets",
-    description: "Decentralized information markets for epistemic defense and collective intelligence",
+    id: "democratic-funding-systems",
+    name: "Democratic Funding Systems",
+    description: "Capital allocation mechanisms for public goods using democratic inputs",
     quadrant: "bits-thrive",
-    examples: ["Polymarket", "Augur", "Gnosis", "Metaculus"],
+    examples: ["Gitcoin Grants", "Optimism RPGF", "Giveth", "CLR.fund", "Allo Protocol", "Endaoment"],
     relatedMechanisms: [],
   },
   {
-    id: "ecosystem-services",
-    name: "Ecosystem Services",
-    description: "Coordination platforms, grants management, and ecosystem support tooling",
+    id: "streaming-treasury",
+    name: "Streaming & Treasury",
+    description: "Continuous payment streams, treasury management, and programmable fund flows",
     quadrant: "bits-thrive",
-    examples: ["Passage", "Questbook", "Hats Protocol", "Coordinape", "Gitcoin"],
+    examples: ["Superfluid", "Sablier", "Llama", "Hedgey", "Coordinape"],
     relatedMechanisms: [],
   },
 ];

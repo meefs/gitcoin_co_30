@@ -513,8 +513,8 @@ function DomainPercent({
   if (!totalWei || ethAmount === 0) return null;
 
   return (
-    <span className={`text-[10px] font-heading font-bold ${pct >= 100 ? "text-green-400" : "text-teal-400/70"}`}>
-      {pct.toFixed(0)}%
+    <span className={`text-sm font-heading font-bold ${pct >= 100 ? "text-green-400" : "text-teal-400"}`}>
+      {pct.toFixed(2)}%
     </span>
   );
 }
