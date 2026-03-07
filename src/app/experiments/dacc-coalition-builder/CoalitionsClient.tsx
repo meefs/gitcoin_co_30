@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useCallback, useRef, useMemo } from "react";
+import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import {
   Shield,
   Network,
@@ -61,21 +62,57 @@ export function CoalitionsClient() {
   const { connect, connectors } = useConnect();
   const { switchChainAsync } = useSwitchChain();
   const { writeContractAsync, isPending: isSending, reset: resetTx } = useWriteContract();
+
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  // Read initial state from URL
+  const initialZoom = useMemo(() => {
+    const z = parseInt(searchParams.get("zoom") || "2", 10);
+    return ([1, 2, 3, 4].includes(z) ? z : 2) as ZoomLevel;
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  const initialQuadrant = useMemo(() => {
+    const q = searchParams.get("quadrant");
+    return q && ["atoms-survive", "atoms-thrive", "bits-survive", "bits-thrive"].includes(q)
+      ? (q as QuadrantId)
+      : null;
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  const initialSort = useMemo(() => {
+    const s = searchParams.get("sort");
+    return s && ["segment", "alpha", "raised", "interest"].includes(s)
+      ? (s as "segment" | "alpha" | "raised" | "interest")
+      : "segment";
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  const initialSearch = useMemo(() => searchParams.get("q") || "", []); // eslint-disable-line react-hooks/exhaustive-deps
+
   const [stakingDomain, setStakingDomain] = useState<string | null>(null);
-  const [zoom, setZoom] = useState<ZoomLevel>(2);
-  const [selectedQuadrant, setSelectedQuadrant] = useState<QuadrantId | null>(null);
-  const [searchQuery, setSearchQuery] = useState("");
+  const [zoom, setZoom] = useState<ZoomLevel>(initialZoom);
+  const [selectedQuadrant, setSelectedQuadrant] = useState<QuadrantId | null>(initialQuadrant);
+  const [searchQuery, setSearchQuery] = useState(initialSearch);
   const [interestCounts, setInterestCounts] = useState<Record<string, number>>({});
   const [trending, setTrending] = useState<{ domainId: string; queryCount: number }[]>([]);
   const [interested, setInterested] = useState<Set<string>>(new Set());
   const [expandedDomain, setExpandedDomain] = useState<string | null>(null);
   const [selectedDiagnostics, setSelectedDiagnostics] = useState<Set<string>>(new Set());
-  const [sortBy, setSortBy] = useState<"segment" | "alpha" | "raised" | "interest">("segment");
+  const [sortBy, setSortBy] = useState<"segment" | "alpha" | "raised" | "interest">(initialSort);
   const [domainTotals, setDomainTotals] = useState<Record<string, number>>({});
   const [activity, setActivity] = useState<{ type: string; domainId: string; address: string; amount?: string; timestamp: number }[]>([]);
   const [activityTotal, setActivityTotal] = useState(0);
   const [pendingTx, setPendingTx] = useState<{ domainId: string; hash: string } | null>(null);
   const searchDebounceRef = useRef<ReturnType<typeof setTimeout>>(null);
+
+  // Sync state to URL
+  useEffect(() => {
+    const params = new URLSearchParams();
+    if (zoom !== 2) params.set("zoom", String(zoom));
+    if (selectedQuadrant) params.set("quadrant", selectedQuadrant);
+    if (sortBy !== "segment") params.set("sort", sortBy);
+    if (searchQuery) params.set("q", searchQuery);
+    const qs = params.toString();
+    const url = qs ? `${pathname}?${qs}` : pathname;
+    router.replace(url, { scroll: false });
+  }, [zoom, selectedQuadrant, sortBy, searchQuery, pathname, router]);
 
   const reportDomainTotal = useCallback((domainId: string, ethAmount: number) => {
     setDomainTotals((prev) => {
