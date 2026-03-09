@@ -301,7 +301,7 @@ export default function PreviewForm() {
                     </h2>
                     <div className="grid md:grid-cols-2 gap-4">
                       {content.resolvedApps.map((app: any) => (
-                        <AppCard key={app.id} app={app} />
+                        <AppCard key={app.slug} app={app} />
                       ))}
                     </div>
                   </div>
@@ -313,7 +313,7 @@ export default function PreviewForm() {
                     </h2>
                     <div className="grid md:grid-cols-2 gap-4">
                       {content.resolvedMechanisms.map((m: any) => (
-                        <MechanismCard key={m.id} mechanism={m} />
+                        <MechanismCard key={m.slug} mechanism={m} />
                       ))}
                     </div>
                   </div>
@@ -325,7 +325,7 @@ export default function PreviewForm() {
                     </h2>
                     <div className="grid md:grid-cols-2 gap-4">
                       {content.resolvedCaseStudies.map((cs: any) => (
-                        <CaseStudyCard key={cs.id} caseStudy={cs} />
+                        <CaseStudyCard key={cs.slug} caseStudy={cs} />
                       ))}
                     </div>
                   </div>
@@ -337,7 +337,7 @@ export default function PreviewForm() {
                     </h2>
                     <div className="grid md:grid-cols-2 gap-4">
                       {content.resolvedResearch.map((r: any) => (
-                        <ResearchCard key={r.id} research={r} />
+                        <ResearchCard key={r.slug} research={r} />
                       ))}
                     </div>
                   </div>
@@ -349,7 +349,7 @@ export default function PreviewForm() {
                     </h2>
                     <div className="grid md:grid-cols-2 gap-4">
                       {content.resolvedCampaigns.map((c: any) => (
-                        <CampaignCard key={c.id} campaign={c} />
+                        <CampaignCard key={c.slug} campaign={c} />
                       ))}
                     </div>
                   </div>

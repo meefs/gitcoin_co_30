@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import Image from "next/image";
 import {
   DetailPageLayout,
   Breadcrumb,
@@ -54,11 +55,13 @@ export default function ContentDetailPage({
         <div className="flex flex-col md:flex-row gap-6 md:gap-8 md:items-center">
           {/* Logo (for apps) */}
           {item.logo && !item.banner && (
-            <div className="flex-shrink-0">
-              <img
+            <div className="shrink-0">
+              <Image
                 src={item.logo}
                 alt={`${item.name} logo`}
-                className="w-20 h-20 rounded-2xl object-cover bg-gray-900"
+                width={80}
+                height={80}
+                className="rounded-2xl object-cover bg-gray-900"
               />
             </div>
           )}

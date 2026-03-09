@@ -146,7 +146,7 @@ export default function HomePage() {
             <div className="grid gap-5 lg:grid-cols-2">
               {featuredCampaigns.map((campaign) => (
                 <CampaignCard
-                  key={campaign.id}
+                  key={campaign.slug}
                   campaign={campaign}
                   variant="home"
                 />
@@ -188,7 +188,7 @@ export default function HomePage() {
               />
               <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                 {featuredApps.map((app) => (
-                  <AppCard key={app.id} app={app} variant="home" />
+                  <AppCard key={app.slug} app={app} variant="home" />
                 ))}
               </div>
             </div>
@@ -205,7 +205,7 @@ export default function HomePage() {
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
               {featuredResearch.map((research) => (
                 <ResearchCard
-                  key={research.id}
+                  key={research.slug}
                   research={research}
                   variant="home"
                 />
