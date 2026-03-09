@@ -1,13 +1,10 @@
 import { Metadata } from "next";
-import { ResearchCard } from "@/components/cards";
 import {
   ListPageLayout,
   ListPageHeader,
-  FilterBar,
-  ResultsBar,
-  ItemsGrid,
   CTASection,
   SensemakingSection,
+  CategoryContent,
 } from "@/components/layouts";
 import { research } from "@/content/research";
 import SectionHeader from "@/components/ui/SectionHeader";
@@ -28,11 +25,7 @@ export default function ResearchPage() {
       <section className="mb-16 md:mb-24 mt-3">
         <div className="container-page">
           <SectionHeader title="All Research" subtitle="" />
-          <ItemsGrid>
-            {research.map((r) => (
-              <ResearchCard key={r.id} research={r} />
-            ))}
-          </ItemsGrid>
+          <CategoryContent items={research} type="research" itemLabel="articles" />
         </div>
       </section>
 
