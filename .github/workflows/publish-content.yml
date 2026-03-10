@@ -87,8 +87,9 @@ jobs:
             let output = '';
             try { output = fs.readFileSync('/tmp/validate-output.txt', 'utf8').trim(); } catch {}
 
+            const issueNumber = '${{ github.event.issue.number }}';
             const successBody = `${marker}\n✅ **Content validation passed!**`;
-            const failureBody = `${marker}\n## ❌ Content Validation Failed\n\n\`\`\`\n${output}\n\`\`\`\n\nFix the errors above and push again — validation will re-run automatically.`;
+            const failureBody = `${marker}\n## ❌ Content Validation Failed\n\n\`\`\`\n${output}\n\`\`\`\n\n[Edit issue #${issueNumber}](https://github.com/${context.repo.owner}/${context.repo.repo}/issues/${issueNumber}) to fix the errors above — removing and re-adding the \`approved\` label will regenerate this PR automatically.`;
             const body = outcome === 'failure' ? failureBody : successBody;
 
             await github.rest.issues.createComment({
