@@ -80,6 +80,8 @@ export default async function ResearchDetailPage({ params }: PageProps) {
         item={r}
         breadcrumbHref="/research"
         breadcrumbLabel="Back to Research"
+        ctaUrl={r.ctaUrl}
+        ctaLabel={r.researchType ? `Read ${r.researchType}` : 'Read'}
       relatedSections={[
         {
           title: 'Related Apps',
