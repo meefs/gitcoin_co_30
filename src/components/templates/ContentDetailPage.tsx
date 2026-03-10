@@ -26,8 +26,9 @@ interface ContentDetailPageProps {
   breadcrumbHref: string;
   breadcrumbLabel: string;
   relatedSections?: RelatedSection[];
-  externalUrl?: string;
-  externalUrlLabel?: string;
+  ctaUrl?: string;
+  ctaLabel?: string;
+  showSuggestEdit?: boolean;
 }
 
 function calcReadTime(text: string): number {
@@ -40,8 +41,9 @@ export default function ContentDetailPage({
   breadcrumbHref,
   breadcrumbLabel,
   relatedSections = [],
-  externalUrl,
-  externalUrlLabel = "Visit",
+  ctaUrl,
+  ctaLabel = "Visit",
+  showSuggestEdit = true,
 }: ContentDetailPageProps) {
   const banner = item.banner || "/content-images/placeholder.png";
   const readTime = calcReadTime(item.description);
@@ -75,10 +77,10 @@ export default function ContentDetailPage({
               <p className="text-lg text-gray-500 max-w-2xl">
                 {item.shortDescription}
               </p>
-              {externalUrl && externalUrlLabel && (
-                <Button href={externalUrl} variant="secondary">
+              {ctaUrl && ctaLabel && (
+                <Button href={ctaUrl} variant="secondary" external={ctaUrl.startsWith('http')}>
                   <span className="flex items-center gap-2">
-                    {externalUrlLabel}
+                    {ctaLabel}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="14"
@@ -127,9 +129,11 @@ export default function ContentDetailPage({
         </div>
 
         <div className="space-y-6 my-10">
-          <SuggestEditButton
-            contentPath={`${breadcrumbHref.slice(1)}/${item.slug}.md`}
-          />
+          {showSuggestEdit && (
+            <SuggestEditButton
+              contentPath={`${breadcrumbHref.slice(1)}/${item.slug}.md`}
+            />
+          )}
           <MetadataSection lastUpdated={item.lastUpdated} />
         </div>
       </section>
