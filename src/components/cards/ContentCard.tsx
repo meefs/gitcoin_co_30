@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import TagsList from "../ui/TagsList";
 
 interface ContentCardProps {
@@ -42,10 +43,12 @@ export default function ContentCard({
             <div
               className={`relative ${bannerHeight || "aspect-video"} -mx-6 -mt-6 mb-4 overflow-hidden rounded-t-xl`}
             >
-              <img
+              <Image
                 src={banner}
                 alt={name}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="object-cover group-hover:scale-105 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-linear-to-b from-transparent to-gray-950 group-hover:opacity-0 transition-all duration-500" />
             </div>
@@ -53,10 +56,12 @@ export default function ContentCard({
 
           <div className="flex items-center gap-4 mb-4 min-h-16">
             {layout === "logo" && logo ? (
-              <img
+              <Image
                 src={logo}
                 alt={`${name} logo`}
-                className="w-12 h-12 rounded-lg object-cover bg-gray-800"
+                width={48}
+                height={48}
+                className="rounded-lg object-cover bg-gray-800"
               />
             ) : layout === "logo" ? (
               <div className="w-12 h-12 rounded-lg border border-gray-25 flex items-center justify-center flex-shrink-0">
