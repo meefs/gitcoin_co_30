@@ -10,7 +10,7 @@ tags:
   - community-governance
   - governance
   - web3
-lastUpdated: '2026-03-10'
+lastUpdated: '2024-05-08'
 relatedMechanisms:
   - quadratic-funding
 relatedApps:

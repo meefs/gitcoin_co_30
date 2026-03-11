@@ -11,7 +11,7 @@ tags:
   - grants
   - web3
   - ai
-lastUpdated: '2026-03-10'
+lastUpdated: '2025-11-28'
 relatedMechanisms:
   - direct-grants
 relatedApps:

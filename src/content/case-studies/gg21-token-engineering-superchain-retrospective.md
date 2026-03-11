@@ -10,7 +10,7 @@ tags:
   - superchain
   - grants
   - gitcoin
-lastUpdated: '2026-03-10'
+lastUpdated: '2024-09-18'
 relatedMechanisms:
   - quadratic-funding
   - retroactive-funding

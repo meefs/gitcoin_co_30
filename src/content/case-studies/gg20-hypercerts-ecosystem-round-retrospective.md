@@ -9,7 +9,7 @@ tags:
   - grants
   - hypercerts
   - impact-measurement
-lastUpdated: '2026-03-10'
+lastUpdated: '2024-06-01'
 relatedMechanisms:
   - quadratic-funding
 relatedApps:

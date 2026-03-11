@@ -10,7 +10,7 @@ tags:
   - interoperability
   - infrastructure
   - ethereum
-lastUpdated: '2026-03-10'
+lastUpdated: '2025-12-12'
 relatedMechanisms:
   - quadratic-funding
 relatedApps:

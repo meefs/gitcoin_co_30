@@ -8,7 +8,7 @@ tags:
   - retroactive-funding
   - grants
   - community
-lastUpdated: '2026-03-10'
+lastUpdated: '2024-04-19'
 relatedMechanisms:
   - retroactive-funding
   - quadratic-funding

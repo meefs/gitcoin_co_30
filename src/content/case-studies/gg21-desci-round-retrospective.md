@@ -9,7 +9,7 @@ tags:
   - grants
   - gitcoin
   - science
-lastUpdated: '2026-03-10'
+lastUpdated: '2024-10-01'
 relatedMechanisms:
   - quadratic-funding
 relatedApps:

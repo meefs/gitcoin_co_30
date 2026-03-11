@@ -9,7 +9,7 @@ tags:
   - grants
   - africa
   - public-goods
-lastUpdated: '2026-03-10'
+lastUpdated: '2023-12-18'
 relatedMechanisms:
   - quadratic-funding
 relatedApps:

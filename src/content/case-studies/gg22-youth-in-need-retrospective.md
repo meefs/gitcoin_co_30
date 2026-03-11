@@ -9,7 +9,7 @@ tags:
   - grants
   - social-impact
   - education
-lastUpdated: '2026-03-10'
+lastUpdated: '2024-11-13'
 relatedMechanisms:
   - quadratic-funding
 relatedApps:

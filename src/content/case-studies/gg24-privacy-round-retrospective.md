@@ -9,7 +9,7 @@ tags:
   - grants
   - privacy
   - maci
-lastUpdated: '2026-03-10'
+lastUpdated: '2025-11-14'
 relatedMechanisms:
   - quadratic-funding
 relatedApps:

@@ -9,7 +9,7 @@ tags:
   - grants
   - infrastructure
   - web3
-lastUpdated: '2026-03-10'
+lastUpdated: '2024-09-10'
 relatedMechanisms:
   - quadratic-funding
 relatedApps:

@@ -10,7 +10,7 @@ tags:
   - latam
   - education
   - refi
-lastUpdated: '2026-03-10'
+lastUpdated: '2023-10-20'
 relatedMechanisms:
   - quadratic-funding
 relatedApps:

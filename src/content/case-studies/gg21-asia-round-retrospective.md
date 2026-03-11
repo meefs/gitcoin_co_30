@@ -9,7 +9,7 @@ tags:
   - grants
   - asia
   - community
-lastUpdated: '2026-03-10'
+lastUpdated: '2024-09-24'
 relatedMechanisms:
   - quadratic-funding
 relatedApps:

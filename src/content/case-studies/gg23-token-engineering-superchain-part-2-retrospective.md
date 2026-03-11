@@ -10,7 +10,7 @@ tags:
   - quadratic-funding
   - superchain
   - optimism
-lastUpdated: '2026-03-10'
+lastUpdated: '2025-06-14'
 relatedMechanisms:
   - quadratic-funding
   - retroactive-funding

@@ -9,7 +9,7 @@ tags:
   - grants
   - allo
   - infrastructure
-lastUpdated: '2026-03-10'
+lastUpdated: '2024-11-22'
 relatedMechanisms:
   - quadratic-funding
 relatedApps:

@@ -10,7 +10,7 @@ tags:
   - grants
   - gitcoin
   - environment
-lastUpdated: '2026-03-10'
+lastUpdated: '2024-11-29'
 relatedMechanisms:
   - quadratic-funding
 relatedApps:

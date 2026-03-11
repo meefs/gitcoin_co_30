@@ -9,7 +9,7 @@ tags:
   - grants
   - oss
   - open-source
-lastUpdated: '2026-03-10'
+lastUpdated: '2025-11-27'
 relatedMechanisms:
   - quadratic-funding
 relatedApps:

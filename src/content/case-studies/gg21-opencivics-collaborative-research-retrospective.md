@@ -10,7 +10,7 @@ tags:
   - research
   - opencivics
   - public-goods
-lastUpdated: '2026-03-10'
+lastUpdated: '2024-09-04'
 relatedMechanisms:
   - quadratic-funding
 relatedApps:

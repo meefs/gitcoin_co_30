@@ -9,7 +9,7 @@ tags:
   - grants
   - community
   - zuzalu
-lastUpdated: '2026-03-10'
+lastUpdated: '2024-06-04'
 relatedMechanisms:
   - quadratic-funding
 relatedApps:
