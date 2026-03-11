@@ -37,6 +37,8 @@ The application deadline was March 31st, 2025, with the round opening April 2nd�
 
 *Participation:* Eleven valid submissions received, with seven providing model documentation.
 
+![Leaderboard of all participants in the Predictive Funding Challenge](/content-images/case-studies/gg23-predictive-funding-challenge-retrospective/01-leaderboard-predictive-funding-challenge.jpeg)
+
 *Performance:* Evaluated using root mean squared error (RMSE), lower scores indicate accuracy:
 - 1st: David Gasquez—0.016
 - 2nd: Omniacs DAO—0.0173
@@ -55,6 +57,8 @@ Three recommendations emerged:
 2. **Collusion Resistance**: Independent allocation lists provide fallback options if fraud detection suggests manipulation, deterring sybil attacks since attackers cannot guarantee their efforts translate to funding.
 
 3. **Markets**: Concurrent prediction markets attract traders while surfacing collective expectations and providing additional allocation signals.
+
+![Division between Ethereum clients using 3 separate allocation lists](/content-images/case-studies/gg23-predictive-funding-challenge-retrospective/03-ethereum-clients-allocation-division.png)
 
 **Limitations**
 

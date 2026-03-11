@@ -33,6 +33,8 @@ banner: /content-images/case-studies/gg22-allo-builders-advancement-retrospectiv
 - Participating Projects: 17
 - Average Contribution: $15.84
 
+![GG22 Allo Builders Advancement Round overview and metrics](/content-images/case-studies/gg22-allo-builders-advancement-retrospective/01-gg22-round-overview.png)
+
 ## Passport Usage
 
 The round employed Gitcoin Passport for contributor verification:
@@ -45,6 +47,8 @@ This approach incentivized "legitimate users to strengthen their digital identit
 ## COCM vs. Quadratic Funding
 
 The round adopted Contribution-Conscious Contribution Matching (COCM) instead of traditional Quadratic Funding. COCM filtered connections and weighted contributions based on donor relationships, resulting in more equitable outcomes.
+
+![COCM vs QF network diagram comparing matching mechanisms](/content-images/case-studies/gg22-allo-builders-advancement-retrospective/02-cocm-vs-qf-comparison.png)
 
 **Top 10 Projects by COCM Matching:**
 1. viaPrize Gitcoin Fiat Integration: $4,438.77
@@ -65,6 +69,12 @@ The round adopted Contribution-Conscious Contribution Matching (COCM) instead of
 **Matching Mechanism Benefits:** COCM prioritized wallets with diverse connection networks, amplifying impact from high-context donors while mitigating concentrated support patterns.
 
 **Fund Distribution:** Only 3 projects received over 10% of matching funds, while 4 projects secured 5-10%, and 9 projects received under 5%.
+
+![Funds distribution from the matching pool across projects](/content-images/case-studies/gg22-allo-builders-advancement-retrospective/03-funds-distribution-pool.png)
+
+![Percentage allocation breakdown across participating projects](/content-images/case-studies/gg22-allo-builders-advancement-retrospective/04-allo-project-percentages.png)
+
+![Donor-project network visualization showing connection clusters](/content-images/case-studies/gg22-allo-builders-advancement-retrospective/05-network-donor-visualization.jpeg)
 
 ## Lessons Learned
 

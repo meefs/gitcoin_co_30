@@ -55,6 +55,10 @@ Three governance tracks operated with distinct purposes:
 
 Participation required joining the Gitcoin Grants Garden, signing the Community Covenant, and staking 1 $GTC.
 
+![Matching funding for communities diagram showing round structure](/content-images/case-studies/gg23-gitcoin-grants-garden-retrospective/01-matching-funding-communities-diagram.jpeg)
+
+![Round mechanism overview for Gitcoin Grants Garden GG23](/content-images/case-studies/gg23-gitcoin-grants-garden-retrospective/02-round-mechanism-overview.jpeg)
+
 ## Community Feedback Scores
 
 - Overall experience: 7.1/10

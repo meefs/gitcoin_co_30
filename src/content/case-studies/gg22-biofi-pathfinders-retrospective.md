@@ -95,7 +95,7 @@ The cohort of 14 grantees will now continue their learning journey as they devel
 ### Summary of Matching Funds, Crowdfunding, and Donors by Project
 
 | Rank | Project | Matching Funds | Crowdfunding | Donors |
-|------|---------|---|---|---|
+|------|---------|----------------|--------------|--------|
 | 1 | Amazon Sacred Headwaters Alliance | $6033.47 | $403.69 | 80 |
 | 2 | Regenerate Cascadia | $6033.47 | $517.41 | 90 |
 | 3 | Salmon Nation CoLabs | $6033.47 | $1,456.59 | 134 |
@@ -107,9 +107,27 @@ The cohort of 14 grantees will now continue their learning journey as they devel
 | 9 | ReFi Uganda | $3533.62 | $338.23 | 65 |
 | 10 | Greater Tkaronto Bioregion (Canada) | $2747.4 | $1,963.1 | 84 |
 | 11 | Re/Village Green Valley | $2591.4 | $325.65 | 60 |
-| 12 | Recôncavo da Guanabara Bay Bioregional Fund: Restoring Ecological Integrity and Socioeconomic Resilience | $1986.16 | $347.11 | 53 |
+| 12 | Recôncavo da Guanabara Bay Bioregional Fund: Restoring Ecological Integrity and Socioeconomic Resilience. | $1986.16 | $347.11 | 53 |
 | 13 | Centro Estratégico de Desarrollo de la Península de Osa (CEDPO) | $1237.23 | $320.03 | 44 |
 | 14 | Reconnecting Northland | $1223.85 | $344.46 | 54 |
+
+### Data Visualization
+
+1. **Distribution of Matching Funds by Project**
+
+![Distribution of Matching Funds by Project](/content-images/case-studies/gg22-biofi-pathfinders-retrospective/01-distribution-matching-funds-by-project.png)
+
+2. **Distribution of Crowdfunding Amounts by Project**
+
+![Distribution of Crowdfunding Amounts by Project](/content-images/case-studies/gg22-biofi-pathfinders-retrospective/02-distribution-crowdfunding-amounts-by-project.png)
+
+3. **Number of Donors per Project**
+
+![Number of Donors per Project](/content-images/case-studies/gg22-biofi-pathfinders-retrospective/03-number-donors-per-project.png)
+
+4. **Comparison of Matching Funds, Crowdfunding, and Donors per Project**
+
+![Comparison of Matching Funds, Crowdfunding, and Donors per Project (Log Scale)](/content-images/case-studies/gg22-biofi-pathfinders-retrospective/04-comparison-matching-crowdfunding-donors-log-scale.png)
 
 ---
 

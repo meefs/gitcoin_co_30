@@ -35,6 +35,8 @@ The Cartographer Syndicate's GG21 Web3 Grants Ecosystem Advancement Round has wr
 - 543 unique donors
 - 1,715 total donations
 
+![GG21 Web3 Grants Ecosystem Advancement Round statistics chart](/content-images/case-studies/gg21-web3-grants-advancement-retrospective/01-gg21-round-statistics-chart.png)
+
 ## User Experience
 
 As someone who has run multiple Gitcoin QF Rounds, I am no stranger to Grants Stack. This season, some key enhancements made it easier for round operators, including:

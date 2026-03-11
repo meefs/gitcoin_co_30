@@ -79,6 +79,8 @@ We also organized a [**Karma GAP Workshop**](https://youtu.be/-xMLKmNxOxc) focus
 | Number of Onboarding Partners | 5 |
 | Languages Supported | English, Spanish, French |
 
+![Office hours and support activity metrics visualization](/content-images/case-studies/gg23-onboarding-education-program-retrospective/01-office-hours-support-metrics.png)
+
 #### On-Demand Sessions for Everyone
 
 | Partner | Number of Bookings | Total Attendees |
@@ -87,6 +89,8 @@ We also organized a [**Karma GAP Workshop**](https://youtu.be/-xMLKmNxOxc) focus
 | Donny | 4 | 6 |
 | Wasabi | 10 | 14 |
 | Group | 1 | 3 |
+
+![On-demand booking and attendance data by partner](/content-images/case-studies/gg23-onboarding-education-program-retrospective/02-on-demand-bookings-data.png)
 
 #### Live Events
 

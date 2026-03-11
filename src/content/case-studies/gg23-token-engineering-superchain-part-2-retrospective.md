@@ -48,6 +48,14 @@ The GG23 retroactive funding round rewarded projects that executed on self-decla
 
 The TEC assembled a 10-member evaluation board including OP Delegates, Badgeholders, and token engineers. They employed an AI agent to score projects across 12 evaluation categories, allowing evaluators to set weighted priorities while mitigating bias.
 
+![12 evaluation categories used in the GG23 retroactive funding scorecard](/content-images/case-studies/gg23-token-engineering-superchain-part-2-retrospective/01-evaluation-scorecard-categories.png)
+
+![Example of evaluator prompts input into the TEC AI Agent for scoring](/content-images/case-studies/gg23-token-engineering-superchain-part-2-retrospective/02-ai-agent-evaluation-prompts-example.png)
+
+![Evaluation criteria scoring interface with definitions](/content-images/case-studies/gg23-token-engineering-superchain-part-2-retrospective/03-evaluation-criteria-scoring-interface.png)
+
+![AI Agent CSV-ready scoring results output for projects](/content-images/case-studies/gg23-token-engineering-superchain-part-2-retrospective/04-ai-agent-scoring-results-output.png)
+
 ## Key Findings
 
 Of 18 GG21 participants, only 9 applied for retroactive funding. Six projects proactively withdrew, with some noting misalignment between their development and Superchain ecosystem focus.

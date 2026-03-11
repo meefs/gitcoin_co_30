@@ -23,6 +23,12 @@ banner: /content-images/case-studies/gg22-youth-in-need-retrospective/banner.png
 
 Here are the round results with COCM matching for the Youth in Need round:
 
+![Round results with COCM matching data for Youth in Need round](/content-images/case-studies/gg22-youth-in-need-retrospective/01-round-results-cocm-matching.png)
+
+![Funding distribution chart across projects](/content-images/case-studies/gg22-youth-in-need-retrospective/02-funding-distribution-chart.png)
+
+![Matching fund summary statistics](/content-images/case-studies/gg22-youth-in-need-retrospective/03-matching-summary.png)
+
 For context:
 This round was made possible because 5 individuals donated $1000 each to crowdfund the necessary matching funds to apply as a community round, then Gitcoin matched that with more funds.
 Huge thanks to:
@@ -53,7 +59,11 @@ I plan to send out a google form for the grantees to share how they used the fun
 
 I also recently had the joy of returning to Ava's House kids shelter by Chiang Mai Thailand (https://avahouse.org/) and seeing the awesome project Dang and his wife have made taking care of 25 kids, built a whole new building, repaired water tanks, and I'm so inspired by the work they do.
 
+![Ava's House kids shelter in Chiang Mai, Thailand](/content-images/case-studies/gg22-youth-in-need-retrospective/04-avas-house-thailand.jpeg)
+
 I plan to be back in January to visit New Hope Shelter in Ecuador (@newhopeshelter on x) and see how the community is doing including Damaris who is in process of being adopted
+
+![New Hope Shelter in Ecuador featuring child Damaris](/content-images/case-studies/gg22-youth-in-need-retrospective/05-new-hope-shelter-ecuador.jpeg)
 
 Incredibly glad to know this awesome ecosystem and mechanism for funding kids shelters and educational projects!
 

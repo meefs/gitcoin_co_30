@@ -51,30 +51,40 @@ OpenCivics Collaborative Research Round 03 distributed **$38,750 USDC in matchin
 | Impact Reporting Interoperability | 14 | 1,000.00 | 36.62 | 1,036.62 |
 | Distributed Governance Score Framework: DAO Ind | 6 | 1,000.00 | 8.71 | 1,008.71 |
 
+[![Crowdfunding pie chart](/content-images/case-studies/gg21-opencivics-collaborative-research-retrospective/01-crowdfunding-pie-chart.png)](/content-images/case-studies/gg21-opencivics-collaborative-research-retrospective/01-crowdfunding-pie-chart.png)
+
+[![Matching pie chart](/content-images/case-studies/gg21-opencivics-collaborative-research-retrospective/02-matching-pie-chart.png)](/content-images/case-studies/gg21-opencivics-collaborative-research-retrospective/02-matching-pie-chart.png)
+
 Compared with our previous round, both the number of donors and the total crowdfunding amount saw significant decreases.
 
-*   **Total Number of Donors:**
-    *   Consortium Grant Round 02: **1,062** donors
-    *   Collaborative Grant Research Round 03: **327** donors
-*   **Total Crowdfunding Amount:**
-    *   Consortium Grant Round 02: **$10,306.50**
-    *   Collaborative Grant Research Round 03: **$3,778.72**
+* **Total Number of Donors:**
+  * Consortium Grant Round 02: **1,062** donors
+  * Collaborative Grant Research Round 03: **327** donors
+* **Total Crowdfunding Amount:**
+  * Consortium Grant Round 02: **$10,306.50**
+  * Collaborative Grant Research Round 03: **$3,778.72**
 
 The percentage change between the OpenCivics Consortium Grant Round 02 and the OpenCivics Collaborative Research Grant Round 03 is as follows:
 
-*   **Total Number of Donors:** Decreased by **69.21%**
-*   **Total Crowdfunding Amount:** Decreased by **63.34%**
+* **Total Number of Donors:** Decreased by **69.21%**
+* **Total Crowdfunding Amount:** Decreased by **63.34%**
 
 ## Overall Data Insights
 
 ### Key Findings:
 
-1.  **Top Performing Projects:**
-    *   **MycoFi for Municipal Resilience** and **Stephen Reid: Technological Metamodernism** both received the highest matching amount of $5,518.75. These projects also garnered a significant number of contributions (33 and 37, respectively) and large amounts of total received funds. The high matching allocation suggests strong donor engagement and broad support.
-2.  **Moderately Funded Projects:**
-    *   **Ethereal Forest's Open Protocol Research Group** and **VoiceDeck: A Marketplace for Journalism Impact** received moderate matching amounts of $4,271.33 and $4,012.55, respectively. These projects had a reasonable number of contributions (23 and 28) and received significant crowdfunding amounts.
-3.  **Lower Funded Projects:**
-    *   The **Bonding Curve Research Group (BCRG)** received the lowest matching amount among the highlighted projects, totaling $2,621.20. With 21 contributions, this project still managed to secure a reasonable level of support, but it fell below the others in terms of both contributions and matching funds.
+1. **Top Performing Projects:**
+   * **MycoFi for Municipal Resilience** and **Stephen Reid: Technological Metamodernism** both received the highest matching amount of $5,518.75. These projects also garnered a significant number of contributions (33 and 37, respectively) and large amounts of total received funds. The high matching allocation suggests strong donor engagement and broad support.
+
+2. **Moderately Funded Projects:**
+   * **Ethereal Forest's Open Protocol Research Group** and **VoiceDeck: A Marketplace for Journalism Impact** received moderate matching amounts of $4,271.33 and $4,012.55, respectively. These projects had a reasonable number of contributions (23 and 28) and received significant crowdfunding amounts.
+
+3. **Lower Funded Projects:**
+   * The **Bonding Curve Research Group (BCRG)** received the lowest matching amount among the highlighted projects, totaling $2,621.20. With 21 contributions, this project still managed to secure a reasonable level of support, but it fell below the others in terms of both contributions and matching funds.
+
+[Click here to view the automatically generated Gitcoin Report Card for the round.](https://reportcards.gitcoin.co/42161/386)
+
+**For a detailed data, tables, and graphs of the grant round results, check out [Collaborative Research Round Analytics](https://www.notion.so/Collaborative-Research-Round-03-Analytics-5014eb48f1b048dc97c679e55f2aae49?pvs=21) on our wiki.**
 
 ## Round Operator Insights
 
@@ -84,7 +94,7 @@ One of the most notable observations during this round was the decline in crowdf
 
 A critical lesson from this experience is the need for the impact-focused segment of the Gitcoin community to extend its outreach beyond the existing web3 space. We see a significant opportunity to engage with other communities that are interested in funding social impact projects but are not currently involved in the space. This challenge could be addressed by coordinating efforts to bring traditional nonprofit ecosystems and climate organizations into the quadratic funding ecosystem.
 
-One of the main barriers to this type of expansion has been the lack of web3 knowledge within these communities. However, the introduction of a fiat PayPal donation option in this round has proven to be a significant step forward. This innovation, made possible through a partnership with viaPrize, allowed us to create a seamless donation process for those unfamiliar with web3, while still ensuring that donations were eligible for matching funds. The success of this experiment suggests that we can now onboard non-web3 participants using traditional payment methods, allowing them to engage in the ecosystem without the steep learning curve associated with purchasing and bridging different cryptocurrencies on different blockchains. For a full retrospective on the viaPrize payment system experiment in GG21, please review founder Noah Chon Lee's post on the Gitcoin Governance Forum.
+One of the main barriers to this type of expansion has been the lack of web3 knowledge within these communities. However, the introduction of a fiat PayPal donation option in this round has proven to be a significant step forward. This innovation, made possible through a partnership with viaPrize, allowed us to create a seamless donation process for those unfamiliar with web3, while still ensuring that donations were eligible for matching funds. The success of this experiment suggests that we can now onboard non-web3 participants using traditional payment methods, allowing them to engage in the ecosystem without the steep learning curve associated with purchasing and bridging different cryptocurrencies on different blockchains. For a full retrospective on the viaPrize payment system experiment in GG21, please review founder Noah Chon Lee's post on the [Gitcoin Governance Forum](https://gov.gitcoin.co/t/we-donated-to-gitcoin-projects-with-credit-card-review-of-paypal-fiat-payments-in-gg21/19287).
 
 ### Challenges in Matching Calculations
 
@@ -96,7 +106,7 @@ Additionally, we had to adjust the results due to a reduction in the matching po
 
 Lastly, we deployed an experimental $1,000 minimum matching to ensure that all projects selected for the round would receive at least enough grant funds to complete a portion of their research inquiry. Round results were modified by filling the gap in matching for projects that fell below the $1,000 threshold by redistributing matching funds proportional to the amount that each project over $1,000 received.
 
-All of these modifications, the calculations used to derive them, and the original figures are listed on our wiki and can be audited by anyone to determine how those choices were made. In the future, we would appreciate features within Gitcoin Manager that would allow us to reduce the matching pool size, set minimum matching amounts, and modify sybil parameters.
+All of these modifications, the calculations used to derive them, and the original figures are listed on our [wiki](https://opencivics.notion.site/Collaborative-Research-Round-03-Analytics-5014eb48f1b048dc97c679e55f2aae49?pvs=4) and can be audited by anyone to determine how those choices were made. In the future, we would appreciate features within Gitcoin Manager that would allow us to reduce the matching pool size, set minimum matching amounts, and modify sybil parameters.
 
 ### Sybil Protection and Model Transparency
 
@@ -112,7 +122,7 @@ Furthermore, upon understanding more clearly how the cluster matching method doe
 
 ### Round Innovations and Feedback
 
-One piece of feedback that emerged early on in our application for matching funds was the ease and clarity of attestations in a research-focused round. The binary nature of research publication—either a project publishes its research or it does not—makes impact attestations straightforward to document. This simplicity may make research-based quadratic funding rounds more attractive and easier to manage. We're incredibly happy with the grantees in this round which demonstrated a wide diversity of inspired, useful, and forward reaching research inquiries into a wide range of domains within the field of web3 civics or DeCiv. To hear from just a few of the amazing grantees in this round, head over to our Round Showcase Space on X. We look forward to sharing the research that's produced through the funding of this round!
+One piece of feedback that emerged early on in our application for matching funds was the ease and clarity of attestations in a research-focused round. The binary nature of research publication—either a project publishes its research or it does not—makes impact attestations straightforward to document. This simplicity may make research-based quadratic funding rounds more attractive and easier to manage. We're incredibly happy with the grantees in this round which demonstrated a wide diversity of inspired, useful, and forward reaching research inquiries into a wide range of domains within the field of web3 civics or DeCiv. To hear from just a few of the amazing grantees in this round, head over to our [Round Showcase Space on X](https://x.com/i/spaces/1YqxovqEEnbJv). We look forward to sharing the research that's produced through the funding of this round!
 
 We consider our PayPal fiat experiment with viaPrize to have been a massive success. Thanks to the amazing work of Noah and his team, combined with efforts from the Gitcoin Grants Labs team to enable a feature for white listing the addresses generated by viaPrize, we were able to process fiat donations for the first time while addressing sybil protection. We encourage folks to read more about Noah's method and results in his retrospective post to learn more about how it works and to decide for themselves if they want to deploy it for their own rounds in the future.
 
@@ -124,11 +134,13 @@ Overall, this round provided critical insights and valuable lessons that we're a
 
 ### Feature Requests
 
-*   Minimum Matching Setting: Allo Protocol
-*   Modifiable Parameters For Matching Results: Passport
-    *   ERC-20 and ERC-721 parameters and weights
-    *   Slider for weight between COCM and QF results
-*   Modifying Matching Pool Size (lower) During Round: Allo Protocol
+* Minimum Matching Setting: Allo Protocol
+* Modifiable Parameters For Matching Results: Passport
+  * ERC-20 and ERC-721 parameters and weights
+  * Slider for weight between COCM and QF results
+* Modifying Matching Pool Size (lower) During Round: Allo Protocol
+
+For a deep dive in matching pool calculations, graphs, and further analysis, visit our [wiki](https://opencivics.notion.site/Collaborative-Research-Round-03-Analytics-5014eb48f1b048dc97c679e55f2aae49?pvs=4).
 
 ---
 

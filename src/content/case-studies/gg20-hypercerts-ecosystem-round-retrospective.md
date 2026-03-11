@@ -21,40 +21,62 @@ relatedCampaigns:
 banner: /content-images/case-studies/gg20-hypercerts-ecosystem-round-retrospective/banner.png
 ---
 
-## Original Post by holke (June 1, 2024)
+## First ever Hypercerts Ecosystem Round
 
-### First ever Hypercerts Ecosystem Round
+The Hypercerts Foundation and Community conducted their inaugural community round on Gitcoin during GG20.
 
-The Hypercerts Foundation and Community conducted their inaugural community round on Gitcoin during GG20, with support from various team members across both organizations.
+## The Hypercerts Ecosystem
 
-### The Hypercerts Ecosystem
+The Hypercerts Foundation aims to "advance the development and adoption of open-source protocols for funding and rewarding positive impact." This ecosystem round supported projects building on hypercerts primitives, intending to transform "isolated platforms into interconnected, dynamic funding networks."
 
-The Hypercerts Foundation aims to "advance the development and adoption of open-source protocols for funding and rewarding positive impact." The round supported projects building on hypercerts primitives to create "interconnected, dynamic funding networks."
+## Types of Projects in the Hypercerts Ecosystem
 
-### Types of Projects in the Hypercerts Ecosystem
+Support focused on five categories:
 
-Five project categories were prioritized:
+1. **New Applications**: Projects developing new applications using hypercerts infrastructure
+2. **Integrations**: Projects integrating hypercerts into existing funding platforms
+3. **Tooling**: Projects building tools extending functionality across integrations
+4. **Pilot Use Cases**: Tangible implementations of new functionalities
+5. **Community Support (DevRel)**: Technical expertise providers
 
-1. **New Applications**: Prize competitions using hypercerts infrastructure
-2. **Integrations**: Hypercerts adoption in existing funding platforms
-3. **Tooling**: Tools extending functionality across integrations
-4. **Pilot Use Cases**: Tangible implementations of new features
-5. **Community Support (DevRel)**: Technical expertise provision
+![Hypercerts ecosystem components](/content-images/case-studies/gg20-hypercerts-ecosystem-round-retrospective/01-hypercerts-ecosystem-components.png)
 
-### Applications: Exceeding Expectations
+## Applications: Exceeding Expectations
 
+Applications received exceeded expectations:
 - **Accepted**: 35 projects
 - **Rejected**: 12 projects
 
-Distribution by category included 5 new platforms, 13 integrations, 2 tooling projects, 13 pilot use cases, and 2 DevRel/community support initiatives.
+**Projects by category:**
+- New platform (5): VoiceDeck, Hyperstaker, HPGF Ecosystem Support Machine, viaPrize, Hyperchange
+- Integrations (13): ReFi DAO, Silvi, Sovereign Nature Initiative, Gainforest, GreenPill Network x GPN Dev Guild, Proof of Philanthropy, Atlantis, Change Code, NERD DAO, Hyperfiles, RWA x Public Goods | BASIN, Drivyx ESG, dMeter
+- Tooling (2): Spark | Deresy & Hyperminter, LiquiCert
+- Pilot use cases (13): Blocktrend, Funding the Commons, PGF Ethereal Mexico, FAB DAO, MesoReefDAO, AgroforestDAO, Armitage, DWeb Camp, LexDAO, Solarpunk Guild, $Earth, DeepVentures, Public Optimism
+- DevRel & community support (2): sodofi, bitbeckers
 
-### Crowdfunded Donations
+Initial projections targeted 10-15 projects; the higher volume spread matching funds thinner than anticipated, warranting future criteria reconsideration.
 
-Over $9,000 was raised, with VoiceDeck receiving the highest amount ($1,745), Atlantis attracting the most contributors (113), and Spark | Deresy & Hyperminter securing the largest matching amount ($4,658).
+## Crowdfunded Donations: Over $9,000 Raised
 
-### Matching Funders
+- **VoiceDeck**: Highest crowdfunding and total amount ($1,745)
+- **Atlantis**: Highest contributor count (113)
+- **Spark | Deresy & Hyperminter**: Highest matching amount ($4,658)
 
-Three organizations provided $60,000 in matching funds: Gitcoin, Thank ARB, and Protocol Labs.
+![Distribution of funds in the Hypercerts Ecosystem Round](/content-images/case-studies/gg20-hypercerts-ecosystem-round-retrospective/02-funding-distribution-chart.png)
+
+## Thank You to Our Matching Funders for $60,000
+
+Matching funders—Gitcoin, Thank ARB, and Protocol Labs—provided $60,000 in support.
+
+![Matching funders logos](/content-images/case-studies/gg20-hypercerts-ecosystem-round-retrospective/03-matching-funders-logos.png)
+
+## Excited About Projects' Progress
+
+The foundation plans follow-up with all projects to provide support and assess fund distribution correlation with project success.
+
+## Get involved
+
+Interested parties can contact the foundation at team [at] hypercerts.org to join as funders, contributors, or new projects.
 
 ---
 

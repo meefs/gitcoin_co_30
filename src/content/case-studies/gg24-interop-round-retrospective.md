@@ -42,11 +42,17 @@ The Interop Standards, Infrastructure & Analytics domain was established to addr
 
 The Interop Standards, Infrastructure & Analytics round was run as a curated Quadratic Funding (QF) round during GG24 to combine broad community signal with targeted domain stewardship. QF was chosen to surface projects with genuine, distributed demand across the Ethereum ecosystem, rather than concentrating influence among a small set of large donors. This was especially important for interoperability and open data work, where impact is ecosystem-wide but often under-monetized and under-recognized by traditional funding models.
 
+![Interop round participation chart showing project distribution across problem areas](/content-images/case-studies/gg24-interop-round-retrospective/01-interop-round-participation-chart.png)
+
+![Five layers of interoperability and grantees building across those layers](/content-images/case-studies/gg24-interop-round-retrospective/02-five-layers-interoperability-diagram.jpeg)
+
 Projects were required to demonstrate proven activity, open-source outputs, and clear alignment with Ethereum interoperability standards, shared data infrastructure, analytics, or adoption of the Open Intents Framework (OIF). Speculative concepts, general-purpose applications, or unrelated tooling were excluded to ensure the round prioritized deployable infrastructure and measurable progress over narratives or future promises.
 
 The round was operated in partnership with Giveth, using its QF infrastructure and cluster-based sybil resistance, with Celo supporting the matching pool. This setup balanced accessibility for donors across multiple networks with safeguards to preserve signal quality. The timing of the round reflected a broader ecosystem inflection point: OIF is reaching closer to production readiness, multi-chain complexity is accelerating, and funders need clearer signals on where early interoperability investments could unlock the highest leverage. The design aimed to meet that moment by pairing community discovery with domain-informed curation, making interoperability fundable, visible, and actionable at the right time.
 
 ## Funding Distribution & Thematic Insights
+
+![Bubble chart showing funding concentration across interoperability problem areas](/content-images/case-studies/gg24-interop-round-retrospective/03-funding-distribution-problem-alignment.png)
 
 This round was structured around a set of interoperability problems spanning standards, shared infrastructure, and analytics/visibility layers. Each project was mapped to one Primary Problem Alignment, representing the core bottleneck it aims to address, and one Secondary Problem Alignment, capturing meaningful but adjacent contributions. For allocation analysis, primary alignments account for the majority of a project's attributed funding, while secondary alignments reflect spillover value across the interop stack. This approach allows capital to be read not just at the project level, but as signals across systemic gaps in Ethereum's multi-chain future.
 

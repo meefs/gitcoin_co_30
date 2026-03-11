@@ -22,69 +22,83 @@ banner: /content-images/case-studies/gg19-public-goods-africa-retrospective/bann
 
 # Retrospective: Public Goods Africa Independent Grant Round in GG19
 
-**Summary**
+**Posted by thinkDecade on December 18, 2023**
 
-This retrospective covers the Public Goods Africa Grant Round, which operated as an independent initiative during GG19.
+## Summary
 
-**Objectives and Goals**
+This retrospective provides a quick overview of the Public Goods Africa Grant Round, which ran as an independent round in GG19.
 
-The round pursued three primary aims:
+## Objectives and Goals
 
-1. Successfully pilot a QF Grant round exclusively for the African Continent
-2. Identify and support high-impact projects
-3. Establish precedent for future QF initiatives and advance the global web3 Public Good movement
+The Public Goods Africa Grant round was initiated with a clear set of objectives and goals aimed at nurturing and empowering the web3 ecosystem in Africa. The primary objectives were:
 
-**Implementation**
+1. Successfully pilot a QF Grant round solely focused on the African Continent
+2. Identify high impact projects and support them.
+3. Set a precedent for future QF initiatives and contribute significantly to the broader global web3 Public Good movement.
 
-Using a direct identification approach with a smaller matching pool, organizers selected ten projects through these steps:
+## Implementation
 
-- Research and shortlisting of high-impact Africa-focused initiatives
-- Direct outreach inviting selected projects to participate
-- Application assistance and Grant Stack training
+As a pilot round with a smaller matching pool, we adopted a direct approach of identify projects for the round. Ten(10) projects were selected to partake in the round. Here's the process we went through.
 
-Selection criteria emphasized:
+- Research and shortlisting : The selection process was a closed one. So we researched and shortlisted some high impact projects focused on Africa
+- Call for Proposals : We then reached out to the projects inviting them to join the round
+- Application Support : We provided help to those that needed support with applications and how to use Grant Stack.
 
-- Projects must target African impact
-- Projects must strengthen the Web3 ecosystem
-- Projects must demonstrate at least three months of activity
+### Selection criteria for projects
 
-The round "prioritize[d] builder initiatives such as developer training programs, hackathon initiatives, and developer communities."
+The selection criteria for projects was fairly simple for this round. The criteria included
 
-**Outcomes and Statistics**
+- The project must aim to make impact in Africa
+- The project must aim to improve the Web3 ecosystem
+- Projects must have been active for at least 3 months.
 
-- Total donations: $727.12 (approximately 15% of matching funds)
-- Average donation: $4.13
-- No sybil attacks detected
-- No project reached the matching cap, indicating equitable distribution
+It is worth noting that we prioritize builder initiatives such as developer training programs, hackathon initiatives, and developer communities.
 
-**Challenges and Learnings**
+## Outcomes and Statics
 
-Key obstacles included:
+- Total donation was $727.12, about 15% of the matching fund
+- We had an average donation of $ 4.13
+- We did not detect any sybil attack
+- No project reached the matching cap signaling a more reasonable disbursement of donations
 
-- Technical issues reported by some donors
-- New donors struggled with Gitcoin Passport scoring requirements
-- Participants unfamiliar with Layer 2 networks and bridging processes
-- Limited funds among potential contributors
-- Lower matching caps recommended to enable broader distribution
+![PGA round statistics chart](/content-images/case-studies/gg19-public-goods-africa-retrospective/01-pga-round-statistics-chart.png)
 
-**Community Feedback and Engagement**
+Find the round report card here → https://reportcards.gitcoin.co/10/0xD309DeFD59C0b8792b14197EaA40043D9625B22B
 
-Support included:
+## Challenges and Learnings
 
-- Ongoing assistance for donors, grantees, and participants
-- Twitter Spaces for education and publicity
-- Post-round community feedback gathering via Twitter Spaces and Telegram
+- Some donors complained about technical issues. Some sent ff screenshot.
 
-**Recommendations for Future Grant Rounds**
+![Donor technical issues screenshot](/content-images/case-studies/gg19-public-goods-africa-retrospective/02-donor-technical-issues-screenshot.png)
 
-- Increase matching fund allocation
-- Expand project participation numbers
-- Broaden selection criteria with specific objectives
-- Launch additional education initiatives
+- Lots of new donors struggled with getting the right score on their Gitcoin passport.
+- Other general challenges included total newbies not being familiar with L2s and bridging, not having funds to donate, etc.
+- For Rounds with relatively smaller matching funds, it might be good to have a lower matching cap to enable more even distribution.
+- We also wanted this to be a learning experience for all the projects involved. We wanted the projects to educate and onboard their community to the rounds. Therefore a lower matching cap leading to more even distribution could signal to projects not to put in much effort in educating and onboarding more donors from their community.
 
-**Conclusion**
+## Community Feedback and Engagement
 
-The organizers expressed gratitude to all participants and positioned this round as foundational, envisioning future rounds where "Web3 technology powered by Public Good Funding catalyzes social and economic change."
+- Throughout the round, we were available to provide support to donors, grantees and anyone looking for specific support.
+- We also hosted a series of X spaces to provide publicity and general education for Grantees, donors and the general public.
+- Post round, we are engaging the community more to solicit further valuable feedback and suggestions.
+  - [Public Goods Africa Grant Round Reflections twitter Space](https://x.com/publicgoodAfric/status/1734644142330769873?s=20)
+  - Public Good Africa Community - Retro on Public Goods Africa Grant Round on Telegram → [Telegram: View @publicgoodAfrica](https://t.me/publicgoodAfrica/1)
+  - X space on Grant Reflections → https://twitter.com/i/spaces/1LyxBnzdkwzxN
+
+## Recommendations for Future Grant Rounds
+
+- Raising a bigger amount for the matching fund
+- Adding more projects to round
+- Expanding the criteria to include more specific objectives
+- Embarking more education initiatives (Spaces, workshops, community AMAs, etc)
+
+## Conclusion
+
+Expressing deep appreciation for all participants(Grantees, donors, funders, educators and the general Public Good audience). We view this round not just as a milestone but as foundations for a future where Web3 technology powered by Public Good Funding catalyzes social and economic change where builders, educators, innovators and change-makers can sustainably be funded to build for positive impact in Africa & beyond. We are excited for the future.
+
+## Acknowledgments
+
+@jon-spark-eco @owocki @M0nkeyFl0wer @sejalrekhan
 
 ---
 
